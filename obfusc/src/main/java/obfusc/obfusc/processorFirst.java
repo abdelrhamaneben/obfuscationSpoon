@@ -1,19 +1,26 @@
 package obfusc.obfusc;
 
 
-import org.apache.log4j.Level;
-
+import java.util.HashMap;
 import spoon.processing.AbstractProcessor;
-import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtField;
-import spoon.reflect.declaration.ModifierKind;
-import spoon.reflect.reference.CtTypeReference;
 
-public class processorFirst  extends AbstractProcessor<CtClass>{
-	public void process(CtClass element) {
-		CtTypeReference stringRef = this.getFactory().Code().createCtTypeReference(String.class);
-		CtField field = getFactory().Code().createCtField("toto", stringRef, "null", ModifierKind.PUBLIC);
-		element.addField(field);
+/**
+ * 
+ * @author abdelrhamanebenhammou
+ *
+ */
+public class processorFirst  extends AbstractProcessor<CtField>{
+	
+	static HashMap<String,String> names = new HashMap<String,String>();
+	
+	public void process(CtField element) {
+		String oldName = element.getSimpleName();
+		if(!names.containsKey(oldName)) {
+			String newName = factotyName.get();
+			names.put(oldName, newName);
+		}
+		element.setSimpleName(names.get(oldName));
     }
 
 }

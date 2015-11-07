@@ -1,27 +1,26 @@
 package obfusc.obfusc;
 
 import spoon.Launcher;
-import spoon.reflect.declaration.CtPackage;
-import spoon.reflect.factory.Factory;
 
 public class App 
 {
     public static void main( String[] args )
     {
     	Launcher spoon = new Launcher(); 
-    	spoon.addInputResource("/home/m2iagl/benhammou/workspace/OPL/applicationbateau/src/applicationbateau");
+    	//spoon.addInputResource("/home/m2iagl/benhammou/workspace/OPL/applicationbateau/src/applicationbateau");
+    	spoon.addInputResource("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/applicationbateau/src/applicationbateau");
+    	
     	spoon.addProcessor(new processorFirst());
-    	spoon.setSourceOutputDirectory("/home/m2iagl/benhammou/Bureau");
+    	//spoon.addProcessor(new processortwo());
+    	spoon.setSourceOutputDirectory("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output");
 	    spoon.run();
 	    
-	    /*Factory factory = spoon.getFactory();
+	  /*  Factory factory = spoon.getFactory();
 	    // list all packages of the model
 	    
 	    for(CtPackage p : factory.Package().getAll()) { 
 	    	
 	    	System.out.println("package: "+p.getQualifiedName());
-	    } */
-	    
-	   
+	    }*/
     }
 }
