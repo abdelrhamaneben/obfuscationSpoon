@@ -1,7 +1,9 @@
 package applicationbateau;
 
 public class app {
+	
 	private String blabla;
+
 	public void un() {
 		try{
 			System.out.println("xxx");
