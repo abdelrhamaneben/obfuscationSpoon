@@ -10,20 +10,13 @@ public class App
     	//spoon.addInputResource("/home/m2iagl/benhammou/workspace/OPL/applicationbateau/src/applicationbateau");
     	spoon.addInputResource("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/applicationbateau/src/applicationbateau");
     	factotyName getterName = new factotyName();
-    	
     	NameDeclarationChanger NDC = new NameDeclarationChanger(getterName);
+    	NameReadChanger NRC = new NameReadChanger(getterName);
+    	
     	spoon.addProcessor(NDC);
-    	//spoon.addProcessor(new processortwo());
+    	spoon.addProcessor(NRC);
     	
     	spoon.setSourceOutputDirectory("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output");
 	    spoon.run();
-	    
-	  /*  Factory factory = spoon.getFactory();
-	    // list all packages of the model
-	    
-	    for(CtPackage p : factory.Package().getAll()) { 
-	    	
-	    	System.out.println("package: "+p.getQualifiedName());
-	    }*/
     }
 }

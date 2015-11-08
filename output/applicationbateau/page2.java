@@ -2,13 +2,13 @@ package applicationbateau;
 
 
 public class page2 {
-    private java.lang.String v1178549a_6d72_444b_a5e8_8d712de54475;
+    private java.lang.String v8c9c30c0_aa96_4942_90f6_cf888d2b4e95;
 
     public void process() {
-        java.lang.String vf20afa55_9280_404f_b756_338305f3d111 = "helloBoy";
-        int v15fb1923_8767_4236_94c2_31817e87a4f1 = 1;
-        if (true) {
-            java.lang.System.out.println("hello kitty");
+        java.lang.String v68254203_ef4d_464a_86c7_84a8289243ff = "helloBoy";
+        int vc9a2c8b6_9e43_406f_829c_896116871c31 = 1;
+        if (v68254203_ef4d_464a_86c7_84a8289243ff == "helloBoy") {
+            java.lang.System.out.println(v68254203_ef4d_464a_86c7_84a8289243ff);
         } 
     }
 }
