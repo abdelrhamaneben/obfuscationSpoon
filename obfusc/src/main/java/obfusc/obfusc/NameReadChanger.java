@@ -11,14 +11,14 @@ import spoon.support.reflect.code.CtVariableReadImpl;
  */
 public class NameReadChanger  extends AbstractProcessor<CtVariableReadImpl>{
 	
-	private factotyName fn;
+	private factotyReference fn;
 	
-	public NameReadChanger (factotyName fn) {
+	public NameReadChanger (factotyReference fn) {
 		this.fn = fn;
 	}
 	
 	public void process(CtVariableReadImpl element) {
-		element.getVariable().setSimpleName(fn.get(element.getVariable().getSimpleName()));
+		element.getVariable().setSimpleName(fn.getName(element.getVariable().getSimpleName()));
     }
 	
 	

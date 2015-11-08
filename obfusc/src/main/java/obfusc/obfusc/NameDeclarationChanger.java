@@ -14,9 +14,9 @@ import spoon.reflect.declaration.CtNamedElement;
  */
 public class NameDeclarationChanger  extends AbstractProcessor<CtNamedElement>{
 	
-	private factotyName fn;
+	private factotyReference fn;
 	
-	public NameDeclarationChanger (factotyName fn) {
+	public NameDeclarationChanger (factotyReference fn) {
 		this.fn = fn;
 	}
 	
@@ -28,7 +28,7 @@ public class NameDeclarationChanger  extends AbstractProcessor<CtNamedElement>{
 		
 		if(elementChangable.contains(element.getClass().getSimpleName())) {
 			String oldName = element.getSimpleName();
-			element.setSimpleName(fn.get(oldName));
+			element.setSimpleName(fn.getName(oldName));
 		}
     }
 

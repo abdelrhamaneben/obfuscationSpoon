@@ -4,30 +4,30 @@ import java.util.ArrayList;
 
 import junit.framework.TestCase;
 
-public class FactoryNameTest extends TestCase {
+public class factotyReferenceTest extends TestCase {
 
-	public FactoryNameTest(String name) {
+	public factotyReferenceTest(String name) {
 		super(name);
 	}
 	
 	/**
 	 * La fonction doit retourner des nom de variable unique
 	 */
-    public void testGet()
+    public void testGetName()
     {
-    	factotyName fn = new factotyName();
+    	factotyReference fn = new factotyReference();
     	// Test que la fonction retourne bien quelque chose
-        this.assertNotNull(fn.get("blabla"));
+        this.assertNotNull(fn.getName("blabla"));
         
         // Test que la fonction retourne bien des noms différents si on lui fourni des noms différents
-        String Nom1 = fn.get("blabla");
-        String Nom2 = fn.get("blibli");
+        String Nom1 = fn.getName("blabla");
+        String Nom2 = fn.getName("blibli");
         this.assertNotSame(Nom1, Nom2);
         
         
         // Test quel retourne des noms identiques si les noms fournis le sont
-	    Nom1 = fn.get("blabla");
-	    Nom2 = fn.get("blabla");
+	    Nom1 = fn.getName("blabla");
+	    Nom2 = fn.getName("blabla");
 	    this.assertSame(Nom1, Nom2);
     }
 }

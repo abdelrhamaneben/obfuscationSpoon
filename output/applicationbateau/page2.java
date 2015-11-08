@@ -2,18 +2,18 @@ package applicationbateau;
 
 
 public class page2 {
-    private java.lang.String vd98472ae_47de_4231_91cb_bde3e4cb0379;
+    private java.lang.String v51f20989_7c79_4a72_a50e_e23a076cd521;
 
     public void process() {
-        java.lang.String vb23a8263_73c9_4c9a_be52_11fb811dc95b = "helloBoy";
-        vb23a8263_73c9_4c9a_be52_11fb811dc95b = "helloBoy";
-        int vcc36eb8f_38a1_43b8_8781_a97ee5266193 = 1;
-        if (vb23a8263_73c9_4c9a_be52_11fb811dc95b == "helloBoy") {
-            java.lang.System.out.println(vb23a8263_73c9_4c9a_be52_11fb811dc95b);
+        java.lang.String v9f55588e_85fd_49f4_b7cb_d81f7958f5ea = totoStringConstantes.vabf766db_0244_4def_af6d_d2e124432480;
+        v9f55588e_85fd_49f4_b7cb_d81f7958f5ea = totoStringConstantes.vabf766db_0244_4def_af6d_d2e124432480;
+        int v87829951_25d3_49b5_b93a_59b177568cf5 = 1;
+        if (v9f55588e_85fd_49f4_b7cb_d81f7958f5ea == totoStringConstantes.vabf766db_0244_4def_af6d_d2e124432480) {
+            java.lang.System.out.println(v9f55588e_85fd_49f4_b7cb_d81f7958f5ea);
         } 
-        switch (vb23a8263_73c9_4c9a_be52_11fb811dc95b) {
+        switch (v9f55588e_85fd_49f4_b7cb_d81f7958f5ea) {
             default :
-                vb23a8263_73c9_4c9a_be52_11fb811dc95b = vb23a8263_73c9_4c9a_be52_11fb811dc95b;
+                v9f55588e_85fd_49f4_b7cb_d81f7958f5ea = v9f55588e_85fd_49f4_b7cb_d81f7958f5ea;
         }
     }
 }

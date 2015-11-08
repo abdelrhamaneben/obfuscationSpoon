@@ -12,14 +12,14 @@ import spoon.support.reflect.code.CtVariableWriteImpl;
  */
 public class NameWriteChanger  extends AbstractProcessor<CtVariableWriteImpl>{
 	
-	private factotyName fn;
+	private factotyReference fn;
 	
-	public NameWriteChanger (factotyName fn) {
+	public NameWriteChanger (factotyReference fn) {
 		this.fn = fn;
 	}
 	
 	public void process(CtVariableWriteImpl element) {
-		element.getVariable().setSimpleName(fn.get(element.getVariable().getSimpleName()));
+		element.getVariable().setSimpleName(fn.getName(element.getVariable().getSimpleName()));
     }
 	
 	
