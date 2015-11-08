@@ -1,7 +1,10 @@
 package obfusc.obfusc;
 
 import spoon.Launcher;
+import spoon.reflect.code.CtExpression;
 import spoon.reflect.declaration.CtClass;
+import spoon.reflect.declaration.CtField;
+import spoon.reflect.declaration.ModifierKind;
 
 public class App 
 {
@@ -30,11 +33,26 @@ public class App
     	
     	// Lancement de SPOON
 	    spoon.run();
-	    /*System.out.println("after Run");
-	    CtClass newClass =  spoon.getFactory().Core().createClass();
-	    newClass.setSimpleName("TotoStringReference");*/
+	    
+	    // Création de la classe Contenant les String en constante
+	    CtClass ConstanteClass =  spoon.getFactory().Core().createClass();
+	    ConstanteClass.setSimpleName("TotoStringReference");
 	    
 	    
+	    CtField field ;
+	    CtExpression ce;
+	    // Ajout d'une variable dans la classe pour chaque string trouvées
+	    for(String i : getterName.strings.keySet()) {
+	    	field = spoon.getFactory().Core().createField();
+	    	field.setSimpleName(getterName.strings.get(i));
+		    ce = spoon.getFactory().Code().createCodeSnippetExpression(i);
+		    field.setAssignment(ce);
+		    field.addModifier(ModifierKind.PUBLIC);
+		    field.addModifier(ModifierKind.STATIC);
+		    ConstanteClass.addField(field);
+	    }
+	    	
+	    System.out.println(ConstanteClass.toString());
 	    
     }
 }

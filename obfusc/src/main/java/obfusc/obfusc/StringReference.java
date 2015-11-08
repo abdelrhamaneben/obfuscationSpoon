@@ -21,10 +21,10 @@ public class StringReference  extends AbstractProcessor<CtLiteral>{
 	public void process(CtLiteral element) {
 		if(element.getType().getSimpleName().equals("String")) {
 			String newName = fn.SaveString(element.getSignature());
-			System.out.println(newName);
 			CtExpression ce = this.getFactory().Code().createCodeSnippetExpression(newName);
 			element.replace(ce);
 		}
     }
+
 
 }

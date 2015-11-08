@@ -9,8 +9,8 @@ import java.util.UUID;
  *
  */
 public class factotyReference {
-	private HashMap<String,String> names ;
-	private HashMap<String,String> strings ;
+	public HashMap<String,String> names ;
+	public HashMap<String,String> strings ;
 	
 	public factotyReference() {
 		names = new HashMap<String,String>();

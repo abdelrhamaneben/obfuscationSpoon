@@ -6,11 +6,15 @@ public class page2 {
 
 	public void process() {
 		String helloBoy = "helloBoy";
-		helloBoy = "helloBoy";
+		helloBoy = "helloBoy" +  " , how are you ?";
 		int blabla = 1;
 		
-        if (helloBoy == "helloBoy") {
-           System.out.println(helloBoy);
+        if (helloBoy.contains("how are you ?")) {
+           System.out.println(helloBoy + " : ");
+           System.out.println("Fine and you ?");
+        }
+        else {
+        	System.out.println("What ?");
         }
 
         switch(helloBoy) {
