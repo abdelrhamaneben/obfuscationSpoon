@@ -23,8 +23,8 @@ public class StringReference  extends AbstractProcessor<CtLiteral>{
 			String newName = fn.SaveString(element.getSignature());
 			CtExpression ce = this.getFactory().Code().createCodeSnippetExpression(newName);
 			element.replace(ce);
+			
 		}
     }
-
 
 }

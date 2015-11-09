@@ -2,21 +2,21 @@ package applicationbateau;
 
 
 public class page2 {
-    private java.lang.String v58fa3816_82ba_4937_9d64_be814a3b746c;
+    private java.lang.String v3ee5ac40_f07e_4b4d_b95a_bea6a5576b5b;
 
     public void process() {
-        java.lang.String v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a = totoStringConstantes.vcd68a63f_0f3d_4447_8d6a_3bd796542b13;
-        v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a = totoStringConstantes.vcd68a63f_0f3d_4447_8d6a_3bd796542b13 + totoStringConstantes.vb0dd0595_2554_4944_8298_2b8cb1763a8c;
-        int v9d0bed83_5abd_4ab6_be83_cad163a3d07f = 1;
-        if (v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a.contains(totoStringConstantes.vb091f8e5_f8dd_4d7f_aa56_726128fb72db)) {
-            java.lang.System.out.println((v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a + totoStringConstantes.v4711bf5f_d63b_436b_9572_bcdded4bf891));
-            java.lang.System.out.println(totoStringConstantes.v880c4013_94d9_4f8d_ada1_380d9c20beab);
+        java.lang.String v02507863_370d_4879_ae11_d57a35a382ae = totoStringConstantes.v8ab39477_fd8c_4c1f_a3c1_70a2f6169de1;
+        v02507863_370d_4879_ae11_d57a35a382ae = totoStringConstantes.v8ab39477_fd8c_4c1f_a3c1_70a2f6169de1 + totoStringConstantes.v616bc39f_49cb_40be_8f14_38f44ff85a22;
+        int va7867a4c_f8cb_4925_b489_db961566dbfc = 1;
+        if (v02507863_370d_4879_ae11_d57a35a382ae.contains(totoStringConstantes.v1c002080_53a6_4d11_8830_fc851980b892)) {
+            java.lang.System.out.println((v02507863_370d_4879_ae11_d57a35a382ae + totoStringConstantes.v84d54914_a857_418d_80b5_d11d94a6fc9a));
+            java.lang.System.out.println(totoStringConstantes.va1c6b11c_d4e5_42e3_a17d_048eef556c44);
         } else {
-            java.lang.System.out.println(totoStringConstantes.v3d053b5f_19a7_4d8d_812d_d2cb8cb99fc3);
+            java.lang.System.out.println(totoStringConstantes.vbb133a6f_dfc0_4c69_8ebb_8a2004d5ee5f);
         }
-        switch (v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a) {
+        switch (v02507863_370d_4879_ae11_d57a35a382ae) {
             default :
-                v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a = v0b945cb0_7dbd_4c79_8e7b_511f2a580c8a;
+                v02507863_370d_4879_ae11_d57a35a382ae = v02507863_370d_4879_ae11_d57a35a382ae;
         }
     }
 }

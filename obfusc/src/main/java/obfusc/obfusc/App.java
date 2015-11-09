@@ -31,28 +31,28 @@ public class App
     	spoon.addProcessor(NWC);
     	spoon.addProcessor(SR);
     	
-    	// Lancement de SPOON
-	    spoon.run();
-	    
-	    // Création de la classe Contenant les String en constante
+    	 // Lancement de SPOON
+      	 spoon.run();
+      	 
+      	// Création de la classe Contenant les String en constante
 	    CtClass ConstanteClass =  spoon.getFactory().Core().createClass();
 	    ConstanteClass.setSimpleName("TotoStringReference");
-	    
-	    
+	   
 	    CtField field ;
 	    CtExpression ce;
 	    // Ajout d'une variable dans la classe pour chaque string trouvées
-	    for(String i : getterName.strings.keySet()) {
+	    for(String VariableValue : getterName.strings.keySet()) {
 	    	field = spoon.getFactory().Core().createField();
-	    	field.setSimpleName(getterName.strings.get(i));
-		    ce = spoon.getFactory().Code().createCodeSnippetExpression(i);
+	    	field.setSimpleName(getterName.strings.get(VariableValue));
+		    ce = spoon.getFactory().Code().createCodeSnippetExpression(VariableValue);
 		    field.setAssignment(ce);
 		    field.addModifier(ModifierKind.PUBLIC);
 		    field.addModifier(ModifierKind.STATIC);
 		    ConstanteClass.addField(field);
 	    }
-	    	
+	    
 	    System.out.println(ConstanteClass.toString());
+	   // CtPackage rootPackage = spoon.getFactory().Package().getRootPackage();
 	    
     }
 }

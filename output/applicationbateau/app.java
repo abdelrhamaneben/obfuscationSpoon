@@ -2,19 +2,19 @@ package applicationbateau;
 
 
 public class app {
-    private java.lang.String v9d0bed83_5abd_4ab6_be83_cad163a3d07f;
+    private java.lang.String va7867a4c_f8cb_4925_b489_db961566dbfc;
 
     public void un() {
         try {
-            java.lang.System.out.println(totoStringConstantes.v07c3925a_3ab3_414d_9bd0_7d926fd608fa);
+            java.lang.System.out.println(totoStringConstantes.ve05f91e5_0918_4a57_8f88_e4169aa37ca6);
         } catch (java.lang.Exception e) {
-            java.lang.System.out.println(v0f1aa1be_3771_4c94_91ed_a709b7cd6eb0);
+            java.lang.System.out.println(vb0614076_d9c1_41af_a05e_d13f8e9f7925);
         }
     }
 
     public void deux() {
         try {
-            java.lang.System.out.println(totoStringConstantes.v07c3925a_3ab3_414d_9bd0_7d926fd608fa);
+            java.lang.System.out.println(totoStringConstantes.ve05f91e5_0918_4a57_8f88_e4169aa37ca6);
         } catch (java.lang.Exception e) {
         }
     }
