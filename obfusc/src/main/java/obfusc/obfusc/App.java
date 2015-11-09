@@ -16,9 +16,9 @@ public class App
     	// Définition des chemins d'entrée et de sortie
     	// INPUT
     	//spoon.addInputResource("/home/m2iagl/benhammou/workspace/OPL/applicationbateau/src/applicationbateau");
-    	spoon.addInputResource("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/applicationbateau/src/applicationbateau");
+    	spoon.addInputResource("../applicationbateau/src/applicationbateau");
     	// OUTPUT
-    	spoon.setSourceOutputDirectory("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output");
+    	spoon.setSourceOutputDirectory("../output");
     	
     	// Ajout des processeurs
     	factotyReference getterName = new factotyReference();
