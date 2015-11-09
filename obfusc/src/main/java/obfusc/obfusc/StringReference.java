@@ -10,7 +10,7 @@ import spoon.reflect.code.CtLiteral;
  * @author abdelrhamanebenhammou
  *
  */
-public class StringReference  extends AbstractProcessor<CtLiteral>{
+public class StringReference  extends AbstractProcessor<CtLiteral<?>>{
 	
 	private factotyReference fn;
 	
@@ -18,12 +18,16 @@ public class StringReference  extends AbstractProcessor<CtLiteral>{
 		this.fn = fn;
 	}
 	
-	public void process(CtLiteral element) {
+	public void process(CtLiteral<?> element) {
 		if(element.getType().getSimpleName().equals("String")) {
-			String newName = fn.SaveString(element.getSignature());
-			CtExpression ce = this.getFactory().Code().createCodeSnippetExpression(newName);
-			element.replace(ce);
-			
+			try {
+				String newName = fn.SaveString(element.getSignature());
+				CtExpression ce = this.getFactory().Code().createCodeSnippetExpression(newName);
+				element.replace(ce);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				System.exit(0);
+			}
 		}
     }
 

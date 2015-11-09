@@ -2,7 +2,6 @@ package obfusc.obfusc;
 
 
 import spoon.processing.AbstractProcessor;
-import spoon.reflect.declaration.CtVariable;
 import spoon.support.reflect.code.CtVariableWriteImpl;
 
 /**
