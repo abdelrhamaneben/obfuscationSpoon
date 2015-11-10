@@ -25,8 +25,11 @@ public class NameDeclarationChanger  extends AbstractProcessor<CtNamedElement>{
 		ArrayList<String> elementChangable = new ArrayList<String>();
 		elementChangable.add("CtLocalVariableImpl");
 		elementChangable.add("CtFieldImpl");
+		elementChangable.add("CtParameterImpl");
 		
 		if(elementChangable.contains(element.getClass().getSimpleName())) {
+			System.out.println(element.getSignature());
+			System.out.println(element.getClass());
 			String oldName = element.getSimpleName();
 			element.setSimpleName(fn.getName(oldName));
 		}
