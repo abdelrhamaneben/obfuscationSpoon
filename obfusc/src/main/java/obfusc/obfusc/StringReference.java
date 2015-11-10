@@ -19,6 +19,7 @@ public class StringReference  extends AbstractProcessor<CtLiteral>{
 	}
 	
 	public void process(CtLiteral element) {
+		System.out.println(element.toString());
 		if(element.getType().getSimpleName().equals("String")) {
 			String newName = fn.SaveString(element.getSignature());
 			CtExpression ce = this.getFactory().Code().createCodeSnippetExpression(newName);
