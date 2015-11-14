@@ -1,8 +1,10 @@
-package obfusc.obfusc;
+package obfusc.obfusc.processors;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import obfusc.obfusc.utils.factotyReference;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.declaration.CtField;
 import spoon.reflect.declaration.CtNamedElement;

@@ -1,4 +1,4 @@
-package obfusc.obfusc;
+package obfusc.obfusc.utils;
 
 import java.util.HashMap;
 import java.util.UUID;

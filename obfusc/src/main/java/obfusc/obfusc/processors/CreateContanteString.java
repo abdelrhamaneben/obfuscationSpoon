@@ -1,5 +1,6 @@
-package obfusc.obfusc;
+package obfusc.obfusc.processors;
 
+import obfusc.obfusc.utils.factotyReference;
 import spoon.processing.AbstractManualProcessor;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtPackage;

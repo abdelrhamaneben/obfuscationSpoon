@@ -2,6 +2,7 @@ package obfusc.obfusc;
 
 
 import junit.framework.TestCase;
+import obfusc.obfusc.utils.factotyReference;
 import spoon.Launcher;
 import spoon.reflect.declaration.CtClass;
 

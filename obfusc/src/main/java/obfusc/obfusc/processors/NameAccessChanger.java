@@ -1,6 +1,7 @@
-package obfusc.obfusc;
+package obfusc.obfusc.processors;
 
 
+import obfusc.obfusc.utils.factotyReference;
 import spoon.processing.AbstractProcessor;
 import spoon.support.reflect.code.CtVariableAccessImpl;
 

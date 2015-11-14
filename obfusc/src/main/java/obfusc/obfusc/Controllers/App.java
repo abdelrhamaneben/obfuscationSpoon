@@ -1,5 +1,10 @@
-package obfusc.obfusc;
+package obfusc.obfusc.Controllers;
 
+import obfusc.obfusc.processors.CreateContanteString;
+import obfusc.obfusc.processors.NameAccessChanger;
+import obfusc.obfusc.processors.NameDeclarationChanger;
+import obfusc.obfusc.processors.StringReference;
+import obfusc.obfusc.utils.factotyReference;
 import spoon.Launcher;
 
 public class App 
