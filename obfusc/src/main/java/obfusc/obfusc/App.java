@@ -6,30 +6,29 @@ public class App
 {
     public static void main( String[] args )
     {
-    	Launcher spoon = new Launcher(); 
-    	
-    	
+    	Launcher spoon = new Launcher();
     	// Définition des chemins d'entrée et de sortie
-    	// INPUT
+    	// INPUT définition
     	//spoon.addInputResource("/home/m2iagl/benhammou/workspace/OPL/applicationbateau/src/applicationbateau");
-    	spoon.addInputResource("/Users/abdelrhamanebenhammou/workspace/appliTest/");
-    	// OUTPUT
+    	spoon.addInputResource("/Users/abdelrhamanebenhammou/workspace/appliTest/src/appliTest/");
+    	// OUTPUT définition
     	spoon.setSourceOutputDirectory("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output/");
     	
     	// Ajout des processeurs
     	factotyReference getterName = new factotyReference();
+ 
+    	// Définition des processeurs
     	NameDeclarationChanger NDC = new NameDeclarationChanger(getterName);
-    	NameReadChanger NRC = new NameReadChanger(getterName);
-    	NameWriteChanger NWC = new NameWriteChanger(getterName);
-    	StringReference SR = new StringReference(getterName);
+    	NameAccessChanger NAC = new NameAccessChanger(getterName);
     	CreateContanteString CCS = new CreateContanteString(getterName);
+    	StringReference SR = new StringReference(getterName);
     	
-    	spoon.addProcessor(CCS);
+    	// Association à spoon
+    	spoon.addProcessor(NAC);
     	spoon.addProcessor(NDC);
-    	spoon.addProcessor(NRC);
-    	spoon.addProcessor(NWC);
+    	spoon.addProcessor(CCS);
     	spoon.addProcessor(SR);
-    	
+
     	 // Lancement de SPOON
       	 spoon.run();
     }
