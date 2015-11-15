@@ -4,6 +4,7 @@ import obfusc.obfusc.utils.factotyReference;
 import spoon.processing.AbstractManualProcessor;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtPackage;
+import spoon.reflect.declaration.ModifierKind;
 
 /**
  * 
@@ -22,6 +23,7 @@ public class CreateContanteString  extends AbstractManualProcessor{
 		
 		CtPackage root  = this.getFactory().Package().create(this.getFactory().Package().getRootPackage(), "toto");
 		CtClass<?> c = this.getFactory().Class().create(root, "totoStringConstantes");
+		c.setVisibility(ModifierKind.PUBLIC);
 		fn.setContanteClass(c);
 	}
 }

@@ -29,8 +29,8 @@ public class App
     	StringReference SR = new StringReference(getterName);
     	
     	// Association à spoon
-    	spoon.addProcessor(NAC);
-    	spoon.addProcessor(NDC);
+    	//spoon.addProcessor(NAC);
+    	//spoon.addProcessor(NDC);
     	spoon.addProcessor(CCS);
     	spoon.addProcessor(SR);
 
