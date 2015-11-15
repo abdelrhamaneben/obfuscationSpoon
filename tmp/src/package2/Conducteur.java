@@ -1,5 +1,6 @@
 package package2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import package1.Voiture;
@@ -11,6 +12,10 @@ public class Conducteur {
 	private String nom;
 	private int age;
 	private List<Voiture> voitures;
+	
+	public Conducteur(){
+		voitures = new ArrayList<Voiture>();	
+	}
 	
 	public String getNom() {
 		return nom;
@@ -64,6 +69,10 @@ public class Conducteur {
 		for(Voiture v : voitures){
 			v.setMarque(marque);
 		}
+	}
+	
+	public void addVoiture(Voiture v){
+		voitures.add(v);
 	}
 }
 

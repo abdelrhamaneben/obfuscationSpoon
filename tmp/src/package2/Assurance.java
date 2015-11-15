@@ -9,7 +9,7 @@ public class Assurance {
 	private List<Conducteur> clients;
 	
 	public Assurance(){
-		
+		clients = new ArrayList<Conducteur>();
 	}
 	
 	public String getNom() {
@@ -23,6 +23,10 @@ public class Assurance {
 	}
 	public void setClients(List<Conducteur> clients) {
 		this.clients = clients;
+	}
+	
+	public void addClient(Conducteur c){
+		this.clients.add(c);
 	}
 	
 	public List<String> getNomsClients(){

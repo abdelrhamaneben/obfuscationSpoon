@@ -1,6 +1,6 @@
 package package1;
 
-public class Voiture {
+public class Voiture extends AbstractVoiture implements Vehicule{
 
 	private int taille;
 	private String marque;
@@ -19,8 +19,17 @@ public class Voiture {
 		this.marque = marque;
 	}
 	
+	public int getKilometrage(){
+		return 33;
+	}
+	
 	public String toString(){
 		return "vroum";
+	}
+	
+	@Override
+	public String klaxon() {
+		return "tutut";
 	}
 	
 }

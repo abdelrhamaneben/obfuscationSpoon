@@ -7,10 +7,10 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-import obfusc.obfusc.NameMethodProcessor;
 import obfusc.obfusc.processors.CreateContanteString;
 import obfusc.obfusc.processors.NameAccessChanger;
 import obfusc.obfusc.processors.NameDeclarationChanger;
+import obfusc.obfusc.processors.NameMethodProcessor;
 import obfusc.obfusc.processors.StringReference;
 import obfusc.obfusc.utils.factotyReference;
 import spoon.Launcher;
@@ -97,8 +97,10 @@ public class App
     
     public static void obfuscation(String inputMain, String inputTest, String sourceClasspath){
     	
-    	inputMain = "../tmp/src";
-    	
+    	//inputMain = "../tmp/src";
+    	inputMain =  "../commons-io/src/main/java:../commons-io/src/test/java";
+    			
+    			
     	System.out.printf("inputMain = "+inputMain+" %ninputTest = "+inputTest+" %nsourceClasspath = "+sourceClasspath+" %n");
     	
         
@@ -116,20 +118,19 @@ public class App
     	factotyReference getterName = new factotyReference();
  
     	// Définition des processeurs
-    	NameDeclarationChanger NDC = new NameDeclarationChanger(getterName);
+    	/*NameDeclarationChanger NDC = new NameDeclarationChanger(getterName);
     	NameAccessChanger NAC = new NameAccessChanger(getterName);
     	CreateContanteString CCS = new CreateContanteString(getterName);
-    	StringReference SR = new StringReference(getterName);
+    	//StringReference SR = new StringReference(getterName);
     	
     	spoon.addProcessor(NAC);
     	spoon.addProcessor(NDC);
     	spoon.addProcessor(CCS);
-    	spoon.addProcessor(SR);
-    	spoon.addProcessor(new NameMethodProcessor(factory));
+    	//spoon.addProcessor(SR);*/
+    	spoon.addProcessor(new NameMethodProcessor());
     	
-        
-    	spoon.run(new String[]{"-i",inputMain,"--source-classpath",sourceClasspath});
     	spoon.setSourceOutputDirectory("../output/src/main/java");
+    	spoon.run(new String[]{"-i",inputMain,"--source-classpath",sourceClasspath});
         
     	System.out.printf("End of obfuscation for %s %n", inputMain);
     	
