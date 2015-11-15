@@ -31,6 +31,4 @@ public class NameAccessChanger  extends AbstractProcessor<CtVariableAccessImpl>{
 				element.getVariable().setSimpleName(fn.getName(element.getVariable().getSimpleName()));
 			}
     }
-	
-	
 }
