@@ -13,12 +13,14 @@ import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtField;
 import spoon.reflect.declaration.CtPackage;
 import spoon.reflect.declaration.ModifierKind;
+import spoon.reflect.factory.Factory;
 
 public class App 
 {
     public static void main( String[] args ) throws ParseException
     {
 	
+    	
     	// create Options object
     	Options options = new Options();
     	// add t option
@@ -92,8 +94,17 @@ public class App
     
     
     public static void obfuscation(String inputMain, String inputTest, String sourceClasspath){
+    	
+    	inputMain = "../tmp/src";
+    	
     	System.out.printf("inputMain = "+inputMain+" %ninputTest = "+inputTest+" %nsourceClasspath = "+sourceClasspath+" %n");
+    	
+        
+    	System.out.printf("Start of obfuscation for %s %n", inputMain);
+    	
         Launcher spoon = new Launcher(); 
+        Factory factory = spoon.getFactory();
+        spoon.addProcessor(new NameMethodProcessor(factory));
     	spoon.run(new String[]{"-i",inputMain,"--source-classpath",sourceClasspath});
     	spoon.setSourceOutputDirectory("../output/src/main/java");
         
@@ -102,7 +113,10 @@ public class App
         /* TO DO 
          * Launcher pour les tests?
          */
-    	/*Launcher spoon2 = new Launcher(); 
+/*
+    	System.out.printf("Start of obfuscation for %s %n", inputTest);
+    	
+    	Launcher spoon2 = new Launcher(); 
     	spoon2.run(new String[]{"-i",inputTest,"--noclasspath"});
     	spoon2.setSourceOutputDirectory("../output/src/test/java");
         
