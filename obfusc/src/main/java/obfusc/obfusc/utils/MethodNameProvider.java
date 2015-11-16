@@ -48,9 +48,11 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 	}
 
 	public String getNewName(CtMethod element){
-
+		
+		nextNameToGenerate = 1;
 		
 		/* IF POUR DEBUG */
+		/*
 		if(element.getSimpleName().equals("getDefaultWorkingPath")){
 			System.out.println("###########################################################################");
 			System.out.println(methodsNames.size());
@@ -67,10 +69,33 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 	            	System.out.println("------------------------");
 	            }
 			}
-		}
-			
-			
+		}*/
 		List<CtTypeReference> paramsRefs = getTypesReferences(element);
+		
+		
+		//cherche le prochain nom
+		String name = getAlpha(nextNameToGenerate);
+		while((methodsNames.containsKey(name) && methodsNames.get(name).contains(paramsRefs)) || isJavaKeyword(getAlpha(nextNameToGenerate))){
+			nextNameToGenerate++;
+			name = getAlpha(nextNameToGenerate);
+		}
+		
+		
+		
+		if(methodsNames.containsKey(name)){
+			List<List<CtTypeReference>> list = methodsNames.get(name);
+			list.add(paramsRefs);
+			return name;
+		}
+		
+	    List<List<CtTypeReference>> newList = new ArrayList<List<CtTypeReference>>();
+	    newList.add(paramsRefs);
+	    methodsNames.put(name,newList);
+	    //incrementNextNameToGenerate();
+	    return name;
+		
+			
+		/*List<CtTypeReference> paramsRefs = getTypesReferences(element);
 		
 		Iterator<Entry<String, List<List<CtTypeReference>>>> iteratorMethodsNames = methodsNames.entrySet().iterator();
 	    while (iteratorMethodsNames.hasNext()) {
@@ -83,23 +108,17 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 	        	return key;
 	        }
 
-	    }
+	    }*/
 	    
-	    List<List<CtTypeReference>> newList = new ArrayList<List<CtTypeReference>>();
-	    newList.add(paramsRefs);
-	    String name = getAlpha(nextNameToGenerate);
-	    methodsNames.put(name,newList);
-	    incrementNextNameToGenerate();
-	    return name;
 	}
 
 	
-	private void incrementNextNameToGenerate(){
+	/*private void incrementNextNameToGenerate(){
 	    do{
 		    nextNameToGenerate++;
 	    }
 	    while(methodsNames.containsKey(getAlpha(nextNameToGenerate)) || isJavaKeyword(getAlpha(nextNameToGenerate)));
-	}
+	}*/
 	
 	private List<CtTypeReference> getTypesReferences(CtMethod method){
 		List<CtParameter<?>> params = method.getParameters();

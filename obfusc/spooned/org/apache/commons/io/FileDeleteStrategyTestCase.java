@@ -16,7 +16,7 @@ public class FileDeleteStrategyTestCase extends org.apache.commons.io.testtools.
         super.tearDown();
     }
 
-    public void testGetPath_with_nullbyte() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         final java.io.File baseDir = org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory();
         final java.io.File subDir = new java.io.File(baseDir , "test");
         junit.framework.TestCase.assertTrue(subDir.mkdir());
@@ -40,7 +40,7 @@ public class FileDeleteStrategyTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertFalse(subDir.exists());
     }
 
-    public void b() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         final java.io.File baseDir = org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory();
         final java.io.File subDir = new java.io.File(baseDir , "test");
         junit.framework.TestCase.assertTrue(subDir.mkdir());
@@ -60,7 +60,7 @@ public class FileDeleteStrategyTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertFalse(subDir.exists());
     }
 
-    public void testCopyDirectoryToItself() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         final java.io.File baseDir = org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory();
         final java.io.File subDir = new java.io.File(baseDir , "test");
         junit.framework.TestCase.assertTrue(subDir.mkdir());
@@ -75,7 +75,7 @@ public class FileDeleteStrategyTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertFalse(subDir.exists());
     }
 
-    public void a() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         try {
             org.apache.commons.io.FileDeleteStrategy.NORMAL.delete(null);
             junit.framework.TestCase.fail();
@@ -84,7 +84,7 @@ public class FileDeleteStrategyTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileDeleteStrategy.NORMAL.deleteQuietly(null));
     }
 
-    public void c() {
+    public void e() {
         junit.framework.TestCase.assertEquals("FileDeleteStrategy[Normal]", org.apache.commons.io.FileDeleteStrategy.NORMAL.toString());
         junit.framework.TestCase.assertEquals("FileDeleteStrategy[Force]", org.apache.commons.io.FileDeleteStrategy.FORCE.toString());
     }

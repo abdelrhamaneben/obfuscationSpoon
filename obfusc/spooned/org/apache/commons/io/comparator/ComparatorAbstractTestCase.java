@@ -35,23 +35,23 @@ public abstract class ComparatorAbstractTestCase extends org.apache.commons.io.t
         org.apache.commons.io.FileUtils.deleteDirectory(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory());
     }
 
-    public void testCopyDirectoryToItself() {
-        junit.framework.TestCase.assertNull(comparator.sort(((java.io.File[])(null))));
-    }
-
-    public void testCopyDirectoryToItself() {
+    public void a() {
         junit.framework.TestCase.assertEquals("equal", 0, comparator.compare(equalFile1, equalFile2));
         junit.framework.TestCase.assertTrue("less", ((comparator.compare(lessFile, moreFile)) < 0));
         junit.framework.TestCase.assertTrue("more", ((comparator.compare(moreFile, lessFile)) > 0));
     }
 
-    public void testCopyDirectoryToItself() {
+    public void b() {
         junit.framework.TestCase.assertEquals("equal", 0, reverse.compare(equalFile1, equalFile2));
         junit.framework.TestCase.assertTrue("less", ((reverse.compare(moreFile, lessFile)) < 0));
         junit.framework.TestCase.assertTrue("more", ((reverse.compare(lessFile, moreFile)) > 0));
     }
 
-    public void testCopyDirectoryToItself() {
+    public void d() {
+        junit.framework.TestCase.assertNull(comparator.sort(((java.io.File[])(null))));
+    }
+
+    public void c() {
         final java.io.File[] files = new java.io.File[3];
         files[0] = equalFile1;
         files[1] = moreFile;
@@ -62,7 +62,7 @@ public abstract class ComparatorAbstractTestCase extends org.apache.commons.io.t
         junit.framework.TestCase.assertSame("more", moreFile, files[2]);
     }
 
-    public void testCopyDirectoryToItself() {
+    public void e() {
         final java.util.List<java.io.File> files = new java.util.ArrayList<java.io.File>();
         files.add(equalFile1);
         files.add(moreFile);
@@ -73,11 +73,11 @@ public abstract class ComparatorAbstractTestCase extends org.apache.commons.io.t
         junit.framework.TestCase.assertSame("more", moreFile, files.get(2));
     }
 
-    public void testCopyDirectoryToItself() {
+    public void f() {
         junit.framework.TestCase.assertNull(comparator.sort(((java.util.List<java.io.File>)(null))));
     }
 
-    public void testCopyDirectoryToItself() {
+    public void g() {
         junit.framework.TestCase.assertNotNull("comparator", comparator.toString());
         junit.framework.TestCase.assertTrue("reverse", reverse.toString().startsWith("ReverseComparator["));
     }

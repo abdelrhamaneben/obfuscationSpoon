@@ -46,7 +46,7 @@ public class PrefixFileFilter extends org.apache.commons.io.filefilter.AbstractF
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         final java.lang.String name = file.getName();
         for (final java.lang.String prefix : this.prefixes) {
             if (caseSensitivity.checkStartsWith(name, prefix)) {
@@ -57,7 +57,7 @@ public class PrefixFileFilter extends org.apache.commons.io.filefilter.AbstractF
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file, final java.lang.String name) {
+    public boolean a(final java.io.File file, final java.lang.String name) {
         for (final java.lang.String prefix : prefixes) {
             if (caseSensitivity.checkStartsWith(name, prefix)) {
                 return true;

@@ -36,13 +36,13 @@ public class SizeFileComparatorTest extends org.apache.commons.io.comparator.Com
         moreFile = largerFile;
     }
 
-    public void a() {
+    public void i() {
         final java.io.File nonexistantFile = new java.io.File(new java.io.File(".") , "nonexistant.txt");
         junit.framework.TestCase.assertFalse(nonexistantFile.exists());
         junit.framework.TestCase.assertTrue("less", ((comparator.compare(nonexistantFile, moreFile)) < 0));
     }
 
-    public void checkFile() {
+    public void h() {
         junit.framework.TestCase.assertEquals("sumDirectoryContents=false", 0, comparator.compare(smallerDir, largerDir));
         junit.framework.TestCase.assertEquals("less", -1, org.apache.commons.io.comparator.SizeFileComparator.SIZE_SUMDIR_COMPARATOR.compare(smallerDir, largerDir));
         junit.framework.TestCase.assertEquals("less", 1, org.apache.commons.io.comparator.SizeFileComparator.SIZE_SUMDIR_REVERSE.compare(smallerDir, largerDir));

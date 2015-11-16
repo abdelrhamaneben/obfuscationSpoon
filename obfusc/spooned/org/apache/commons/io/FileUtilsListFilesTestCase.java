@@ -6,7 +6,7 @@ public class FileUtilsListFilesTestCase extends org.apache.commons.io.testtools.
         super(name);
     }
 
-    private java.io.File testCopyDirectoryToItself() {
+    private java.io.File a() {
         return new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "list-files");
     }
 
@@ -48,7 +48,7 @@ public class FileUtilsListFilesTestCase extends org.apache.commons.io.testtools.
         org.apache.commons.io.FileUtils.deleteDirectory(dir);
     }
 
-    private java.util.Collection<java.lang.String> testCopyDirectoryToItself(final java.util.Collection<java.io.File> files) {
+    private java.util.Collection<java.lang.String> a(final java.util.Collection<java.io.File> files) {
         final java.util.Collection<java.lang.String> filenames = new java.util.ArrayList<java.lang.String>(files.size());
         for (final java.io.File file : files) {
             filenames.add(file.getName());
@@ -56,7 +56,7 @@ public class FileUtilsListFilesTestCase extends org.apache.commons.io.testtools.
         return filenames;
     }
 
-    private java.util.Collection<java.lang.String> testCopyDirectoryToItself(final java.util.Iterator<java.io.File> files) {
+    private java.util.Collection<java.lang.String> a(final java.util.Iterator<java.io.File> files) {
         final java.util.Collection<java.lang.String> filenames = new java.util.ArrayList<java.lang.String>();
         while (files.hasNext()) {
             filenames.add(files.next().getName());
@@ -64,7 +64,7 @@ public class FileUtilsListFilesTestCase extends org.apache.commons.io.testtools.
         return filenames;
     }
 
-    public void testGetPath_with_nullbyte() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         final java.lang.String[] extensions = new java.lang.String[]{ "xml" , "txt" };
         java.util.Iterator<java.io.File> files = org.apache.commons.io.FileUtils.iterateFiles(getLocalTestDirectory(), extensions, false);
         java.util.Collection<java.lang.String> filenames = filesToFilenames(files);
@@ -85,7 +85,7 @@ public class FileUtilsListFilesTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertFalse(filenames.contains("dummy-file.txt"));
     }
 
-    public void b() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         final java.lang.String[] extensions = new java.lang.String[]{ "xml" , "txt" };
         java.util.Collection<java.io.File> files = org.apache.commons.io.FileUtils.listFiles(getLocalTestDirectory(), extensions, false);
         junit.framework.TestCase.assertEquals(1, files.size());
@@ -106,7 +106,7 @@ public class FileUtilsListFilesTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertFalse(filenames.contains("dummy-file.txt"));
     }
 
-    public void a() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         java.util.Collection<java.io.File> files;
         java.util.Collection<java.lang.String> filenames;
         org.apache.commons.io.filefilter.IOFileFilter fileFilter;

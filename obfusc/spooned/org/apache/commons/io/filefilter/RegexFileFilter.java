@@ -39,7 +39,7 @@ public class RegexFileFilter extends org.apache.commons.io.filefilter.AbstractFi
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File dir, final java.lang.String name) {
+    public boolean a(final java.io.File dir, final java.lang.String name) {
         return pattern.matcher(name).matches();
     }
 }

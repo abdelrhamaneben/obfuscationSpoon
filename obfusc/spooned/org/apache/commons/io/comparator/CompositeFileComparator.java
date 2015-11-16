@@ -31,7 +31,7 @@ public class CompositeFileComparator extends org.apache.commons.io.comparator.Ab
         }
     }
 
-    public int compare(final java.io.File file1, final java.io.File file2) {
+    public int a(final java.io.File file1, final java.io.File file2) {
         int result = 0;
         for (final java.util.Comparator<java.io.File> delegate : delegates) {
             result = delegate.compare(file1, file2);

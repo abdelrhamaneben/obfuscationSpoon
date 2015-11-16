@@ -29,7 +29,7 @@ public class FileUtilsFileNewerTestCase extends org.apache.commons.io.testtools.
         m_testFile2.delete();
     }
 
-    public void testCopyDirectoryToItself() {
+    public void a() {
         if (!(m_testFile1.exists())) {
             throw new java.lang.IllegalStateException("The m_testFile1 should exist");
         } 
@@ -40,7 +40,7 @@ public class FileUtilsFileNewerTestCase extends org.apache.commons.io.testtools.
         testIsFileNewer("two second later is newer", m_testFile1, (fileLastModified - TWO_SECOND), true);
     }
 
-    public void testGetPath_with_nullbyte() {
+    public void b() {
         final java.io.File imaginaryFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "imaginaryFile");
         if (imaginaryFile.exists()) {
             throw new java.lang.IllegalStateException("The imaginary File exists");
@@ -48,7 +48,7 @@ public class FileUtilsFileNewerTestCase extends org.apache.commons.io.testtools.
         testIsFileNewer("imaginary file can be newer", imaginaryFile, m_testFile2.lastModified(), false);
     }
 
-    protected void testCopyDirectoryToItself(final java.lang.String description, final java.io.File file, final long time, final boolean wantedResult) {
+    protected void a(final java.lang.String description, final java.io.File file, final long time, final boolean wantedResult) {
         junit.framework.TestCase.assertEquals((description + " - time"), wantedResult, org.apache.commons.io.FileUtils.isFileNewer(file, time));
         junit.framework.TestCase.assertEquals((description + " - date"), wantedResult, org.apache.commons.io.FileUtils.isFileNewer(file, new java.util.Date(time)));
         final java.io.File temporaryFile = m_testFile2;
@@ -57,7 +57,7 @@ public class FileUtilsFileNewerTestCase extends org.apache.commons.io.testtools.
         junit.framework.TestCase.assertEquals((description + " - file"), wantedResult, org.apache.commons.io.FileUtils.isFileNewer(file, temporaryFile));
     }
 
-    public void b() {
+    public void d() {
         try {
             org.apache.commons.io.FileUtils.isFileNewer(null, 0);
             junit.framework.TestCase.fail("File not specified");
@@ -65,7 +65,7 @@ public class FileUtilsFileNewerTestCase extends org.apache.commons.io.testtools.
         }
     }
 
-    public void a() {
+    public void c() {
         try {
             org.apache.commons.io.FileUtils.isFileNewer(m_testFile1, ((java.util.Date)(null)));
             junit.framework.TestCase.fail("Date not specified");
@@ -73,7 +73,7 @@ public class FileUtilsFileNewerTestCase extends org.apache.commons.io.testtools.
         }
     }
 
-    public void c() {
+    public void e() {
         try {
             org.apache.commons.io.FileUtils.isFileNewer(m_testFile1, ((java.io.File)(null)));
             junit.framework.TestCase.fail("Reference file not specified");

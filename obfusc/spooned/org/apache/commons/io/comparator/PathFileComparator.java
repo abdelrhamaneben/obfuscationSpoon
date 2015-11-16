@@ -26,7 +26,7 @@ public class PathFileComparator extends org.apache.commons.io.comparator.Abstrac
         this.caseSensitivity = caseSensitivity == null ? org.apache.commons.io.IOCase.SENSITIVE : caseSensitivity;
     }
 
-    public int compare(final java.io.File file1, final java.io.File file2) {
+    public int a(final java.io.File file1, final java.io.File file2) {
         return caseSensitivity.checkCompareTo(file1.getPath(), file2.getPath());
     }
 

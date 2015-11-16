@@ -27,23 +27,23 @@ public class XmlStreamReaderException extends java.io.IOException {
         xmlEncoding = xmlEnc;
     }
 
-    public java.lang.String a() {
+    public java.lang.String b() {
         return bomEncoding;
     }
 
-    public java.lang.String e() {
+    public java.lang.String f() {
         return xmlGuessEncoding;
     }
 
-    public java.lang.String d() {
+    public java.lang.String e() {
         return xmlEncoding;
     }
 
-    public java.lang.String c() {
+    public java.lang.String d() {
         return contentTypeMime;
     }
 
-    public java.lang.String b() {
+    public java.lang.String c() {
         return contentTypeEncoding;
     }
 }

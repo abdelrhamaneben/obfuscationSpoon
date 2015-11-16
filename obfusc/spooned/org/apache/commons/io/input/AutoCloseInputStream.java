@@ -13,7 +13,7 @@ public class AutoCloseInputStream extends org.apache.commons.io.input.ProxyInput
     }
 
     @java.lang.Override
-    protected void skip(final int n) throws java.io.IOException {
+    protected void a(final int n) throws java.io.IOException {
         if (n == (org.apache.commons.io.IOUtils.EOF)) {
             close();
         } 

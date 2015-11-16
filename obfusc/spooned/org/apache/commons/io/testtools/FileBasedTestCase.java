@@ -8,7 +8,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         super(name);
     }
 
-    public static java.io.File pauseForDeleteToComplete() {
+    public static java.io.File av() {
         if ((org.apache.commons.io.testtools.FileBasedTestCase.testDir) == null) {
             org.apache.commons.io.testtools.FileBasedTestCase.testDir = new java.io.File("test/io/").getAbsoluteFile();
         } 
@@ -16,7 +16,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         return org.apache.commons.io.testtools.FileBasedTestCase.testDir;
     }
 
-    protected void testCopyDirectoryToItself(final java.io.File file, final long size) throws java.io.IOException {
+    protected void a(final java.io.File file, final long size) throws java.io.IOException {
         if (!(file.getParentFile().exists())) {
             throw new java.io.IOException((("Cannot create file " + file) + " as the parent directory does not exist"));
         } 
@@ -28,7 +28,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected byte[] testCopyDirectoryToItself(final long size) {
+    protected byte[] a(final long size) {
         try {
             final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
             generateTestData(baout, size);
@@ -38,13 +38,13 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected void testCopyDirectoryToItself(final java.io.OutputStream out, final long size) throws java.io.IOException {
+    protected void a(final java.io.OutputStream out, final long size) throws java.io.IOException {
         for (int i = 0 ; i < size ; i++) {
             out.write(((byte)((i % 127) + 1)));
         }
     }
 
-    protected void testCopyDirectoryToItself(final java.io.File file, final java.lang.String[] data) throws java.io.IOException {
+    protected void c(final java.io.File file, final java.lang.String[] data) throws java.io.IOException {
         if (((file.getParentFile()) != null) && (!(file.getParentFile().exists()))) {
             throw new java.io.IOException((("Cannot create file " + file) + " as the parent directory does not exist"));
         } 
@@ -58,7 +58,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected java.io.File testCopyDirectoryToItself(final java.lang.String filename) throws java.io.IOException {
+    protected java.io.File a(final java.lang.String filename) throws java.io.IOException {
         final java.io.File destination = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , filename);
         if (destination.exists()) {
             org.apache.commons.io.FileUtils.forceDelete(destination);
@@ -66,12 +66,12 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         return destination;
     }
 
-    protected void testGetPath_with_nullbyte(final java.io.File file, final java.io.File referenceFile) throws java.lang.Exception {
+    protected void b(final java.io.File file, final java.io.File referenceFile) throws java.lang.Exception {
         junit.framework.TestCase.assertTrue("Check existence of output file", file.exists());
         assertEqualContent(referenceFile, file);
     }
 
-    private void testCopyDirectoryToItself(final java.io.File f0, final java.io.File f1) throws java.io.IOException {
+    private void a(final java.io.File f0, final java.io.File f1) throws java.io.IOException {
         final java.io.InputStream is0 = new java.io.FileInputStream(f0);
         try {
             final java.io.InputStream is1 = new java.io.FileInputStream(f1);
@@ -94,7 +94,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected void testCopyDirectoryToItself(final byte[] b0, final java.io.File file) throws java.io.IOException {
+    protected void a(final byte[] b0, final java.io.File file) throws java.io.IOException {
         final java.io.InputStream is = new java.io.FileInputStream(file);
         int count = 0;
         int numRead = 0;
@@ -113,7 +113,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected void testCopyDirectoryToItself(final char[] c0, final java.io.File file) throws java.io.IOException {
+    protected void a(final char[] c0, final java.io.File file) throws java.io.IOException {
         final java.io.Reader ir = new java.io.FileReader(file);
         int count = 0;
         int numRead = 0;
@@ -132,7 +132,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected void testCopyDirectoryToItself(final java.io.OutputStream output) throws java.lang.Exception {
+    protected void a(final java.io.OutputStream output) throws java.lang.Exception {
         try {
             new java.io.PrintStream(output).write(0);
         } catch (final java.lang.Throwable t) {
@@ -140,7 +140,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected void testCopyDirectoryToItself(final java.io.Writer output) throws java.lang.Exception {
+    protected void a(final java.io.Writer output) throws java.lang.Exception {
         try {
             new java.io.PrintWriter(output).write('a');
         } catch (final java.lang.Throwable t) {
@@ -148,7 +148,7 @@ public abstract class FileBasedTestCase extends junit.framework.TestCase {
         }
     }
 
-    protected void testCopyDirectoryToItself(final java.io.File file) throws java.lang.Exception {
+    protected void a(final java.io.File file) throws java.lang.Exception {
         if (file.exists()) {
             junit.framework.TestCase.assertTrue(("Couldn\'t delete file: " + file), file.delete());
         } 

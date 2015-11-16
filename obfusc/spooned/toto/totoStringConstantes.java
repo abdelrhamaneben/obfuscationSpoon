@@ -1,5 +1,0 @@
-package toto;
-
-
-class totoStringConstantes {}
-

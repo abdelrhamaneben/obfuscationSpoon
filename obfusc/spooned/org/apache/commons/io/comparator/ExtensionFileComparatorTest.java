@@ -17,7 +17,7 @@ public class ExtensionFileComparatorTest extends org.apache.commons.io.comparato
         moreFile = new java.io.File("abc.xyz");
     }
 
-    public void checkFile() {
+    public void h() {
         final java.io.File file3 = new java.io.File("abc.FOO");
         final java.util.Comparator<java.io.File> sensitive = new org.apache.commons.io.comparator.ExtensionFileComparator(null);
         junit.framework.TestCase.assertTrue("sensitive file1 & file2 = 0", ((sensitive.compare(equalFile1, equalFile2)) == 0));

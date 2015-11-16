@@ -26,11 +26,11 @@ public class NullReader extends java.io.Reader {
         this.throwEofException = throwEofException;
     }
 
-    public long a() {
+    public long c() {
         return position;
     }
 
-    public long b() {
+    public long d() {
         return size;
     }
 
@@ -53,24 +53,6 @@ public class NullReader extends java.io.Reader {
     @java.lang.Override
     public boolean markSupported() {
         return markSupported;
-    }
-
-    @java.lang.Override
-    public synchronized void reset() throws java.io.IOException {
-        if (!(markSupported)) {
-            throw new java.lang.UnsupportedOperationException("Mark not supported");
-        } 
-        if ((mark) < 0) {
-            throw new java.io.IOException("No position has been marked");
-        } 
-        if ((position) > ((mark) + (readlimit))) {
-            throw new java.io.IOException((((("Marked position [" + (mark)) + "] is no longer valid - passed the read limit [") + (readlimit)) + "]"));
-        } 
-        position = mark;
-        eof = false;
-    }
-
-    protected void a(final char[] chars, final int offset, final int length) {
     }
 
     @java.lang.Override
@@ -109,6 +91,21 @@ public class NullReader extends java.io.Reader {
     }
 
     @java.lang.Override
+    public synchronized void reset() throws java.io.IOException {
+        if (!(markSupported)) {
+            throw new java.lang.UnsupportedOperationException("Mark not supported");
+        } 
+        if ((mark) < 0) {
+            throw new java.io.IOException("No position has been marked");
+        } 
+        if ((position) > ((mark) + (readlimit))) {
+            throw new java.io.IOException((((("Marked position [" + (mark)) + "] is no longer valid - passed the read limit [") + (readlimit)) + "]"));
+        } 
+        position = mark;
+        eof = false;
+    }
+
+    @java.lang.Override
     public long skip(final long numberOfChars) throws java.io.IOException {
         if (eof) {
             throw new java.io.IOException("Skip after end of file");
@@ -125,11 +122,14 @@ public class NullReader extends java.io.Reader {
         return returnLength;
     }
 
-    protected int processChars() {
+    protected int b() {
         return 0;
     }
 
-    private int read() throws java.io.EOFException {
+    protected void a(final char[] chars, final int offset, final int length) {
+    }
+
+    private int a() throws java.io.EOFException {
         eof = true;
         if (throwEofException) {
             throw new java.io.EOFException();

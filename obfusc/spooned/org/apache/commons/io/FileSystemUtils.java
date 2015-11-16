@@ -55,7 +55,7 @@ public class FileSystemUtils {
         return INSTANCE.freeSpaceOS(path, OS, false, -1);
     }
 
-    public static long openProcess(final java.lang.String path) throws java.io.IOException {
+    public static long b(final java.lang.String path) throws java.io.IOException {
         return org.apache.commons.io.FileSystemUtils.freeSpaceKb(path, -1);
     }
 
@@ -89,7 +89,7 @@ public class FileSystemUtils {
         }
     }
 
-    long openProcess(java.lang.String path, final long timeout) throws java.io.IOException {
+    long b(java.lang.String path, final long timeout) throws java.io.IOException {
         path = org.apache.commons.io.FilenameUtils.normalize(path, false);
         if (((path.length()) > 0) && ((path.charAt(0)) != '\"')) {
             path = ("\"" + path) + "\"";
@@ -105,7 +105,7 @@ public class FileSystemUtils {
         throw new java.io.IOException(((("Command line \'dir /-c\' did not return any info " + "for path \'") + path) + "\'"));
     }
 
-    long openProcess(final java.lang.String line, final java.lang.String path) throws java.io.IOException {
+    long b(final java.lang.String line, final java.lang.String path) throws java.io.IOException {
         int bytesStart = 0;
         int bytesEnd = 0;
         int j = (line.length()) - 1;

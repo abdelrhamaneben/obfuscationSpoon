@@ -13,7 +13,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         super.setUp();
     }
 
-    public void a() {
+    public void b() {
         final org.apache.commons.io.monitor.FileAlterationObserver observer = new org.apache.commons.io.monitor.FileAlterationObserver("/foo");
         observer.addListener(null);
         junit.framework.TestCase.assertFalse("Listeners[1]", observer.getListeners().iterator().hasNext());
@@ -29,7 +29,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         junit.framework.TestCase.assertFalse("Listeners[5]", observer.getListeners().iterator().hasNext());
     }
 
-    public void g() {
+    public void h() {
         final java.io.File file = new java.io.File("/foo");
         org.apache.commons.io.monitor.FileAlterationObserver observer = null;
         observer = new org.apache.commons.io.monitor.FileAlterationObserver(file);
@@ -39,7 +39,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         junit.framework.TestCase.assertEquals(file, observer.getDirectory());
     }
 
-    public void b() {
+    public void c() {
         try {
             checkAndNotify();
             checkCollectionsEmpty("A");
@@ -92,7 +92,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         }
     }
 
-    public void c() {
+    public void d() {
         try {
             checkAndNotify();
             checkCollectionsEmpty("A");
@@ -142,7 +142,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         }
     }
 
-    public void e() {
+    public void f() {
         try {
             checkAndNotify();
             checkCollectionsEmpty("A");
@@ -189,7 +189,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         }
     }
 
-    public void d() {
+    public void e() {
         try {
             checkAndNotify();
             checkCollectionsEmpty("A");
@@ -239,7 +239,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         }
     }
 
-    public void f() {
+    public void g() {
         try {
             final java.io.File testDirA = new java.io.File(testDir , "test-dir-A");
             java.io.File testDirAFile1 = new java.io.File(testDirA , "A-file1.java");
@@ -284,7 +284,7 @@ public class FileAlterationObserverTestCase extends org.apache.commons.io.monito
         }
     }
 
-    protected void testAddRemoveObservers() throws java.lang.Exception {
+    protected void a() throws java.lang.Exception {
         observer.checkAndNotify();
     }
 }

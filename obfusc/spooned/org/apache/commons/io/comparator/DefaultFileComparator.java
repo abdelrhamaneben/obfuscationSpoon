@@ -8,7 +8,7 @@ public class DefaultFileComparator extends org.apache.commons.io.comparator.Abst
 
     public static final java.util.Comparator<java.io.File> DEFAULT_REVERSE = new org.apache.commons.io.comparator.ReverseComparator(DEFAULT_COMPARATOR);
 
-    public int compare(final java.io.File file1, final java.io.File file2) {
+    public int a(final java.io.File file1, final java.io.File file2) {
         return file1.compareTo(file2);
     }
 }

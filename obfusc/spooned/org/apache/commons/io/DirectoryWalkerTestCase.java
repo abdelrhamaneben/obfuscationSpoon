@@ -272,7 +272,7 @@ public class DirectoryWalkerTestCase {
             super(dirFilter, fileFilter, depthLimit);
         }
 
-        protected java.util.List<java.io.File> handleDirectory(final java.io.File startDirectory) {
+        protected java.util.List<java.io.File> a(final java.io.File startDirectory) {
             final java.util.List<java.io.File> results = new java.util.ArrayList<java.io.File>();
             try {
                 walk(startDirectory, results);
@@ -283,12 +283,12 @@ public class DirectoryWalkerTestCase {
         }
 
         @java.lang.Override
-        protected void a(final java.io.File directory, final int depth, final java.util.Collection<java.io.File> results) {
+        protected void d(final java.io.File directory, final int depth, final java.util.Collection<java.io.File> results) {
             results.add(directory);
         }
 
         @java.lang.Override
-        protected void c(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) {
+        protected void f(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) {
             results.add(file);
         }
     }
@@ -315,14 +315,14 @@ public class DirectoryWalkerTestCase {
             this.suppressCancel = suppressCancel;
         }
 
-        protected java.util.List<java.io.File> handleDirectory(final java.io.File startDirectory) throws java.io.IOException {
+        protected java.util.List<java.io.File> a(final java.io.File startDirectory) throws java.io.IOException {
             final java.util.List<java.io.File> results = new java.util.ArrayList<java.io.File>();
             walk(startDirectory, results);
             return results;
         }
 
         @java.lang.Override
-        protected void a(final java.io.File directory, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
+        protected void d(final java.io.File directory, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
             results.add(directory);
             if (cancelFileName.equals(directory.getName())) {
                 throw new org.apache.commons.io.DirectoryWalker.CancelException(directory , depth);
@@ -330,7 +330,7 @@ public class DirectoryWalkerTestCase {
         }
 
         @java.lang.Override
-        protected void c(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
+        protected void f(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
             results.add(file);
             if (cancelFileName.equals(file.getName())) {
                 throw new org.apache.commons.io.DirectoryWalker.CancelException(file , depth);
@@ -338,7 +338,7 @@ public class DirectoryWalkerTestCase {
         }
 
         @java.lang.Override
-        protected void handleDirectory(final java.io.File startDirectory, final java.util.Collection<java.io.File> results, final org.apache.commons.io.DirectoryWalker.CancelException cancel) throws java.io.IOException {
+        protected void a(final java.io.File startDirectory, final java.util.Collection<java.io.File> results, final org.apache.commons.io.DirectoryWalker.CancelException cancel) throws java.io.IOException {
             if (!(suppressCancel)) {
                 super.handleCancelled(startDirectory, results, cancel);
             } 
@@ -360,14 +360,14 @@ public class DirectoryWalkerTestCase {
             this.suppressCancel = suppressCancel;
         }
 
-        protected java.util.List<java.io.File> handleDirectory(final java.io.File startDirectory) throws java.io.IOException {
+        protected java.util.List<java.io.File> a(final java.io.File startDirectory) throws java.io.IOException {
             results = new java.util.ArrayList<java.io.File>();
             walk(startDirectory, results);
             return results;
         }
 
         @java.lang.Override
-        protected void a(final java.io.File directory, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
+        protected void d(final java.io.File directory, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
             results.add(directory);
             org.junit.Assert.assertFalse(cancelled);
             if (cancelFileName.equals(directory.getName())) {
@@ -376,7 +376,7 @@ public class DirectoryWalkerTestCase {
         }
 
         @java.lang.Override
-        protected void c(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
+        protected void f(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
             results.add(file);
             org.junit.Assert.assertFalse(cancelled);
             if (cancelFileName.equals(file.getName())) {
@@ -385,12 +385,12 @@ public class DirectoryWalkerTestCase {
         }
 
         @java.lang.Override
-        protected boolean find(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
+        protected boolean b(final java.io.File file, final int depth, final java.util.Collection<java.io.File> results) throws java.io.IOException {
             return cancelled;
         }
 
         @java.lang.Override
-        protected void handleDirectory(final java.io.File startDirectory, final java.util.Collection<java.io.File> results, final org.apache.commons.io.DirectoryWalker.CancelException cancel) throws java.io.IOException {
+        protected void a(final java.io.File startDirectory, final java.util.Collection<java.io.File> results, final org.apache.commons.io.DirectoryWalker.CancelException cancel) throws java.io.IOException {
             if (!(suppressCancel)) {
                 super.handleCancelled(startDirectory, results, cancel);
             } 
@@ -402,7 +402,7 @@ public class DirectoryWalkerTestCase {
             super(filter, depthLimit);
         }
 
-        protected java.util.List<java.lang.String> handleDirectory(final java.io.File startDirectory) {
+        protected java.util.List<java.lang.String> a(final java.io.File startDirectory) {
             final java.util.List<java.lang.String> results = new java.util.ArrayList<java.lang.String>();
             try {
                 walk(startDirectory, results);
@@ -413,7 +413,7 @@ public class DirectoryWalkerTestCase {
         }
 
         @java.lang.Override
-        protected void c(final java.io.File file, final int depth, final java.util.Collection<java.lang.String> results) {
+        protected void f(final java.io.File file, final int depth, final java.util.Collection<java.lang.String> results) {
             results.add(file.toString());
         }
     }

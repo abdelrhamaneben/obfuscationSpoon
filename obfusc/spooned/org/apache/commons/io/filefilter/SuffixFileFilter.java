@@ -46,7 +46,7 @@ public class SuffixFileFilter extends org.apache.commons.io.filefilter.AbstractF
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         final java.lang.String name = file.getName();
         for (final java.lang.String suffix : this.suffixes) {
             if (caseSensitivity.checkEndsWith(name, suffix)) {
@@ -57,7 +57,7 @@ public class SuffixFileFilter extends org.apache.commons.io.filefilter.AbstractF
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file, final java.lang.String name) {
+    public boolean a(final java.io.File file, final java.lang.String name) {
         for (final java.lang.String suffix : this.suffixes) {
             if (caseSensitivity.checkEndsWith(name, suffix)) {
                 return true;

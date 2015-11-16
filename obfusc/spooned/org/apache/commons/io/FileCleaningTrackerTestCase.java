@@ -2,7 +2,7 @@ package org.apache.commons.io;
 
 
 public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools.FileBasedTestCase {
-    protected org.apache.commons.io.FileCleaningTracker testGetPath_with_nullbyte() {
+    protected org.apache.commons.io.FileCleaningTracker b() {
         return new org.apache.commons.io.FileCleaningTracker();
     }
 
@@ -34,7 +34,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         theInstance = null;
     }
 
-    public void h() throws java.lang.Exception {
+    public void j() throws java.lang.Exception {
         final java.lang.String path = testFile.getPath();
         junit.framework.TestCase.assertFalse(testFile.exists());
         java.io.RandomAccessFile r = new java.io.RandomAccessFile(testFile , "rw");
@@ -51,7 +51,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertEquals(showFailures(), false, new java.io.File(path).exists());
     }
 
-    public void a() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         createFile(testFile, 100);
         junit.framework.TestCase.assertTrue(testFile.exists());
         junit.framework.TestCase.assertTrue(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory().exists());
@@ -66,7 +66,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertTrue(testFile.getParentFile().exists());
     }
 
-    public void c() throws java.lang.Exception {
+    public void e() throws java.lang.Exception {
         createFile(testFile, 100);
         junit.framework.TestCase.assertTrue(testFile.exists());
         junit.framework.TestCase.assertTrue(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory().exists());
@@ -81,7 +81,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertTrue(testFile.getParentFile().exists());
     }
 
-    public void b() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         createFile(testFile, 100);
         junit.framework.TestCase.assertTrue(testFile.exists());
         junit.framework.TestCase.assertTrue(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory().exists());
@@ -97,7 +97,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertEquals(showFailures(), false, testFile.getParentFile().exists());
     }
 
-    public void i() throws java.lang.Exception {
+    public void k() throws java.lang.Exception {
         try {
             theInstance.track(((java.io.File)(null)), new java.lang.Object());
             junit.framework.TestCase.fail();
@@ -120,7 +120,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         }
     }
 
-    public void f() throws java.lang.Exception {
+    public void h() throws java.lang.Exception {
         junit.framework.TestCase.assertFalse(theInstance.exitWhenFinished);
         theInstance.exitWhenFinished();
         junit.framework.TestCase.assertTrue(theInstance.exitWhenFinished);
@@ -131,7 +131,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertEquals(null, theInstance.reaper);
     }
 
-    public void g() throws java.lang.Exception {
+    public void i() throws java.lang.Exception {
         junit.framework.TestCase.assertFalse(theInstance.exitWhenFinished);
         theInstance.exitWhenFinished();
         junit.framework.TestCase.assertTrue(theInstance.exitWhenFinished);
@@ -147,7 +147,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertEquals(null, theInstance.reaper);
     }
 
-    public void d() throws java.lang.Exception {
+    public void f() throws java.lang.Exception {
         final java.lang.String path = testFile.getPath();
         junit.framework.TestCase.assertEquals("1-testFile exists", false, testFile.exists());
         java.io.RandomAccessFile r = new java.io.RandomAccessFile(testFile , "rw");
@@ -172,7 +172,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertEquals("13-reaper.isAlive", false, theInstance.reaper.isAlive());
     }
 
-    public void e() throws java.lang.Exception {
+    public void g() throws java.lang.Exception {
         final java.lang.String path = testFile.getPath();
         junit.framework.TestCase.assertFalse(testFile.exists());
         java.io.RandomAccessFile r = new java.io.RandomAccessFile(testFile , "rw");
@@ -200,7 +200,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         junit.framework.TestCase.assertFalse(theInstance.reaper.isAlive());
     }
 
-    private void pauseForDeleteToComplete(java.io.File file) {
+    private void b(java.io.File file) {
         int count = 0;
         while ((file.exists()) && ((count++) < 40)) {
             try {
@@ -211,7 +211,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         }
     }
 
-    private java.lang.String testCopyDirectoryToItself() throws java.lang.Exception {
+    private java.lang.String a() throws java.lang.Exception {
         if ((theInstance.deleteFailures.size()) == 1) {
             return ("[Delete Failed: " + (theInstance.deleteFailures.get(0))) + "]";
         } else {
@@ -219,7 +219,7 @@ public class FileCleaningTrackerTestCase extends org.apache.commons.io.testtools
         }
     }
 
-    private void j() throws java.lang.Exception {
+    private void l() throws java.lang.Exception {
         java.lang.System.gc();
         java.lang.Thread.sleep(500);
         int count = 0;

@@ -13,12 +13,12 @@ public class FileAlterationMonitorTestCase extends org.apache.commons.io.monitor
         super.setUp();
     }
 
-    public void a() {
+    public void b() {
         final org.apache.commons.io.monitor.FileAlterationMonitor monitor = new org.apache.commons.io.monitor.FileAlterationMonitor();
         junit.framework.TestCase.assertEquals("Interval", 10000, monitor.getInterval());
     }
 
-    public void testAddRemoveObservers() {
+    public void a() {
         org.apache.commons.io.monitor.FileAlterationObserver[] observers = null;
         org.apache.commons.io.monitor.FileAlterationMonitor monitor = null;
         monitor = new org.apache.commons.io.monitor.FileAlterationMonitor(123 , observers);
@@ -40,7 +40,7 @@ public class FileAlterationMonitorTestCase extends org.apache.commons.io.monitor
         junit.framework.TestCase.assertFalse("Observers[6]", monitor.getObservers().iterator().hasNext());
     }
 
-    public void b() {
+    public void c() {
         try {
             final long interval = 100;
             listener.clear();
@@ -74,7 +74,7 @@ public class FileAlterationMonitorTestCase extends org.apache.commons.io.monitor
         }
     }
 
-    public void c() {
+    public void d() {
         try {
             final long interval = 100;
             listener.clear();
@@ -97,7 +97,7 @@ public class FileAlterationMonitorTestCase extends org.apache.commons.io.monitor
         }
     }
 
-    private void testAddRemoveObservers(final java.lang.String label, final java.io.File file, final java.util.Collection<java.io.File> files) {
+    private void a(final java.lang.String label, final java.io.File file, final java.util.Collection<java.io.File> files) {
         for (int i = 0 ; i < 20 ; i++) {
             if (files.contains(file)) {
                 return ;

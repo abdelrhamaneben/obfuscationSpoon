@@ -34,7 +34,7 @@ public class AgeFileFilter extends org.apache.commons.io.filefilter.AbstractFile
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         final boolean newer = org.apache.commons.io.FileUtils.isFileNewer(file, cutoff);
         return acceptOlder ? !newer : newer;
     }

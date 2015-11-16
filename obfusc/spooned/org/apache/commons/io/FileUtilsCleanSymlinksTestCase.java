@@ -18,7 +18,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         org.apache.commons.io.FileUtils.deleteDirectory(top);
     }
 
-    public void a() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -40,7 +40,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertFalse(symlinkFile.exists());
     }
 
-    public void testCopyDirectoryToItself() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -62,7 +62,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertEquals("Contents of sym link should not have been removed", 1, randomDirectory.list().length);
     }
 
-    public void testGetPath_with_nullbyte() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -87,7 +87,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertEquals("Contents of sym link should not have been removed", 1, randomDirectory.list().length);
     }
 
-    public void f() throws java.lang.Exception {
+    public void h() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -102,7 +102,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertEquals(0, randomDirectory.list().length);
     }
 
-    public void d() throws java.lang.Exception {
+    public void f() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -114,7 +114,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.isSymlink(randomDirectory));
     }
 
-    public void e() throws java.lang.Exception {
+    public void g() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -126,7 +126,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.isSymlink(randomFile));
     }
 
-    public void c() throws java.lang.Exception {
+    public void e() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -141,7 +141,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.isSymlink(badSymlinkInPathFile));
     }
 
-    public void b() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         if (java.lang.System.getProperty("os.name").startsWith("Win")) {
             return ;
         } 
@@ -157,7 +157,7 @@ public class FileUtilsCleanSymlinksTestCase extends org.apache.commons.io.testto
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.isSymlink(realChild));
     }
 
-    private void pauseForDeleteToComplete(final java.io.File res, final java.io.File link) throws java.lang.Exception {
+    private void c(final java.io.File res, final java.io.File link) throws java.lang.Exception {
         final java.util.List<java.lang.String> args = new java.util.ArrayList<java.lang.String>();
         args.add("ln");
         args.add("-s");

@@ -27,11 +27,11 @@ public class OrFileFilter extends org.apache.commons.io.filefilter.AbstractFileF
         addFileFilter(filter2);
     }
 
-    public void toString(final org.apache.commons.io.filefilter.IOFileFilter ioFileFilter) {
+    public void b(final org.apache.commons.io.filefilter.IOFileFilter ioFileFilter) {
         this.fileFilters.add(ioFileFilter);
     }
 
-    public java.util.List<org.apache.commons.io.filefilter.IOFileFilter> removeFileFilter() {
+    public java.util.List<org.apache.commons.io.filefilter.IOFileFilter> a() {
         return java.util.Collections.unmodifiableList(this.fileFilters);
     }
 
@@ -39,13 +39,13 @@ public class OrFileFilter extends org.apache.commons.io.filefilter.AbstractFileF
         return this.fileFilters.remove(ioFileFilter);
     }
 
-    public void removeFileFilter(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> fileFilters) {
+    public void a(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> fileFilters) {
         this.fileFilters.clear();
         this.fileFilters.addAll(fileFilters);
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         for (final org.apache.commons.io.filefilter.IOFileFilter fileFilter : fileFilters) {
             if (fileFilter.accept(file)) {
                 return true;
@@ -55,7 +55,7 @@ public class OrFileFilter extends org.apache.commons.io.filefilter.AbstractFileF
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file, final java.lang.String name) {
+    public boolean a(final java.io.File file, final java.lang.String name) {
         for (final org.apache.commons.io.filefilter.IOFileFilter fileFilter : fileFilters) {
             if (fileFilter.accept(file, name)) {
                 return true;

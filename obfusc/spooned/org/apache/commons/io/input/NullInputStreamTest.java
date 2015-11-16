@@ -155,7 +155,7 @@ public class NullInputStreamTest extends junit.framework.TestCase {
         }
 
         @java.lang.Override
-        protected int a() {
+        protected int b() {
             return ((int)(getPosition())) - 1;
         }
 

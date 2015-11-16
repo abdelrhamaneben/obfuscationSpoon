@@ -46,7 +46,7 @@ public class WildcardFileFilter extends org.apache.commons.io.filefilter.Abstrac
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File dir, final java.lang.String name) {
+    public boolean a(final java.io.File dir, final java.lang.String name) {
         for (final java.lang.String wildcard : wildcards) {
             if (org.apache.commons.io.FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity)) {
                 return true;
@@ -56,7 +56,7 @@ public class WildcardFileFilter extends org.apache.commons.io.filefilter.Abstrac
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         final java.lang.String name = file.getName();
         for (final java.lang.String wildcard : wildcards) {
             if (org.apache.commons.io.FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity)) {

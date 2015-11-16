@@ -14,7 +14,7 @@ public class CanReadFileFilter extends org.apache.commons.io.filefilter.Abstract
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         return file.canRead();
     }
 }

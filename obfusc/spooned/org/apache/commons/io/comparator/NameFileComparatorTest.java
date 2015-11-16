@@ -17,7 +17,7 @@ public class NameFileComparatorTest extends org.apache.commons.io.comparator.Com
         moreFile = new java.io.File("d/XYZ.txt");
     }
 
-    public void checkFile() {
+    public void h() {
         final java.io.File file3 = new java.io.File("a/FOO.txt");
         final java.util.Comparator<java.io.File> sensitive = new org.apache.commons.io.comparator.NameFileComparator(null);
         junit.framework.TestCase.assertTrue("sensitive file1 & file2 = 0", ((sensitive.compare(equalFile1, equalFile2)) == 0));

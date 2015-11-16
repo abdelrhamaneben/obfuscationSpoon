@@ -294,7 +294,7 @@ public class CharSequenceInputStreamTest {
         testSingleByteRead(TEST_STRING, "UTF-8");
     }
 
-    private void aa(final java.lang.String csName) throws java.lang.Exception {
+    private void g(final java.lang.String csName) throws java.lang.Exception {
         final java.io.InputStream r = new org.apache.commons.io.input.CharSequenceInputStream("test" , csName);
         try {
             org.junit.Assert.assertEquals(1, r.skip(1));

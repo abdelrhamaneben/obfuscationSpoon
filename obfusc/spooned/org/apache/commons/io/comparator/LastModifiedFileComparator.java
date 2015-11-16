@@ -8,7 +8,7 @@ public class LastModifiedFileComparator extends org.apache.commons.io.comparator
 
     public static final java.util.Comparator<java.io.File> LASTMODIFIED_REVERSE = new org.apache.commons.io.comparator.ReverseComparator(LASTMODIFIED_COMPARATOR);
 
-    public int compare(final java.io.File file1, final java.io.File file2) {
+    public int a(final java.io.File file1, final java.io.File file2) {
         final long result = (file1.lastModified()) - (file2.lastModified());
         if (result < 0) {
             return -1;

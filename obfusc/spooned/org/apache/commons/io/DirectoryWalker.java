@@ -28,7 +28,7 @@ public abstract class DirectoryWalker<T> {
         this.depthLimit = depthLimit;
     }
 
-    protected final void a(final java.io.File startDirectory, final java.util.Collection<T> results) throws java.io.IOException {
+    protected final void b(final java.io.File startDirectory, final java.util.Collection<T> results) throws java.io.IOException {
         if (startDirectory == null) {
             throw new java.lang.NullPointerException("Start Directory is null");
         } 
@@ -41,7 +41,7 @@ public abstract class DirectoryWalker<T> {
         }
     }
 
-    private void e(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    private void h(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
         checkIfCancelled(directory, depth, results);
         if (handleDirectory(directory, depth, results)) {
             handleDirectoryStart(directory, depth, results);
@@ -69,44 +69,44 @@ public abstract class DirectoryWalker<T> {
         checkIfCancelled(directory, depth, results);
     }
 
-    protected final void list(final java.io.File file, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    protected final void c(final java.io.File file, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
         if (handleIsCancelled(file, depth, results)) {
             throw new org.apache.commons.io.DirectoryWalker.CancelException(file , depth);
         } 
     }
 
-    protected boolean find(final java.io.File file, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    protected boolean b(final java.io.File file, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
         return false;
     }
 
-    protected void handleDirectory(final java.io.File startDirectory, final java.util.Collection<T> results, final org.apache.commons.io.DirectoryWalker.CancelException cancel) throws java.io.IOException {
+    protected void a(final java.io.File startDirectory, final java.util.Collection<T> results, final org.apache.commons.io.DirectoryWalker.CancelException cancel) throws java.io.IOException {
         throw cancel;
     }
 
-    protected void handleDirectory(final java.io.File startDirectory, final java.util.Collection<T> results) throws java.io.IOException {
+    protected void a(final java.io.File startDirectory, final java.util.Collection<T> results) throws java.io.IOException {
     }
 
-    protected boolean handleCancelled(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    protected boolean a(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
         return true;
     }
 
-    protected void b(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    protected void e(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
     }
 
-    protected java.io.File[] handleDirectory(final java.io.File directory, final int depth, final java.io.File[] files) throws java.io.IOException {
+    protected java.io.File[] a(final java.io.File directory, final int depth, final java.io.File[] files) throws java.io.IOException {
         return files;
     }
 
-    protected void c(final java.io.File file, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    protected void f(final java.io.File file, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
+    }
+
+    protected void g(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
     }
 
     protected void d(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
     }
 
-    protected void a(final java.io.File directory, final int depth, final java.util.Collection<T> results) throws java.io.IOException {
-    }
-
-    protected void handleDirectory(final java.util.Collection<T> results) throws java.io.IOException {
+    protected void a(final java.util.Collection<T> results) throws java.io.IOException {
     }
 
     public static class CancelException extends java.io.IOException {

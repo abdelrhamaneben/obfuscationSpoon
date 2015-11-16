@@ -12,7 +12,7 @@ public class HiddenFileFilter extends org.apache.commons.io.filefilter.AbstractF
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         return file.isHidden();
     }
 }

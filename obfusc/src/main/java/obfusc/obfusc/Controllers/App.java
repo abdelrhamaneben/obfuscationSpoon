@@ -100,7 +100,8 @@ public class App
     	//inputMain = "../tmp2";
     	//inputMain = "../tmp/src";
     	inputMain =  "../commons-io/src/main/java:../commons-io/src/test/java";
-    			
+    	inputMain = "../tmp/src";
+    	
     			
     	System.out.printf("inputMain = "+inputMain+" %ninputTest = "+inputTest+" %nsourceClasspath = "+sourceClasspath+" %n");
     	

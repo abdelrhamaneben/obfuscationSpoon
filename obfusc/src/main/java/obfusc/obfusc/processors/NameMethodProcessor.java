@@ -38,7 +38,8 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 	
 	public NameMethodProcessor(){
 	}
-	@Override
+	
+	//@Override
 	public void process(CtType element) {
 		
 		System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_- CHANGE METHODS OF "+element.getSimpleName()+" -_-_-_-_-_-_-_-_-_-_-_-_-_-");
@@ -65,6 +66,8 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 
 			method.setSimpleName(newName);
 			changeAllInvocationExecutable(filterInvoc,method);
+			
+			
 			changeAllSubClass(filterName,method,element);
 		}
 		
@@ -73,10 +76,15 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 	public void changeAllInvocationExecutable(InvocationFilter filter, CtMethod method){
 		//System.out.println("....Change all invocations of the method:");
 		
-		QueryVisitor visiteur = new QueryVisitor(filter);
+		CtPackage p = getFactory().Package().getRootPackage();
+		List<CtInvocation<?>> invocationList = p.getElements(filter);
 		
-		List<CtInvocation<?>> invocationList = visiteur.getResult();
+		/*QueryVisitor visiteur = new QueryVisitor(filter);
+		List<CtInvocation<?>> invocationList = visiteur.getResult();*/
+		
 		for(CtInvocation<?> invoc : invocationList){
+			System.out.println("....Change invocations:");
+			System.out.println("......"+invoc.getPosition()+"  "+invoc.getSignature());
 			/*System.out.println("......Invocation Executable");
 			System.out.println("......Position ="+invoc.getPosition());
 			System.out.println("......Old = "+invoc.getExecutable());*/

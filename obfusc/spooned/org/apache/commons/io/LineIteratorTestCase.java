@@ -6,7 +6,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
         super(name);
     }
 
-    private void testCopyDirectoryToItself(final java.util.List<java.lang.String> lines, final org.apache.commons.io.LineIterator iterator) {
+    private void a(final java.util.List<java.lang.String> lines, final org.apache.commons.io.LineIterator iterator) {
         try {
             for (int i = 0 ; i < (lines.size()) ; i++) {
                 final java.lang.String line = iterator.nextLine();
@@ -18,19 +18,19 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
         }
     }
 
-    private java.util.List<java.lang.String> testCopyDirectoryToItself(final java.io.File file, final int lineCount) throws java.io.IOException {
+    private java.util.List<java.lang.String> a(final java.io.File file, final int lineCount) throws java.io.IOException {
         final java.util.List<java.lang.String> lines = createStringLines(lineCount);
         org.apache.commons.io.FileUtils.writeLines(file, lines);
         return lines;
     }
 
-    private java.util.List<java.lang.String> testCopyDirectoryToItself(final java.io.File file, final java.lang.String encoding, final int lineCount) throws java.io.IOException {
+    private java.util.List<java.lang.String> a(final java.io.File file, final java.lang.String encoding, final int lineCount) throws java.io.IOException {
         final java.util.List<java.lang.String> lines = createStringLines(lineCount);
         org.apache.commons.io.FileUtils.writeLines(file, encoding, lines);
         return lines;
     }
 
-    private java.util.List<java.lang.String> testCopyDirectoryToItself(final int lineCount) {
+    private java.util.List<java.lang.String> a(final int lineCount) {
         final java.util.List<java.lang.String> lines = new java.util.ArrayList<java.lang.String>();
         for (int i = 0 ; i < lineCount ; i++) {
             lines.add(("LINE " + i));
@@ -55,7 +55,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void testGetPath_with_nullbyte() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         try {
             new org.apache.commons.io.LineIterator(null);
             junit.framework.TestCase.fail();
@@ -64,27 +64,27 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void n() throws java.lang.Exception {
+    public void p() throws java.lang.Exception {
         doTestFileWithSpecifiedLines(0);
     }
 
     @org.junit.Test
-    public void j() throws java.lang.Exception {
+    public void l() throws java.lang.Exception {
         doTestFileWithSpecifiedLines(1);
     }
 
     @org.junit.Test
-    public void l() throws java.lang.Exception {
+    public void n() throws java.lang.Exception {
         doTestFileWithSpecifiedLines(2);
     }
 
     @org.junit.Test
-    public void k() throws java.lang.Exception {
+    public void m() throws java.lang.Exception {
         doTestFileWithSpecifiedLines(3);
     }
 
     @org.junit.Test
-    public void d() throws java.lang.Exception {
+    public void f() throws java.lang.Exception {
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "dummy-missing-file.txt");
         org.apache.commons.io.LineIterator iterator = null;
         try {
@@ -97,7 +97,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void m() throws java.lang.Exception {
+    public void o() throws java.lang.Exception {
         final java.lang.String encoding = "UTF-8";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-validEncoding.txt");
         createLinesFile(testFile, encoding, 3);
@@ -115,7 +115,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void c() throws java.lang.Exception {
+    public void e() throws java.lang.Exception {
         final java.lang.String encoding = "XXXXXXXX";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-invalidEncoding.txt");
         createLinesFile(testFile, "UTF-8", 3);
@@ -130,7 +130,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void e() throws java.lang.Exception {
+    public void g() throws java.lang.Exception {
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-nextOnly.txt");
         final java.util.List<java.lang.String> lines = createLinesFile(testFile, 3);
         final org.apache.commons.io.LineIterator iterator = org.apache.commons.io.FileUtils.lineIterator(testFile);
@@ -138,7 +138,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void f() throws java.lang.Exception {
+    public void h() throws java.lang.Exception {
         final java.lang.String encoding = null;
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-nextOnly.txt");
         final java.util.List<java.lang.String> lines = createLinesFile(testFile, encoding, 3);
@@ -147,7 +147,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void g() throws java.lang.Exception {
+    public void i() throws java.lang.Exception {
         final java.lang.String encoding = "UTF-8";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-nextOnly.txt");
         final java.util.List<java.lang.String> lines = createLinesFile(testFile, encoding, 3);
@@ -156,7 +156,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void h() throws java.lang.Exception {
+    public void j() throws java.lang.Exception {
         final java.lang.String encoding = null;
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-nextOnly.txt");
         final java.util.List<java.lang.String> lines = createLinesFile(testFile, encoding, 3);
@@ -173,7 +173,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void i() throws java.lang.Exception {
+    public void k() throws java.lang.Exception {
         final java.io.Reader reader = new java.io.BufferedReader(new java.io.StringReader("")) {
             @java.lang.Override
             public java.lang.String readLine() throws java.io.IOException {
@@ -188,7 +188,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void testCopyDirectoryToItself() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         final java.lang.String encoding = "UTF-8";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "LineIterator-closeEarly.txt");
         createLinesFile(testFile, encoding, 3);
@@ -224,7 +224,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
         }
     }
 
-    private void pauseForDeleteToComplete(final int lineCount) throws java.io.IOException {
+    private void b(final int lineCount) throws java.io.IOException {
         final java.lang.String encoding = "UTF-8";
         final java.lang.String fileName = ("LineIterator-" + lineCount) + "-test.txt";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , fileName);
@@ -260,7 +260,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void b() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         final java.lang.String encoding = "UTF-8";
         final java.lang.String fileName = "LineIterator-Filter-test.txt";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , fileName);
@@ -270,7 +270,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
     }
 
     @org.junit.Test
-    public void a() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         final java.lang.String encoding = "UTF-8";
         final java.lang.String fileName = "LineIterator-Filter-test.txt";
         final java.io.File testFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , fileName);
@@ -279,7 +279,7 @@ public class LineIteratorTestCase extends org.apache.commons.io.testtools.FileBa
         testFiltering(lines, reader);
     }
 
-    private void testCopyDirectoryToItself(final java.util.List<java.lang.String> lines, final java.io.Reader reader) {
+    private void a(final java.util.List<java.lang.String> lines, final java.io.Reader reader) {
         final org.apache.commons.io.LineIterator iterator = new org.apache.commons.io.LineIterator(reader) {
             @java.lang.Override
             protected boolean isValidLine(final java.lang.String line) {

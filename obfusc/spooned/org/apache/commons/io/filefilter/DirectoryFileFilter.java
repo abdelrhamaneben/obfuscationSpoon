@@ -12,7 +12,7 @@ public class DirectoryFileFilter extends org.apache.commons.io.filefilter.Abstra
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         return file.isDirectory();
     }
 }

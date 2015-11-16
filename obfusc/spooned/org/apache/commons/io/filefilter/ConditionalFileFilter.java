@@ -2,12 +2,12 @@ package org.apache.commons.io.filefilter;
 
 
 public interface ConditionalFileFilter {
-    void a(org.apache.commons.io.filefilter.IOFileFilter ioFileFilter);
+    void d(org.apache.commons.io.filefilter.IOFileFilter ioFileFilter);
 
-    java.util.List<org.apache.commons.io.filefilter.IOFileFilter> setFileFilters();
+    java.util.List<org.apache.commons.io.filefilter.IOFileFilter> b();
 
-    boolean removeFileFilter(org.apache.commons.io.filefilter.IOFileFilter ioFileFilter);
+    boolean c(org.apache.commons.io.filefilter.IOFileFilter ioFileFilter);
 
-    void a(java.util.List<org.apache.commons.io.filefilter.IOFileFilter> fileFilters);
+    void b(java.util.List<org.apache.commons.io.filefilter.IOFileFilter> fileFilters);
 }
 

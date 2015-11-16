@@ -21,7 +21,7 @@ public class SizeFileFilter extends org.apache.commons.io.filefilter.AbstractFil
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         final boolean smaller = (file.length()) < (size);
         return acceptLarger ? !smaller : smaller;
     }

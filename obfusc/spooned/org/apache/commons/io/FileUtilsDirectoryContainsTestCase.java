@@ -49,7 +49,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void testCopyDirectoryToItself() throws java.io.IOException {
+    public void a() throws java.io.IOException {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(directory1, file1ByRelativeDirectory2));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(directory2, file2ByRelativeDirectory1));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory1, file2ByRelativeDirectory1));
@@ -57,7 +57,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void testGetPath_with_nullbyte() throws java.io.IOException {
+    public void b() throws java.io.IOException {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(top, directory1));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(top, directory2));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(top, directory3));
@@ -65,13 +65,13 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void a() throws java.io.IOException {
+    public void c() throws java.io.IOException {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(directory1, file1));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(directory2, file2));
     }
 
     @org.junit.Test
-    public void b() throws java.io.IOException {
+    public void d() throws java.io.IOException {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory1, file2));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory2, file1));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory1, file3));
@@ -79,7 +79,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void c() throws java.io.IOException {
+    public void e() throws java.io.IOException {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory1, top));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory2, top));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory3, top));
@@ -87,7 +87,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void d() throws java.io.IOException {
+    public void f() throws java.io.IOException {
         final java.io.File dir = new java.io.File("DOESNOTEXIST");
         junit.framework.TestCase.assertFalse(dir.exists());
         try {
@@ -98,7 +98,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void h() throws java.io.IOException {
+    public void j() throws java.io.IOException {
         try {
             junit.framework.TestCase.assertTrue(org.apache.commons.io.FileUtils.directoryContains(file1, file1));
             junit.framework.TestCase.fail(("Expected " + (java.lang.IllegalArgumentException.class.getName())));
@@ -107,13 +107,13 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void g() throws java.io.IOException {
+    public void i() throws java.io.IOException {
         java.io.File fooFile = new java.io.File(directory1.getParent() , "directory1.txt");
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(directory1, fooFile));
     }
 
     @org.junit.Test
-    public void e() throws java.io.IOException {
+    public void g() throws java.io.IOException {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FileUtils.directoryContains(top, null));
         final java.io.File file = new java.io.File("DOESNOTEXIST");
         junit.framework.TestCase.assertFalse(file.exists());
@@ -121,7 +121,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void f() throws java.io.IOException {
+    public void h() throws java.io.IOException {
         final java.io.File file = new java.io.File(top , "DOESNOTEXIST");
         junit.framework.TestCase.assertTrue("Check directory exists", top.exists());
         junit.framework.TestCase.assertFalse("Check file does not exist", file.exists());
@@ -129,7 +129,7 @@ public class FileUtilsDirectoryContainsTestCase extends org.apache.commons.io.te
     }
 
     @org.junit.Test
-    public void i() throws java.io.IOException {
+    public void k() throws java.io.IOException {
         final java.io.File dir = new java.io.File("DOESNOTEXIST");
         final java.io.File file = new java.io.File(dir , "DOESNOTEXIST2");
         junit.framework.TestCase.assertFalse(dir.exists());

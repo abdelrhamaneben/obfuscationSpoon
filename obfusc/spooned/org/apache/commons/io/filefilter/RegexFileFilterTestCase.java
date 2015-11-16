@@ -16,7 +16,7 @@ public class RegexFileFilterTestCase extends org.apache.commons.io.testtools.Fil
         org.apache.commons.io.FileUtils.deleteDirectory(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory());
     }
 
-    public void testCopyDirectoryToItself(final org.apache.commons.io.filefilter.IOFileFilter filter, final java.io.File file, final boolean expected) throws java.lang.Exception {
+    public void a(final org.apache.commons.io.filefilter.IOFileFilter filter, final java.io.File file, final boolean expected) throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(((((("Filter(File) " + (filter.getClass().getName())) + " not ") + expected) + " for ") + file), expected, filter.accept(file));
         if ((file != null) && ((file.getParentFile()) != null)) {
             junit.framework.TestCase.assertEquals(((((("Filter(File, String) " + (filter.getClass().getName())) + " not ") + expected) + " for ") + file), expected, filter.accept(file.getParentFile(), file.getName()));
@@ -25,7 +25,7 @@ public class RegexFileFilterTestCase extends org.apache.commons.io.testtools.Fil
         } 
     }
 
-    public void testCopyDirectoryToItself() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.RegexFileFilter("^.*[tT]est(-\\d+)?\\.java$");
         assertFiltering(filter, new java.io.File("Test.java"), true);
         assertFiltering(filter, new java.io.File("test-10.java"), true);

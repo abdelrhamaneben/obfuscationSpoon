@@ -13,7 +13,7 @@ class ReverseComparator extends org.apache.commons.io.comparator.AbstractFileCom
         this.delegate = delegate;
     }
 
-    public int compare(final java.io.File file1, final java.io.File file2) {
+    public int a(final java.io.File file1, final java.io.File file2) {
         return delegate.compare(file2, file1);
     }
 

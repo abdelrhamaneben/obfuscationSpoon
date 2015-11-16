@@ -2,14 +2,14 @@ package org.apache.commons.io.input;
 
 
 public interface TailerListener {
-    void a(org.apache.commons.io.input.Tailer tailer);
+    void c(org.apache.commons.io.input.Tailer tailer);
 
-    void fileRotated();
+    void i();
 
-    void a();
+    void j();
 
-    void a(java.lang.String line);
+    void c(java.lang.String line);
 
-    void a(java.lang.Exception ex);
+    void c(java.lang.Exception ex);
 }
 

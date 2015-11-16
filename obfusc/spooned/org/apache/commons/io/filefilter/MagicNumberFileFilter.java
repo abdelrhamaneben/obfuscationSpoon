@@ -46,7 +46,7 @@ public class MagicNumberFileFilter extends org.apache.commons.io.filefilter.Abst
     }
 
     @java.lang.Override
-    public boolean removeFileFilter(final java.io.File file) {
+    public boolean a(final java.io.File file) {
         if (((file != null) && (file.isFile())) && (file.canRead())) {
             java.io.RandomAccessFile randomAccessFile = null;
             try {
