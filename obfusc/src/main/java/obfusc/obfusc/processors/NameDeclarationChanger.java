@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import obfusc.obfusc.utils.factotyReference;
 import spoon.processing.AbstractProcessor;
+import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtField;
 import spoon.reflect.declaration.CtNamedElement;
 
@@ -32,7 +33,6 @@ public class NameDeclarationChanger  extends AbstractProcessor<CtNamedElement>{
 		if(elementChangable.contains(element.getClass().getSimpleName())) {
 			String oldName = element.getSimpleName();
 			element.setSimpleName(fn.getName(oldName));
-			System.out.println(element.getClass());
 		}
 		
     }
