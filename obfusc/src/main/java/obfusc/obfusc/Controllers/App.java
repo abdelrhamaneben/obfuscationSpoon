@@ -30,11 +30,14 @@ public class App
     	// vérification des entrées et sorties définition par défaut 
     	int nbParam = args.length;
     	if(nbParam <= 1) {
+    		// ajuster le nombre d'élement dans le tableau
     		args = new String[2];
     		System.out.println("Pas d'entrée et sortie renseignées");
     		System.out.println("utilisation des parametres par défault");
-    		args[0] = "/Users/abdelrhamanebenhammou/workspace/appliTest/src/appliTest/";
+    		args[0] = "/Users/abdelrhamanebenhammou/workspace/commons-csv/src/main/";
     		args[1] = "/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output/";
+    		//args[2] = "/Users/abdelrhamanebenhammou/workspace/commons-csv/src/test";
+    		//args[3] = "/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output/";
     		
     		System.out.println("Input  : " + args[0]);
     		System.out.println("Output : " + args[1]);
@@ -72,6 +75,6 @@ public class App
         	 // Lancement de SPOON
           	 spoon.run();
     	}
-    	
+    	System.out.println("Obfuscation Terminé");
     }
 }

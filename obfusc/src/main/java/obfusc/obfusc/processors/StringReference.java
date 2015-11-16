@@ -20,7 +20,7 @@ public class StringReference  extends AbstractProcessor<CtLiteral<?>>{
 	}
 	
 	public void process(CtLiteral<?> element) {
-		if(element.getType().getSimpleName().equals("String")) {
+		if(element.getPosition() != null && element.isParentInitialized() && element.getType().getSimpleName().equals("String")) {
 			try {
 				String newName = fn.SaveString(element.getSignature());
 				CtExpression ce = this.getFactory().Code().createCodeSnippetExpression(newName);
