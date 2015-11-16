@@ -99,8 +99,16 @@ public class App
     	
     	//inputMain = "../tmp2";
     	//inputMain = "../tmp/src";
-    	inputMain =  "../commons-io/src/main/java:../commons-io/src/test/java";
-    	inputMain = "../tmp/src";
+    	inputMain =  "../commons-csv/src/main/java:../commons-csv/src/test/java";
+    	//inputMain = "../jsoup/src/main/java";
+    	
+    	sourceClasspath += ":../commons-csv/target:../jars/commons-io-2.4.jar:../jars/commons-lang3-3.4.jar"
+    					+":../jars/csv-1.0.jar:../jars/gj-csv-1.0.jar:../jars/javacsv-2.0.jar:../jars/jmh-core-1.11.2.jar"
+    					+":../jars/jmh-generator-annprocess-1.11.2.jar:../jars/opencsv-3.6.jar:../jars/super-csv-2.4.0.jar";
+    	
+    	//inputMain = "../tmp/src";
+    	//sourceClasspath += ":../jsoup-1.8.4-SNAPSHOT.jar";
+    	
     	
     			
     	System.out.printf("inputMain = "+inputMain+" %ninputTest = "+inputTest+" %nsourceClasspath = "+sourceClasspath+" %n");

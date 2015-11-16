@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.UUID;
 
 import spoon.reflect.code.CtInvocation;
 import spoon.reflect.declaration.CtClass;
@@ -26,6 +27,7 @@ import spoon.reflect.visitor.ReferenceFilter;
 import spoon.reflect.visitor.filter.InvocationFilter;
 import spoon.reflect.visitor.filter.ReferenceTypeFilter;
 import spoon.reflect.visitor.filter.TypeFilter;
+import spoon.support.reflect.reference.SpoonClassNotFoundException;
 
 public class MethodNameProvider implements NameProvider<CtMethod>{
 	
@@ -49,33 +51,18 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 
 	public String getNewName(CtMethod element){
 		
+		/*String name = getAlpha(nextNameToGenerate);
+		nextNameToGenerate++;
+		return name;*/
+		
 		nextNameToGenerate = 1;
 		
-		/* IF POUR DEBUG */
-		/*
-		if(element.getSimpleName().equals("getDefaultWorkingPath")){
-			System.out.println("###########################################################################");
-			System.out.println(methodsNames.size());
-			Iterator<Entry<String, List<List<CtTypeReference>>>> iteratorMethodsNames = methodsNames.entrySet().iterator();
-			while (iteratorMethodsNames.hasNext()) {
-			    Map.Entry<String, List<List<CtTypeReference>>> pair = (Map.Entry)iteratorMethodsNames.next();
-			    String key = pair.getKey();
-	            List<List<CtTypeReference>> value = pair.getValue();
-	            System.out.println(key);
-	            for(List<CtTypeReference> lst : value) {
-	            	for(CtTypeReference type : lst) {
-		                System.out.println(type.getSimpleName());
-		            }
-	            	System.out.println("------------------------");
-	            }
-			}
-		}*/
 		List<CtTypeReference> paramsRefs = getTypesReferences(element);
 		
 		
 		//cherche le prochain nom
 		String name = getAlpha(nextNameToGenerate);
-		while((methodsNames.containsKey(name) && methodsNames.get(name).contains(paramsRefs)) || isJavaKeyword(getAlpha(nextNameToGenerate))){
+		while((methodsNames.containsKey(name) && listContainRefs(methodsNames.get(name),paramsRefs)) || isJavaKeyword(getAlpha(nextNameToGenerate))){
 			nextNameToGenerate++;
 			name = getAlpha(nextNameToGenerate);
 		}
@@ -129,6 +116,37 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 		return paramsTypes;
 	}
 	
+	private boolean listContainRefs(List<List<CtTypeReference>> list, List<CtTypeReference> paramsRefs){
+		boolean flag;
+		
+		if(list.contains(paramsRefs)){
+			return true;
+		}
+		
+		//verifie que les types ne sont pas tous des sous types
+		for(List<CtTypeReference> refs : list){
+			if(refs.size() == paramsRefs.size()){
+				flag = true;
+				for(int i = 0; i<refs.size();i++){
+					try{
+						if(! (paramsRefs.get(i).isSubtypeOf(refs.get(i)) || refs.get(i).isSubtypeOf(paramsRefs.get(i)))){
+							flag = false;
+						}
+					}catch(SpoonClassNotFoundException e){
+						System.out.println("SpoonClassNotFoundException : by default, return true");
+						return true;
+					}
+				}
+				if(flag){
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	
 	private void initMap(){
 		/*System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		System.out.println("init Map for "+currentClass.getSimpleName());*/
@@ -180,12 +198,13 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 		for(CtType<?> c : subclasses){
 			
 			//si c hérite ou implemente la currentClass
-			if(currentClass.getReference().equals(c.getSuperclass())
-			|| c.getSuperInterfaces().contains(currentClass.getReference())){
+			/*if(currentClass.getReference().equals(c.getSuperclass())
+			|| c.getSuperInterfaces().contains(currentClass.getReference())){*/
+			if(c.isSubtypeOf(currentClass.getReference())){
 				
 			System.out.println("SUB CLASS = "+c.getSimpleName());
-			addMethodsFromSubClasses(c);
-			System.out.println(c.getMethods().size());
+			//addMethodsFromSubClasses(c);
+			//System.out.println(c.getMethods().size());
 			addMethods(c.getMethods());
 			//}
 			}
@@ -223,6 +242,12 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 
 		return result;
 	}
+	
+
+	public String getNewStaticName() {
+		return UUID.randomUUID().toString().replaceAll("[^A-Za-z]+", "");
+	}
+	
 
 	static final String keywords[] = { "abstract", "assert", "boolean",
             "break", "byte", "case", "catch", "char", "class", "const",
@@ -237,6 +262,7 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
     public static boolean isJavaKeyword(String keyword) {
         return (Arrays.binarySearch(keywords, keyword) >= 0);
     }
+
 	
 
 }
