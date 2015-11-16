@@ -26,7 +26,7 @@ public class ExtensionFileComparator extends org.apache.commons.io.comparator.Ab
         this.caseSensitivity = caseSensitivity == null ? org.apache.commons.io.IOCase.SENSITIVE : caseSensitivity;
     }
 
-    public int a(final java.io.File file1, final java.io.File file2) {
+    public int compare(final java.io.File file1, final java.io.File file2) {
         final java.lang.String suffix1 = org.apache.commons.io.FilenameUtils.getExtension(file1.getName());
         final java.lang.String suffix2 = org.apache.commons.io.FilenameUtils.getExtension(file2.getName());
         return caseSensitivity.checkCompareTo(suffix1, suffix2);

@@ -97,6 +97,7 @@ public class App
     
     public static void obfuscation(String inputMain, String inputTest, String sourceClasspath){
     	
+    	//inputMain = "../tmp2";
     	//inputMain = "../tmp/src";
     	inputMain =  "../commons-io/src/main/java:../commons-io/src/test/java";
     			

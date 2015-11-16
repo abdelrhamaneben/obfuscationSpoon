@@ -17,7 +17,7 @@ public class PathFileComparatorTest extends org.apache.commons.io.comparator.Com
         moreFile = new java.io.File("xyz/file.txt");
     }
 
-    public void a() {
+    public void checkFile() {
         final java.io.File file3 = new java.io.File("FOO/file.txt");
         final java.util.Comparator<java.io.File> sensitive = new org.apache.commons.io.comparator.PathFileComparator(null);
         junit.framework.TestCase.assertTrue("sensitive file1 & file2 = 0", ((sensitive.compare(equalFile1, equalFile2)) == 0));

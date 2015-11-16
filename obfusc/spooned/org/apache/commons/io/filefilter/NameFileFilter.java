@@ -46,7 +46,7 @@ public class NameFileFilter extends org.apache.commons.io.filefilter.AbstractFil
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file) {
+    public boolean removeFileFilter(final java.io.File file) {
         final java.lang.String name = file.getName();
         for (final java.lang.String name2 : this.names) {
             if (caseSensitivity.checkEquals(name, name2)) {
@@ -57,7 +57,7 @@ public class NameFileFilter extends org.apache.commons.io.filefilter.AbstractFil
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File dir, final java.lang.String name) {
+    public boolean removeFileFilter(final java.io.File dir, final java.lang.String name) {
         for (final java.lang.String name2 : names) {
             if (caseSensitivity.checkEquals(name, name2)) {
                 return true;

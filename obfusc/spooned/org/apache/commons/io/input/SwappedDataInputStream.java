@@ -6,23 +6,23 @@ public class SwappedDataInputStream extends org.apache.commons.io.input.ProxyInp
         super(input);
     }
 
-    public boolean a() throws java.io.EOFException, java.io.IOException {
+    public boolean skip() throws java.io.EOFException, java.io.IOException {
         return 0 != (readByte());
     }
 
-    public byte b() throws java.io.EOFException, java.io.IOException {
+    public byte mark() throws java.io.EOFException, java.io.IOException {
         return ((byte)(in.read()));
     }
 
-    public char c() throws java.io.EOFException, java.io.IOException {
+    public char readChar() throws java.io.EOFException, java.io.IOException {
         return ((char)(readShort()));
     }
 
-    public double d() throws java.io.EOFException, java.io.IOException {
+    public double a() throws java.io.EOFException, java.io.IOException {
         return org.apache.commons.io.EndianUtils.readSwappedDouble(in);
     }
 
-    public float e() throws java.io.EOFException, java.io.IOException {
+    public float b() throws java.io.EOFException, java.io.IOException {
         return org.apache.commons.io.EndianUtils.readSwappedFloat(in);
     }
 
@@ -42,31 +42,31 @@ public class SwappedDataInputStream extends org.apache.commons.io.input.ProxyInp
         }
     }
 
-    public int f() throws java.io.EOFException, java.io.IOException {
+    public int c() throws java.io.EOFException, java.io.IOException {
         return org.apache.commons.io.EndianUtils.readSwappedInteger(in);
     }
 
-    public java.lang.String i() throws java.io.EOFException, java.io.IOException {
+    public java.lang.String f() throws java.io.EOFException, java.io.IOException {
         throw new java.lang.UnsupportedOperationException("Operation not supported: readLine()");
     }
 
-    public long k() throws java.io.EOFException, java.io.IOException {
+    public long h() throws java.io.EOFException, java.io.IOException {
         return org.apache.commons.io.EndianUtils.readSwappedLong(in);
     }
 
-    public short l() throws java.io.EOFException, java.io.IOException {
+    public short i() throws java.io.EOFException, java.io.IOException {
         return org.apache.commons.io.EndianUtils.readSwappedShort(in);
     }
 
-    public int g() throws java.io.EOFException, java.io.IOException {
+    public int d() throws java.io.EOFException, java.io.IOException {
         return in.read();
     }
 
-    public int h() throws java.io.EOFException, java.io.IOException {
+    public int e() throws java.io.EOFException, java.io.IOException {
         return org.apache.commons.io.EndianUtils.readSwappedUnsignedShort(in);
     }
 
-    public java.lang.String j() throws java.io.EOFException, java.io.IOException {
+    public java.lang.String g() throws java.io.EOFException, java.io.IOException {
         throw new java.lang.UnsupportedOperationException("Operation not supported: readUTF()");
     }
 

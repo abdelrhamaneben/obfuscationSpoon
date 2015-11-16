@@ -1,5 +1,6 @@
 package obfusc.obfusc.processors;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -12,6 +13,7 @@ import obfusc.obfusc.utils.MethodNameProvider;
 import obfusc.obfusc.utils.NameProvider;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtInvocation;
+import spoon.reflect.declaration.CtAnnotation;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.declaration.CtPackage;
@@ -38,7 +40,8 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 	}
 	@Override
 	public void process(CtType element) {
-
+		
+		System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_- CHANGE METHODS OF "+element.getSimpleName()+" -_-_-_-_-_-_-_-_-_-_-_-_-_-");
 		NameProvider nameProvider = new MethodNameProvider(getFactory(),element);
 		
 		Set<CtMethod> methods = element.getMethods();
@@ -119,6 +122,7 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 		}
 		
 		if(isOverride(method)){
+			System.out.println("METHOD NOT OVERRIDE "+method.getSimpleName());
 			return false;
 		}
 		
@@ -126,7 +130,15 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 	}
 	
 	public boolean isOverride(CtMethod method){
+		
+		/*final List<CtAnnotation<? extends Annotation>> methodAnnotations = method.getAnnotations();
+		for (final CtAnnotation<? extends Annotation> annotation : methodAnnotations) {
+			if (annotation.getAnnotationType().getActualClass().equals(Override.class)) {
+				return true;
+			}
+		}*/
 		return (method.getAnnotation(Override.class) != null);
+
 	}
 
 	/**

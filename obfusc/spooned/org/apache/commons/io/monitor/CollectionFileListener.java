@@ -22,13 +22,13 @@ public class CollectionFileListener implements java.io.Serializable , org.apache
         this.clearOnStart = clearOnStart;
     }
 
-    public void a(final org.apache.commons.io.monitor.FileAlterationObserver observer) {
+    public void onDirectoryChange(final org.apache.commons.io.monitor.FileAlterationObserver observer) {
         if (clearOnStart) {
             clear();
         } 
     }
 
-    public void g() {
+    public void onFileChange() {
         createdFiles.clear();
         changedFiles.clear();
         deletedFiles.clear();
@@ -37,55 +37,55 @@ public class CollectionFileListener implements java.io.Serializable , org.apache
         deletedDirectories.clear();
     }
 
-    public java.util.Collection<java.io.File> a() {
+    public java.util.Collection<java.io.File> onDirectoryChange() {
         return changedDirectories;
     }
 
-    public java.util.Collection<java.io.File> b() {
+    public java.util.Collection<java.io.File> onDirectoryChange() {
         return changedFiles;
     }
 
-    public java.util.Collection<java.io.File> c() {
+    public java.util.Collection<java.io.File> onDirectoryDelete() {
         return createdDirectories;
     }
 
-    public java.util.Collection<java.io.File> d() {
+    public java.util.Collection<java.io.File> onDirectoryChange() {
         return createdFiles;
     }
 
-    public java.util.Collection<java.io.File> e() {
+    public java.util.Collection<java.io.File> onFileChange() {
         return deletedDirectories;
     }
 
-    public java.util.Collection<java.io.File> f() {
+    public java.util.Collection<java.io.File> onFileChange() {
         return deletedFiles;
     }
 
-    public void b(final java.io.File directory) {
+    public void onDirectoryDelete(final java.io.File directory) {
         createdDirectories.add(directory);
     }
 
-    public void a(final java.io.File directory) {
+    public void onDirectoryChange(final java.io.File directory) {
         changedDirectories.add(directory);
     }
 
-    public void c(final java.io.File directory) {
+    public void a(final java.io.File directory) {
         deletedDirectories.add(directory);
     }
 
-    public void e(final java.io.File file) {
+    public void c(final java.io.File file) {
         createdFiles.add(file);
     }
 
-    public void d(final java.io.File file) {
+    public void b(final java.io.File file) {
         changedFiles.add(file);
     }
 
-    public void f(final java.io.File file) {
+    public void d(final java.io.File file) {
         deletedFiles.add(file);
     }
 
-    public void b(final org.apache.commons.io.monitor.FileAlterationObserver observer) {
+    public void a(final org.apache.commons.io.monitor.FileAlterationObserver observer) {
     }
 }
 

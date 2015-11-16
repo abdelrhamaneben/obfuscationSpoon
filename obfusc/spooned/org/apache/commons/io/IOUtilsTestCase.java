@@ -16,7 +16,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         super(name);
     }
 
-    private void a(final byte[] b0, final byte[] b1) {
+    private void testCopyDirectoryToItself(final byte[] b0, final byte[] b1) {
         junit.framework.TestCase.assertTrue("Content not equal according to java.util.Arrays#equals()", java.util.Arrays.equals(b0, b1));
     }
 
@@ -52,7 +52,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void j() {
+    public void h() {
         final java.io.Closeable closeable = new java.io.Closeable() {
             public void a() throws java.io.IOException {
                 throw new java.io.IOException();
@@ -61,7 +61,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         org.apache.commons.io.IOUtils.closeQuietly(closeable, null, closeable);
     }
 
-    public void k() {
+    public void i() {
         org.apache.commons.io.IOUtils.closeQuietly(new java.io.Closeable() {
             public void a() throws java.io.IOException {
                 throw new java.io.IOException();
@@ -69,7 +69,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         });
     }
 
-    public void l() {
+    public void j() {
         java.nio.channels.Selector selector = null;
         try {
             selector = java.nio.channels.Selector.open();
@@ -79,7 +79,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void m() {
+    public void k() {
         final java.nio.channels.Selector selector = new org.apache.commons.io.SelectorAdapter() {
             @java.lang.Override
             public void close() throws java.io.IOException {
@@ -89,12 +89,12 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         org.apache.commons.io.IOUtils.closeQuietly(selector);
     }
 
-    public void n() {
+    public void l() {
         final java.nio.channels.Selector selector = null;
         org.apache.commons.io.IOUtils.closeQuietly(selector);
     }
 
-    public void o() {
+    public void m() {
         java.nio.channels.Selector selector = null;
         try {
             selector = java.nio.channels.Selector.open();
@@ -105,12 +105,12 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void p() throws java.io.IOException {
+    public void n() throws java.io.IOException {
         org.apache.commons.io.IOUtils.closeQuietly(((java.net.ServerSocket)(null)));
         org.apache.commons.io.IOUtils.closeQuietly(new java.net.ServerSocket());
     }
 
-    public void q() throws java.io.IOException {
+    public void o() throws java.io.IOException {
         org.apache.commons.io.IOUtils.closeQuietly(new java.net.ServerSocket() {
             @java.lang.Override
             public void close() throws java.io.IOException {
@@ -119,12 +119,12 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         });
     }
 
-    public void r() {
+    public void p() {
         org.apache.commons.io.IOUtils.closeQuietly(((java.net.Socket)(null)));
         org.apache.commons.io.IOUtils.closeQuietly(new java.net.Socket());
     }
 
-    public void s() {
+    public void q() {
         org.apache.commons.io.IOUtils.closeQuietly(new java.net.Socket() {
             @java.lang.Override
             public synchronized void close() throws java.io.IOException {
@@ -133,7 +133,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         });
     }
 
-    public void t() throws java.lang.Exception {
+    public void r() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals('/', org.apache.commons.io.IOUtils.DIR_SEPARATOR_UNIX);
         junit.framework.TestCase.assertEquals('\\', org.apache.commons.io.IOUtils.DIR_SEPARATOR_WINDOWS);
         junit.framework.TestCase.assertEquals("\n", org.apache.commons.io.IOUtils.LINE_SEPARATOR_UNIX);
@@ -148,7 +148,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void v() throws java.lang.Exception {
+    public void t() throws java.lang.Exception {
         {
             final java.io.ByteArrayInputStream input1 = new java.io.ByteArrayInputStream("".getBytes(org.apache.commons.io.Charsets.UTF_8));
             junit.framework.TestCase.assertTrue(org.apache.commons.io.IOUtils.contentEquals(input1, input1));
@@ -164,7 +164,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOUtils.contentEquals(new java.io.ByteArrayInputStream("ABC".getBytes(org.apache.commons.io.Charsets.UTF_8)), new java.io.ByteArrayInputStream("ABCD".getBytes(org.apache.commons.io.Charsets.UTF_8))));
     }
 
-    public void w() throws java.lang.Exception {
+    public void u() throws java.lang.Exception {
         {
             final java.io.StringReader input1 = new java.io.StringReader("");
             junit.framework.TestCase.assertTrue(org.apache.commons.io.IOUtils.contentEquals(input1, input1));
@@ -180,7 +180,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOUtils.contentEquals(new java.io.StringReader("ABC"), new java.io.StringReader("ABCD")));
     }
 
-    public void u() throws java.lang.Exception {
+    public void s() throws java.lang.Exception {
         {
             final java.io.Reader input1 = new java.io.CharArrayReader("".toCharArray());
             junit.framework.TestCase.assertTrue(org.apache.commons.io.IOUtils.contentEqualsIgnoreEOL(input1, input1));
@@ -209,7 +209,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void ah() throws java.lang.Exception {
+    public void af() throws java.lang.Exception {
         final java.io.File destination = newFile("copy8.txt");
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         byte[] in;
@@ -231,7 +231,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void ai() throws java.lang.Exception {
+    public void ag() throws java.lang.Exception {
         final java.io.File destination = newFile("copy7.txt");
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         byte[] in;
@@ -253,7 +253,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void aj() throws java.lang.Exception {
+    public void ah() throws java.lang.Exception {
         final java.io.File destination = newFile("copy6.txt");
         final java.io.FileReader fin = new java.io.FileReader(m_testFile);
         java.lang.String str;
@@ -274,7 +274,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         deleteFile(destination);
     }
 
-    public void x() throws java.io.IOException {
+    public void v() throws java.io.IOException {
         java.io.CharArrayReader is = null;
         java.io.CharArrayWriter os = null;
         try {
@@ -292,7 +292,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void y() throws java.io.IOException {
+    public void w() throws java.io.IOException {
         java.io.CharArrayReader is = null;
         java.io.CharArrayWriter os = null;
         try {
@@ -310,7 +310,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void z() throws java.io.IOException {
+    public void x() throws java.io.IOException {
         java.io.CharArrayReader is = null;
         java.io.CharArrayWriter os = null;
         try {
@@ -328,7 +328,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void aa() throws java.io.IOException {
+    public void y() throws java.io.IOException {
         java.io.CharArrayReader is = null;
         java.io.CharArrayWriter os = null;
         try {
@@ -346,7 +346,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ab() throws java.io.IOException {
+    public void z() throws java.io.IOException {
         java.io.CharArrayReader is = null;
         java.io.CharArrayWriter os = null;
         try {
@@ -361,7 +361,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ac() throws java.io.IOException {
+    public void aa() throws java.io.IOException {
         java.io.ByteArrayInputStream is = null;
         java.io.ByteArrayOutputStream os = null;
         try {
@@ -379,7 +379,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ad() throws java.io.IOException {
+    public void ab() throws java.io.IOException {
         java.io.ByteArrayInputStream is = null;
         java.io.ByteArrayOutputStream os = null;
         try {
@@ -397,7 +397,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ae() throws java.io.IOException {
+    public void ac() throws java.io.IOException {
         java.io.ByteArrayInputStream is = null;
         java.io.ByteArrayOutputStream os = null;
         try {
@@ -415,7 +415,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void af() throws java.io.IOException {
+    public void ad() throws java.io.IOException {
         java.io.ByteArrayInputStream is = null;
         java.io.ByteArrayOutputStream os = null;
         try {
@@ -433,7 +433,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ag() throws java.io.IOException {
+    public void ae() throws java.io.IOException {
         java.io.ByteArrayInputStream is = null;
         java.io.ByteArrayOutputStream os = null;
         try {
@@ -448,7 +448,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void at() throws java.lang.Exception {
+    public void ar() throws java.lang.Exception {
         final java.nio.ByteBuffer buffer = java.nio.ByteBuffer.allocate(FILE_SIZE);
         final java.io.FileInputStream fileInputStream = new java.io.FileInputStream(m_testFile);
         final java.nio.channels.FileChannel input = fileInputStream.getChannel();
@@ -468,7 +468,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ak() throws java.lang.Exception {
+    public void ai() throws java.lang.Exception {
         final int size = 1027;
         final byte[] buffer = new byte[size];
         final java.io.InputStream input = new java.io.ByteArrayInputStream(new byte[size]);
@@ -487,7 +487,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         org.apache.commons.io.IOUtils.closeQuietly(input);
     }
 
-    public void am() throws java.lang.Exception {
+    public void ak() throws java.lang.Exception {
         final byte[] bytes = "abcd1234".getBytes("UTF-8");
         final java.io.ByteArrayInputStream stream = new java.io.ByteArrayInputStream(bytes);
         final byte[] result = org.apache.commons.io.IOUtils.readFully(stream, bytes.length);
@@ -495,7 +495,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         assertEqualContent(result, bytes);
     }
 
-    public void al() throws java.lang.Exception {
+    public void aj() throws java.lang.Exception {
         final byte[] bytes = "abcd1234".getBytes("UTF-8");
         final java.io.ByteArrayInputStream stream = new java.io.ByteArrayInputStream(bytes);
         final byte[] buffer = "wx00000000".getBytes("UTF-8");
@@ -504,7 +504,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         org.apache.commons.io.IOUtils.closeQuietly(stream);
     }
 
-    public void an() throws java.lang.Exception {
+    public void al() throws java.lang.Exception {
         final java.nio.ByteBuffer buffer = java.nio.ByteBuffer.allocate(FILE_SIZE);
         final java.io.FileInputStream fileInputStream = new java.io.FileInputStream(m_testFile);
         final java.nio.channels.FileChannel input = fileInputStream.getChannel();
@@ -529,7 +529,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ao() throws java.lang.Exception {
+    public void am() throws java.lang.Exception {
         final int size = 1027;
         final char[] buffer = new char[size];
         final java.io.Reader input = new java.io.CharArrayReader(new char[size]);
@@ -548,7 +548,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         org.apache.commons.io.IOUtils.closeQuietly(input);
     }
 
-    public void ap() throws java.lang.Exception {
+    public void an() throws java.lang.Exception {
         final java.io.Reader reader = new java.io.StringReader("abcd1234");
         final char[] buffer = "wx00000000".toCharArray();
         org.apache.commons.io.IOUtils.readFully(reader, buffer, 2, 8);
@@ -557,7 +557,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void aq() throws java.lang.Exception {
+    public void ao() throws java.lang.Exception {
         final java.io.File file = newFile("lines.txt");
         java.io.InputStream in = null;
         try {
@@ -573,7 +573,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ar() throws java.lang.Exception {
+    public void ap() throws java.lang.Exception {
         final java.io.File file = newFile("lines.txt");
         java.io.InputStream in = null;
         try {
@@ -589,7 +589,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void as() throws java.lang.Exception {
+    public void aq() throws java.lang.Exception {
         final java.io.File file = newFile("lines.txt");
         java.io.Reader in = null;
         try {
@@ -605,7 +605,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ax() throws java.lang.Exception {
+    public void av() throws java.lang.Exception {
         final java.io.FileReader in = new java.io.FileReader(m_testFile);
         try {
             junit.framework.TestCase.assertEquals(((FILE_SIZE) - 10), org.apache.commons.io.IOUtils.skip(in, ((FILE_SIZE) - 10)));
@@ -616,7 +616,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void ay() throws java.lang.Exception {
+    public void aw() throws java.lang.Exception {
         final java.io.InputStream in = new java.io.FileInputStream(m_testFile);
         try {
             junit.framework.TestCase.assertEquals(((FILE_SIZE) - 10), org.apache.commons.io.IOUtils.skip(in, ((FILE_SIZE) - 10)));
@@ -627,7 +627,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void az() throws java.lang.Exception {
+    public void ax() throws java.lang.Exception {
         final java.io.FileInputStream fileInputStream = new java.io.FileInputStream(m_testFile);
         final java.nio.channels.FileChannel fileChannel = fileInputStream.getChannel();
         try {
@@ -639,7 +639,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void au() throws java.lang.Exception {
+    public void as() throws java.lang.Exception {
         final int size = 1027;
         final java.io.InputStream input = new java.io.ByteArrayInputStream(new byte[size]);
         try {
@@ -657,7 +657,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         org.apache.commons.io.IOUtils.closeQuietly(input);
     }
 
-    public void av() throws java.lang.Exception {
+    public void at() throws java.lang.Exception {
         final java.io.FileInputStream fileInputStream = new java.io.FileInputStream(m_testFile);
         final java.nio.channels.FileChannel fileChannel = fileInputStream.getChannel();
         try {
@@ -678,7 +678,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void aw() throws java.lang.Exception {
+    public void au() throws java.lang.Exception {
         final int size = 1027;
         final java.io.Reader input = new java.io.CharArrayReader(new char[size]);
         org.apache.commons.io.IOUtils.skipFully(input, 0);
@@ -697,7 +697,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void ba() throws java.lang.Exception {
+    public void ay() throws java.lang.Exception {
         final java.io.File destination = newFile("copy5.txt");
         final java.io.FileReader fin = new java.io.FileReader(m_testFile);
         java.lang.String str;
@@ -717,7 +717,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         deleteFile(destination);
     }
 
-    public void bc() throws java.lang.Exception {
+    public void ba() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final java.io.InputStream in = org.apache.commons.io.IOUtils.toBufferedInputStream(fin);
@@ -731,7 +731,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bb() throws java.lang.Exception {
+    public void az() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final java.io.InputStream in = org.apache.commons.io.IOUtils.toBufferedInputStream(fin, 2048);
@@ -745,7 +745,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bd() throws java.lang.Exception {
+    public void bb() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final byte[] out = org.apache.commons.io.IOUtils.toByteArray(fin);
@@ -758,7 +758,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void be() throws java.lang.Exception {
+    public void bc() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             org.apache.commons.io.IOUtils.toByteArray(fin, -1);
@@ -770,7 +770,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bf() throws java.lang.Exception {
+    public void bd() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final byte[] out = org.apache.commons.io.IOUtils.toByteArray(fin, m_testFile.length());
@@ -783,7 +783,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bg() throws java.lang.Exception {
+    public void be() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             org.apache.commons.io.IOUtils.toByteArray(fin, ((m_testFile.length()) + 1));
@@ -795,7 +795,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bh() throws java.lang.Exception {
+    public void bf() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             org.apache.commons.io.IOUtils.toByteArray(fin, (((long)(java.lang.Integer.MAX_VALUE)) + 1));
@@ -807,7 +807,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bi() throws java.lang.Exception {
+    public void bg() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final byte[] out = org.apache.commons.io.IOUtils.toByteArray(fin, 0);
@@ -819,7 +819,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bj() throws java.io.IOException {
+    public void bh() throws java.io.IOException {
         final java.lang.String charsetName = "UTF-8";
         final byte[] expecteds = charsetName.getBytes(charsetName);
         byte[] actuals = org.apache.commons.io.IOUtils.toByteArray(new java.io.InputStreamReader(new java.io.ByteArrayInputStream(expecteds)));
@@ -829,7 +829,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bk() throws java.lang.Exception {
+    public void bi() throws java.lang.Exception {
         final java.io.FileReader fin = new java.io.FileReader(m_testFile);
         try {
             final java.lang.String str = org.apache.commons.io.IOUtils.toString(fin);
@@ -840,19 +840,19 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bl() throws java.lang.Exception {
+    public void bj() throws java.lang.Exception {
         final java.net.URI url = m_testFile.toURI();
         final byte[] actual = org.apache.commons.io.IOUtils.toByteArray(url);
         org.junit.Assert.assertEquals(FILE_SIZE, actual.length);
     }
 
-    public void bm() throws java.lang.Exception {
+    public void bk() throws java.lang.Exception {
         final java.net.URL url = m_testFile.toURI().toURL();
         final byte[] actual = org.apache.commons.io.IOUtils.toByteArray(url);
         org.junit.Assert.assertEquals(FILE_SIZE, actual.length);
     }
 
-    public void bn() throws java.lang.Exception {
+    public void bl() throws java.lang.Exception {
         final java.net.URLConnection urlConn = m_testFile.toURI().toURL().openConnection();
         byte[] actual;
         try {
@@ -864,7 +864,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bo() throws java.lang.Exception {
+    public void bm() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final char[] out = org.apache.commons.io.IOUtils.toCharArray(fin);
@@ -877,7 +877,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bp() throws java.lang.Exception {
+    public void bn() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final char[] out = org.apache.commons.io.IOUtils.toCharArray(fin, "UTF-8");
@@ -890,7 +890,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bq() throws java.lang.Exception {
+    public void bo() throws java.lang.Exception {
         final java.io.FileReader fr = new java.io.FileReader(m_testFile);
         try {
             final char[] out = org.apache.commons.io.IOUtils.toCharArray(fr);
@@ -903,7 +903,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "javadoc")
-    public void br() throws java.lang.Exception {
+    public void bp() throws java.lang.Exception {
         final java.lang.CharSequence csq = new java.lang.StringBuilder("Abc123Xyz!");
         @java.lang.SuppressWarnings(value = "deprecation")
         java.io.InputStream inStream = org.apache.commons.io.IOUtils.toInputStream(csq);
@@ -918,7 +918,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "javadoc")
-    public void bs() throws java.lang.Exception {
+    public void bq() throws java.lang.Exception {
         final java.lang.String str = "Abc123Xyz!";
         @java.lang.SuppressWarnings(value = "deprecation")
         java.io.InputStream inStream = org.apache.commons.io.IOUtils.toInputStream(str);
@@ -933,7 +933,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bt() throws java.lang.Exception {
+    public void br() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final byte[] in = org.apache.commons.io.IOUtils.toByteArray(fin);
@@ -945,7 +945,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bu() throws java.lang.Exception {
+    public void bs() throws java.lang.Exception {
         final java.io.FileInputStream fin = new java.io.FileInputStream(m_testFile);
         try {
             final java.lang.String out = org.apache.commons.io.IOUtils.toString(fin);
@@ -957,7 +957,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void bv() throws java.lang.Exception {
+    public void bt() throws java.lang.Exception {
         final java.io.FileReader fin = new java.io.FileReader(m_testFile);
         try {
             final java.lang.String out = org.apache.commons.io.IOUtils.toString(fin);
@@ -969,52 +969,52 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bw() throws java.lang.Exception {
+    public void bu() throws java.lang.Exception {
         final java.net.URI url = m_testFile.toURI();
         final java.lang.String out = org.apache.commons.io.IOUtils.toString(url);
         junit.framework.TestCase.assertNotNull(out);
         junit.framework.TestCase.assertEquals("Wrong output size", FILE_SIZE, out.length());
     }
 
-    private void aa(final java.lang.String encoding) throws java.lang.Exception {
+    private void testGetPath_with_nullbyte(final java.lang.String encoding) throws java.lang.Exception {
         final java.net.URI uri = m_testFile.toURI();
         final java.lang.String out = org.apache.commons.io.IOUtils.toString(uri, encoding);
         junit.framework.TestCase.assertNotNull(out);
         junit.framework.TestCase.assertEquals("Wrong output size", FILE_SIZE, out.length());
     }
 
-    public void bx() throws java.lang.Exception {
+    public void bv() throws java.lang.Exception {
         testToString_URI("US-ASCII");
     }
 
-    public void by() throws java.lang.Exception {
+    public void bw() throws java.lang.Exception {
         testToString_URI(null);
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void bz() throws java.lang.Exception {
+    public void bx() throws java.lang.Exception {
         final java.net.URL url = m_testFile.toURI().toURL();
         final java.lang.String out = org.apache.commons.io.IOUtils.toString(url);
         junit.framework.TestCase.assertNotNull(out);
         junit.framework.TestCase.assertEquals("Wrong output size", FILE_SIZE, out.length());
     }
 
-    private void ab(final java.lang.String encoding) throws java.lang.Exception {
+    private void aa(final java.lang.String encoding) throws java.lang.Exception {
         final java.net.URL url = m_testFile.toURI().toURL();
         final java.lang.String out = org.apache.commons.io.IOUtils.toString(url, encoding);
         junit.framework.TestCase.assertNotNull(out);
         junit.framework.TestCase.assertEquals("Wrong output size", FILE_SIZE, out.length());
     }
 
-    public void ca() throws java.lang.Exception {
+    public void by() throws java.lang.Exception {
         testToString_URL("US-ASCII");
     }
 
-    public void cb() throws java.lang.Exception {
+    public void bz() throws java.lang.Exception {
         testToString_URL(null);
     }
 
-    public void c() {
+    public void a() {
         try {
             org.apache.commons.io.IOUtils.buffer(((java.io.InputStream)(null)));
             junit.framework.TestCase.fail("Expected NullPointerException");
@@ -1037,7 +1037,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         }
     }
 
-    public void a() {
+    public void testCopyDirectoryToItself() {
         java.io.InputStream is = new java.io.InputStream() {
             @java.lang.Override
             public int read() throws java.io.IOException {
@@ -1049,7 +1049,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(bis, org.apache.commons.io.IOUtils.buffer(bis));
     }
 
-    public void b() {
+    public void testGetPath_with_nullbyte() {
         java.io.InputStream is = new java.io.InputStream() {
             @java.lang.Override
             public int read() throws java.io.IOException {
@@ -1062,7 +1062,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(bis, org.apache.commons.io.IOUtils.buffer(bis, 1024));
     }
 
-    public void d() {
+    public void b() {
         java.io.OutputStream is = new java.io.OutputStream() {
             @java.lang.Override
             public void write(int b) throws java.io.IOException {
@@ -1073,7 +1073,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(bis, org.apache.commons.io.IOUtils.buffer(bis));
     }
 
-    public void e() {
+    public void c() {
         java.io.OutputStream os = new java.io.OutputStream() {
             @java.lang.Override
             public void write(int b) throws java.io.IOException {
@@ -1085,7 +1085,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(bos, org.apache.commons.io.IOUtils.buffer(bos, 1024));
     }
 
-    public void f() {
+    public void d() {
         java.io.Reader is = new java.io.Reader() {
             @java.lang.Override
             public int read(char[] cbuf, int off, int len) throws java.io.IOException {
@@ -1101,7 +1101,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(bis, org.apache.commons.io.IOUtils.buffer(bis));
     }
 
-    public void g() {
+    public void e() {
         java.io.Reader r = new java.io.Reader() {
             @java.lang.Override
             public int read(char[] cbuf, int off, int len) throws java.io.IOException {
@@ -1118,7 +1118,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(br, org.apache.commons.io.IOUtils.buffer(br, 1024));
     }
 
-    public void h() {
+    public void f() {
         java.io.Writer is = new java.io.Writer() {
             @java.lang.Override
             public void write(int b) throws java.io.IOException {
@@ -1141,7 +1141,7 @@ public class IOUtilsTestCase extends org.apache.commons.io.testtools.FileBasedTe
         junit.framework.TestCase.assertSame(bis, org.apache.commons.io.IOUtils.buffer(bis));
     }
 
-    public void i() {
+    public void g() {
         java.io.Writer w = new java.io.Writer() {
             @java.lang.Override
             public void write(int b) throws java.io.IOException {

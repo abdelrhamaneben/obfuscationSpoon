@@ -8,7 +8,7 @@ public class FileUtilsCleanDirectoryTestCase extends org.apache.commons.io.testt
         super(name);
     }
 
-    private java.io.File a() {
+    private java.io.File testCopyDirectoryToItself() {
         return new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "list-files");
     }
 
@@ -23,13 +23,13 @@ public class FileUtilsCleanDirectoryTestCase extends org.apache.commons.io.testt
         org.apache.commons.io.FileUtils.deleteDirectory(top);
     }
 
-    public void b() throws java.lang.Exception {
+    public void testGetPath_with_nullbyte() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(0, top.list().length);
         org.apache.commons.io.FileUtils.cleanDirectory(top);
         junit.framework.TestCase.assertEquals(0, top.list().length);
     }
 
-    public void d() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         org.apache.commons.io.FileUtils.touch(new java.io.File(top , "regular"));
         org.apache.commons.io.FileUtils.touch(new java.io.File(top , ".hidden"));
         junit.framework.TestCase.assertEquals(2, top.list().length);
@@ -37,7 +37,7 @@ public class FileUtilsCleanDirectoryTestCase extends org.apache.commons.io.testt
         junit.framework.TestCase.assertEquals(0, top.list().length);
     }
 
-    public void c() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         final java.io.File nested = new java.io.File(top , "nested");
         junit.framework.TestCase.assertTrue(nested.mkdirs());
         org.apache.commons.io.FileUtils.touch(new java.io.File(nested , "file"));
@@ -46,7 +46,7 @@ public class FileUtilsCleanDirectoryTestCase extends org.apache.commons.io.testt
         junit.framework.TestCase.assertEquals(0, top.list().length);
     }
 
-    public void f() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         if ((java.lang.System.getProperty("os.name").startsWith("Win")) || (!(chmod(top, 0, false)))) {
             return ;
         } 
@@ -58,7 +58,7 @@ public class FileUtilsCleanDirectoryTestCase extends org.apache.commons.io.testt
         }
     }
 
-    public void e() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         final java.io.File file = new java.io.File(top , "restricted");
         org.apache.commons.io.FileUtils.touch(file);
         if ((java.lang.System.getProperty("os.name").startsWith("Win")) || (!(chmod(top, 500, false)))) {
@@ -72,7 +72,7 @@ public class FileUtilsCleanDirectoryTestCase extends org.apache.commons.io.testt
         }
     }
 
-    private boolean a(final java.io.File file, final int mode, final boolean recurse) throws java.lang.InterruptedException {
+    private boolean testCopyDirectoryToItself(final java.io.File file, final int mode, final boolean recurse) throws java.lang.InterruptedException {
         final java.util.List<java.lang.String> args = new java.util.ArrayList<java.lang.String>();
         args.add("chmod");
         if (recurse) {

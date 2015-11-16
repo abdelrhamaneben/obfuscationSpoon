@@ -30,7 +30,7 @@ public class WildcardFilter extends org.apache.commons.io.filefilter.AbstractFil
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File dir, final java.lang.String name) {
+    public boolean removeFileFilter(final java.io.File dir, final java.lang.String name) {
         if ((dir != null) && (new java.io.File(dir , name).isDirectory())) {
             return false;
         } 
@@ -43,7 +43,7 @@ public class WildcardFilter extends org.apache.commons.io.filefilter.AbstractFil
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file) {
+    public boolean removeFileFilter(final java.io.File file) {
         if (file.isDirectory()) {
             return false;
         } 

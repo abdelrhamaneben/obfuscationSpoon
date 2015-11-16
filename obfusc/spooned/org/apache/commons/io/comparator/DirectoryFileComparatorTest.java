@@ -19,11 +19,11 @@ public class DirectoryFileComparatorTest extends org.apache.commons.io.comparato
     }
 
     @java.lang.Override
-    public void c() {
+    public void createLineBasedFile() {
     }
 
     @java.lang.Override
-    public void e() {
+    public void generateTestData() {
     }
 }
 

@@ -12,7 +12,7 @@ public class CanWriteFileFilter extends org.apache.commons.io.filefilter.Abstrac
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file) {
+    public boolean removeFileFilter(final java.io.File file) {
         return file.canWrite();
     }
 }

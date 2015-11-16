@@ -16,13 +16,13 @@ public class CountingInputStream extends org.apache.commons.io.input.ProxyInputS
     }
 
     @java.lang.Override
-    protected synchronized void a(final int n) {
+    protected synchronized void skip(final int n) {
         if (n != (org.apache.commons.io.IOUtils.EOF)) {
             this.count += n;
         } 
     }
 
-    public int a() {
+    public int skip() {
         final long result = getByteCount();
         if (result > (java.lang.Integer.MAX_VALUE)) {
             throw new java.lang.ArithmeticException((("The byte count " + result) + " is too large to be converted to an int"));
@@ -30,7 +30,7 @@ public class CountingInputStream extends org.apache.commons.io.input.ProxyInputS
         return ((int)(result));
     }
 
-    public int b() {
+    public int readChar() {
         final long result = resetByteCount();
         if (result > (java.lang.Integer.MAX_VALUE)) {
             throw new java.lang.ArithmeticException((("The byte count " + result) + " is too large to be converted to an int"));
@@ -38,11 +38,11 @@ public class CountingInputStream extends org.apache.commons.io.input.ProxyInputS
         return ((int)(result));
     }
 
-    public synchronized long c() {
+    public synchronized long skip() {
         return this.count;
     }
 
-    public synchronized long d() {
+    public synchronized long skip() {
         final long tmp = this.count;
         this.count = 0;
         return tmp;

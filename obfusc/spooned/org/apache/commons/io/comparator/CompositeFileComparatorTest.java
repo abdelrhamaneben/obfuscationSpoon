@@ -22,7 +22,7 @@ public class CompositeFileComparatorTest extends org.apache.commons.io.comparato
         createFile(moreFile, 48);
     }
 
-    public void b() {
+    public void a() {
         final java.util.List<java.util.Comparator<java.io.File>> list = new java.util.ArrayList<java.util.Comparator<java.io.File>>();
         list.add(org.apache.commons.io.comparator.SizeFileComparator.SIZE_COMPARATOR);
         list.add(org.apache.commons.io.comparator.ExtensionFileComparator.EXTENSION_COMPARATOR);
@@ -32,14 +32,14 @@ public class CompositeFileComparatorTest extends org.apache.commons.io.comparato
         junit.framework.TestCase.assertTrue("more", ((c.compare(moreFile, lessFile)) > 0));
     }
 
-    public void c() {
+    public void b() {
         final java.util.Comparator<java.io.File> c = new org.apache.commons.io.comparator.CompositeFileComparator(((java.lang.Iterable<java.util.Comparator<java.io.File>>)(null)));
         junit.framework.TestCase.assertEquals("less,more", 0, c.compare(lessFile, moreFile));
         junit.framework.TestCase.assertEquals("more,less", 0, c.compare(moreFile, lessFile));
         junit.framework.TestCase.assertEquals("toString", "CompositeFileComparator{}", c.toString());
     }
 
-    public void a() {
+    public void checkFile() {
         final java.util.Comparator<java.io.File> c = new org.apache.commons.io.comparator.CompositeFileComparator(((java.util.Comparator<java.io.File>[])(null)));
         junit.framework.TestCase.assertEquals("less,more", 0, c.compare(lessFile, moreFile));
         junit.framework.TestCase.assertEquals("more,less", 0, c.compare(moreFile, lessFile));

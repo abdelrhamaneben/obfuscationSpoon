@@ -22,7 +22,7 @@ public class SizeFileComparator extends org.apache.commons.io.comparator.Abstrac
         this.sumDirectoryContents = sumDirectoryContents;
     }
 
-    public int a(final java.io.File file1, final java.io.File file2) {
+    public int compare(final java.io.File file1, final java.io.File file2) {
         long size1 = 0;
         if (file1.isDirectory()) {
             size1 = (sumDirectoryContents) && (file1.exists()) ? org.apache.commons.io.FileUtils.sizeOfDirectory(file1) : 0;

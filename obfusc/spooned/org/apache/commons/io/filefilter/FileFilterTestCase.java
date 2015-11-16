@@ -20,7 +20,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         org.apache.commons.io.FileUtils.deleteDirectory(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory());
     }
 
-    public void a(final org.apache.commons.io.filefilter.IOFileFilter filter, final java.io.File file, final boolean expected) throws java.lang.Exception {
+    public void testCopyDirectoryToItself(final org.apache.commons.io.filefilter.IOFileFilter filter, final java.io.File file, final boolean expected) throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(((((("Filter(File) " + (filter.getClass().getName())) + " not ") + expected) + " for ") + file), expected, filter.accept(file));
         if ((file != null) && ((file.getParentFile()) != null)) {
             junit.framework.TestCase.assertEquals(((((("Filter(File, String) " + (filter.getClass().getName())) + " not ") + expected) + " for ") + file), expected, filter.accept(file.getParentFile(), file.getName()));
@@ -30,7 +30,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         junit.framework.TestCase.assertNotNull(filter.toString());
     }
 
-    public void ar() throws java.lang.Exception {
+    public void aj() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.SuffixFileFilter(new java.lang.String[]{ "tes" , "est" });
         final java.io.File testFile = new java.io.File("test");
         final java.io.File fredFile = new java.io.File("fred");
@@ -68,7 +68,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void as() throws java.lang.Exception {
+    public void ak() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.SuffixFileFilter(new java.lang.String[]{ "tes" , "est" } , org.apache.commons.io.IOCase.INSENSITIVE);
         assertFiltering(filter, new java.io.File("foo.tes"), true);
         assertFiltering(filter, new java.io.File("foo.est"), true);
@@ -110,7 +110,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void h() throws java.lang.Exception {
+    public void testGetPath_with_nullbyte() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.DirectoryFileFilter();
         assertFiltering(filter, new java.io.File("src/"), true);
         assertFiltering(filter, new java.io.File("src/main/java/"), true);
@@ -121,7 +121,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.DirectoryFileFilter.DIRECTORY, org.apache.commons.io.filefilter.DirectoryFileFilter.INSTANCE);
     }
 
-    public void n() throws java.lang.Exception {
+    public void f() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFileFilter.FILE;
         assertFiltering(filter, new java.io.File("src/"), false);
         assertFiltering(filter, new java.io.File("src/java/"), false);
@@ -131,7 +131,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(filter, new java.io.File("LICENSE.txt"), true);
     }
 
-    public void ao() throws java.lang.Exception {
+    public void ag() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.PrefixFileFilter(new java.lang.String[]{ "foo" , "bar" });
         final java.io.File testFile = new java.io.File("test");
         final java.io.File fredFile = new java.io.File("fred");
@@ -171,7 +171,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void ap() throws java.lang.Exception {
+    public void ah() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.PrefixFileFilter(new java.lang.String[]{ "foo" , "bar" } , org.apache.commons.io.IOCase.INSENSITIVE);
         assertFiltering(filter, new java.io.File("foo.test1"), true);
         assertFiltering(filter, new java.io.File("bar.test1"), true);
@@ -215,7 +215,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void ah() throws java.lang.Exception {
+    public void z() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.NameFileFilter(new java.lang.String[]{ "foo" , "bar" });
         assertFiltering(filter, new java.io.File("foo"), true);
         assertFiltering(filter, new java.io.File("bar"), true);
@@ -261,7 +261,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(filter, new java.io.File("fred"), false);
     }
 
-    public void ai() throws java.lang.Exception {
+    public void aa() throws java.lang.Exception {
         final java.lang.String test = null;
         try {
             new org.apache.commons.io.filefilter.NameFileFilter(test);
@@ -275,7 +275,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void aj() throws java.lang.Exception {
+    public void ab() throws java.lang.Exception {
         final java.lang.String[] test = null;
         try {
             new org.apache.commons.io.filefilter.NameFileFilter(test);
@@ -284,7 +284,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void ak() throws java.lang.Exception {
+    public void ac() throws java.lang.Exception {
         final java.util.List<java.lang.String> test = null;
         try {
             new org.apache.commons.io.filefilter.NameFileFilter(test);
@@ -293,7 +293,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void at() throws java.lang.Exception {
+    public void al() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
         assertFiltering(filter, new java.io.File("foo.test"), true);
         assertFiltering(filter, new java.io.File("foo"), true);
@@ -301,7 +301,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.TrueFileFilter.TRUE, org.apache.commons.io.filefilter.TrueFileFilter.INSTANCE);
     }
 
-    public void k() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.falseFileFilter();
         assertFiltering(filter, new java.io.File("foo.test"), false);
         assertFiltering(filter, new java.io.File("foo"), false);
@@ -309,7 +309,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.FalseFileFilter.FALSE, org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE);
     }
 
-    public void al() throws java.lang.Exception {
+    public void ad() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.notFileFilter(org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter());
         assertFiltering(filter, new java.io.File("foo.test"), false);
         assertFiltering(filter, new java.io.File("foo"), false);
@@ -321,32 +321,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void b() throws java.lang.Exception {
-        final org.apache.commons.io.filefilter.IOFileFilter trueFilter = org.apache.commons.io.filefilter.TrueFileFilter.INSTANCE;
-        final org.apache.commons.io.filefilter.IOFileFilter falseFilter = org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE;
-        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(trueFilter , trueFilter), new java.io.File("foo.test"), true);
-        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(trueFilter , falseFilter), new java.io.File("foo.test"), false);
-        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(falseFilter , trueFilter), new java.io.File("foo.test"), false);
-        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(falseFilter , falseFilter), new java.io.File("foo.test"), false);
-        final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters = new java.util.ArrayList<org.apache.commons.io.filefilter.IOFileFilter>();
-        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(filters), new java.io.File("test"), false);
-        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(), new java.io.File("test"), false);
-        try {
-            new org.apache.commons.io.filefilter.AndFileFilter(falseFilter , null);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException ex) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.AndFileFilter(null , falseFilter);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException ex) {
-        }
-        final org.apache.commons.io.filefilter.AndFileFilter f = new org.apache.commons.io.filefilter.AndFileFilter(null);
-        junit.framework.TestCase.assertTrue(f.getFileFilters().isEmpty());
-        junit.framework.TestCase.assertNotNull(f.toString());
-    }
-
-    public void an() throws java.lang.Exception {
+    public void af() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter trueFilter = org.apache.commons.io.filefilter.TrueFileFilter.INSTANCE;
         final org.apache.commons.io.filefilter.IOFileFilter falseFilter = org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE;
         final java.io.File testFile = new java.io.File("foo.test");
@@ -377,7 +352,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         junit.framework.TestCase.assertTrue(f.getFileFilters().isEmpty());
     }
 
-    public void l() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter trueFilter = org.apache.commons.io.filefilter.TrueFileFilter.INSTANCE;
         final org.apache.commons.io.filefilter.IOFileFilter falseFilter = org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE;
         assertFiltering(org.apache.commons.io.filefilter.FileFilterUtils.and(trueFilter, trueFilter, trueFilter), new java.io.File("foo.test"), true);
@@ -386,7 +361,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(org.apache.commons.io.filefilter.FileFilterUtils.and(falseFilter, falseFilter), new java.io.File("foo.test"), false);
     }
 
-    public void m() throws java.lang.Exception {
+    public void e() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter trueFilter = org.apache.commons.io.filefilter.TrueFileFilter.INSTANCE;
         final org.apache.commons.io.filefilter.IOFileFilter falseFilter = org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE;
         final java.io.File testFile = new java.io.File("foo.test");
@@ -396,54 +371,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(org.apache.commons.io.filefilter.FileFilterUtils.or(falseFilter, falseFilter, falseFilter), testFile, false);
     }
 
-    @java.lang.SuppressWarnings(value = "deprecation")
-    public void g() throws java.lang.Exception {
-        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.WildcardFilter("*.txt");
-        final java.util.List<java.lang.String> patternList = java.util.Arrays.asList("*.txt", "*.xml", "*.gif");
-        final org.apache.commons.io.filefilter.IOFileFilter listFilter = new org.apache.commons.io.filefilter.WildcardFilter(patternList);
-        final java.io.File txtFile = new java.io.File("test.txt");
-        final java.io.File bmpFile = new java.io.File("test.bmp");
-        final java.io.File dir = new java.io.File("src/java");
-        assertFiltering(filter, new java.io.File("log.txt"), true);
-        filter = new org.apache.commons.io.filefilter.WildcardFilter("log?.txt");
-        assertFiltering(filter, new java.io.File("log1.txt"), true);
-        assertFiltering(filter, new java.io.File("log12.txt"), false);
-        filter = new org.apache.commons.io.filefilter.WildcardFilter("open??.????04");
-        assertFiltering(filter, new java.io.File("openAB.102504"), true);
-        assertFiltering(filter, new java.io.File("openA.102504"), false);
-        assertFiltering(filter, new java.io.File("openXY.123103"), false);
-        filter = new org.apache.commons.io.filefilter.WildcardFilter(new java.lang.String[]{ "*.java" , "*.class" });
-        assertFiltering(filter, new java.io.File("Test.java"), true);
-        assertFiltering(filter, new java.io.File("Test.class"), true);
-        assertFiltering(filter, new java.io.File("Test.jsp"), false);
-        assertFiltering(listFilter, new java.io.File("Test.txt"), true);
-        assertFiltering(listFilter, new java.io.File("Test.xml"), true);
-        assertFiltering(listFilter, new java.io.File("Test.gif"), true);
-        assertFiltering(listFilter, new java.io.File("Test.bmp"), false);
-        junit.framework.TestCase.assertTrue(listFilter.accept(txtFile));
-        junit.framework.TestCase.assertTrue(!(listFilter.accept(bmpFile)));
-        junit.framework.TestCase.assertTrue(!(listFilter.accept(dir)));
-        junit.framework.TestCase.assertTrue(listFilter.accept(txtFile.getParentFile(), txtFile.getName()));
-        junit.framework.TestCase.assertTrue(!(listFilter.accept(bmpFile.getParentFile(), bmpFile.getName())));
-        junit.framework.TestCase.assertTrue(!(listFilter.accept(dir.getParentFile(), dir.getName())));
-        try {
-            new org.apache.commons.io.filefilter.WildcardFilter(((java.lang.String)(null)));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException ex) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.WildcardFilter(((java.lang.String[])(null)));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException ex) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.WildcardFilter(((java.util.List<java.lang.String>)(null)));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException ex) {
-        }
-    }
-
-    public void au() throws java.lang.Exception {
+    public void am() throws java.lang.Exception {
         org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.WildcardFileFilter("*.txt");
         assertFiltering(filter, new java.io.File("log.txt"), true);
         assertFiltering(filter, new java.io.File("log.TXT"), false);
@@ -507,28 +435,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         }
     }
 
-    public void e() throws java.lang.Exception {
-        final org.apache.commons.io.filefilter.OrFileFilter orFilter = new org.apache.commons.io.filefilter.OrFileFilter();
-        final java.io.File testFile = new java.io.File("test.txt");
-        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FileFilter)(orFilter)));
-        assertFiltering(filter, testFile, false);
-        junit.framework.TestCase.assertNotNull(filter.toString());
-        filter = new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FilenameFilter)(orFilter)));
-        assertFiltering(filter, testFile, false);
-        junit.framework.TestCase.assertNotNull(filter.toString());
-        try {
-            new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FileFilter)(null)));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FilenameFilter)(null)));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-    }
-
-    public void ad() throws java.lang.Exception {
+    public void v() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter1 = org.apache.commons.io.filefilter.FileFilterUtils.makeCVSAware(null);
         final org.apache.commons.io.filefilter.IOFileFilter filter2 = org.apache.commons.io.filefilter.FileFilterUtils.makeCVSAware(org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("test-file1.txt"));
         java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "CVS");
@@ -550,7 +457,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(filter2, file, false);
     }
 
-    public void ag() throws java.lang.Exception {
+    public void y() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.IOFileFilter filter1 = org.apache.commons.io.filefilter.FileFilterUtils.makeSVNAware(null);
         final org.apache.commons.io.filefilter.IOFileFilter filter2 = org.apache.commons.io.filefilter.FileFilterUtils.makeSVNAware(org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("test-file1.txt"));
         java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , SVN_DIR_NAME);
@@ -572,7 +479,454 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(filter2, file, false);
     }
 
+    public void ai() throws java.lang.Exception {
+        final java.io.File smallFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "small.txt");
+        createFile(smallFile, 32);
+        final java.io.File largeFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "large.txt");
+        createFile(largeFile, 128);
+        final org.apache.commons.io.filefilter.IOFileFilter filter1 = org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(64);
+        final org.apache.commons.io.filefilter.IOFileFilter filter2 = org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(64, true);
+        final org.apache.commons.io.filefilter.IOFileFilter filter3 = org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(64, false);
+        assertFiltering(filter1, smallFile, false);
+        assertFiltering(filter2, smallFile, false);
+        assertFiltering(filter3, smallFile, true);
+        assertFiltering(filter1, largeFile, true);
+        assertFiltering(filter2, largeFile, true);
+        assertFiltering(filter3, largeFile, false);
+        final org.apache.commons.io.filefilter.IOFileFilter filter4 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(33, 127);
+        final org.apache.commons.io.filefilter.IOFileFilter filter5 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(32, 127);
+        final org.apache.commons.io.filefilter.IOFileFilter filter6 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(33, 128);
+        final org.apache.commons.io.filefilter.IOFileFilter filter7 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(31, 129);
+        final org.apache.commons.io.filefilter.IOFileFilter filter8 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(128, 128);
+        assertFiltering(filter4, smallFile, false);
+        assertFiltering(filter4, largeFile, false);
+        assertFiltering(filter5, smallFile, true);
+        assertFiltering(filter5, largeFile, false);
+        assertFiltering(filter6, smallFile, false);
+        assertFiltering(filter6, largeFile, true);
+        assertFiltering(filter7, smallFile, true);
+        assertFiltering(filter7, largeFile, true);
+        assertFiltering(filter8, largeFile, true);
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(-1);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException ex) {
+        }
+    }
+
+    public void p() throws java.lang.Exception {
+        final java.io.File hiddenDir = new java.io.File(SVN_DIR_NAME);
+        if (hiddenDir.exists()) {
+            assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.HIDDEN, hiddenDir, hiddenDir.isHidden());
+            assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.VISIBLE, hiddenDir, !(hiddenDir.isHidden()));
+        } 
+        assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.HIDDEN, org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory(), false);
+        assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.VISIBLE, org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory(), true);
+    }
+
     public void a() throws java.lang.Exception {
+        final java.io.File emptyDir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "empty-dir");
+        emptyDir.mkdirs();
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, emptyDir, true);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, emptyDir, false);
+        final java.io.File emptyFile = new java.io.File(emptyDir , "empty-file.txt");
+        createFile(emptyFile, 0);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, emptyFile, true);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, emptyFile, false);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, emptyDir, false);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, emptyDir, true);
+        final java.io.File notEmptyFile = new java.io.File(emptyDir , "not-empty-file.txt");
+        createFile(notEmptyFile, 32);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, notEmptyFile, false);
+        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, notEmptyFile, true);
+        org.apache.commons.io.FileUtils.forceDelete(emptyDir);
+    }
+
+    public void w() throws java.lang.Exception {
+        junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.DirectoryFileFilter.DIRECTORY, org.apache.commons.io.filefilter.FileFilterUtils.makeDirectoryOnly(null));
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.makeDirectoryOnly(org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("B"));
+        final java.io.File fileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A");
+        final java.io.File fileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B");
+        fileA.mkdirs();
+        fileB.mkdirs();
+        assertFiltering(filter, fileA, false);
+        assertFiltering(filter, fileB, true);
+        org.apache.commons.io.FileUtils.deleteDirectory(fileA);
+        org.apache.commons.io.FileUtils.deleteDirectory(fileB);
+        createFile(fileA, 32);
+        createFile(fileB, 32);
+        assertFiltering(filter, fileA, false);
+        assertFiltering(filter, fileB, false);
+        fileA.delete();
+        fileB.delete();
+    }
+
+    public void x() throws java.lang.Exception {
+        junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.FileFileFilter.FILE, org.apache.commons.io.filefilter.FileFilterUtils.makeFileOnly(null));
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.makeFileOnly(org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("B"));
+        final java.io.File fileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A");
+        final java.io.File fileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B");
+        fileA.mkdirs();
+        fileB.mkdirs();
+        assertFiltering(filter, fileA, false);
+        assertFiltering(filter, fileB, false);
+        org.apache.commons.io.FileUtils.deleteDirectory(fileA);
+        org.apache.commons.io.FileUtils.deleteDirectory(fileB);
+        createFile(fileA, 32);
+        createFile(fileB, 32);
+        assertFiltering(filter, fileA, false);
+        assertFiltering(filter, fileB, true);
+        fileA.delete();
+        fileB.delete();
+    }
+
+    @java.lang.SuppressWarnings(value = "deprecation")
+    public void q() throws java.lang.Exception {
+        final byte[] classFileMagicNumber = new byte[]{ ((byte)(202)) , ((byte)(254)) , ((byte)(186)) , ((byte)(190)) };
+        final java.lang.String xmlFileContent = "<?xml version=\"1.0\" encoding=\"UTF-8\">\n" + "<element>text</element>";
+        final java.io.File classFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.class");
+        final java.io.File xmlFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.xml");
+        final java.io.File emptyFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "C.xml");
+        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
+        dir.mkdirs();
+        final java.io.OutputStream classFileAStream = org.apache.commons.io.FileUtils.openOutputStream(classFileA);
+        org.apache.commons.io.IOUtils.write(classFileMagicNumber, classFileAStream);
+        generateTestData(classFileAStream, 32);
+        classFileAStream.close();
+        org.apache.commons.io.FileUtils.write(xmlFileB, xmlFileContent, org.apache.commons.io.Charsets.UTF_8);
+        org.apache.commons.io.FileUtils.touch(emptyFile);
+        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(classFileMagicNumber);
+        assertFiltering(filter, classFileA, true);
+        assertFiltering(filter, xmlFileB, false);
+        assertFiltering(filter, emptyFile, false);
+        assertFiltering(filter, dir, false);
+        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(classFileMagicNumber);
+        assertFiltering(filter, classFileA, true);
+        assertFiltering(filter, xmlFileB, false);
+        assertFiltering(filter, emptyFile, false);
+        assertFiltering(filter, dir, false);
+    }
+
+    public void r() throws java.lang.Exception {
+        final byte[] tarMagicNumber = new byte[]{ 117 , 115 , 116 , 97 , 114 };
+        final long tarMagicNumberOffset = 257;
+        final java.io.File tarFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.tar");
+        final java.io.File randomFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.txt");
+        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
+        dir.mkdirs();
+        final java.io.OutputStream tarFileAStream = org.apache.commons.io.FileUtils.openOutputStream(tarFileA);
+        generateTestData(tarFileAStream, tarMagicNumberOffset);
+        org.apache.commons.io.IOUtils.write(tarMagicNumber, tarFileAStream);
+        tarFileAStream.close();
+        createFile(randomFileB, (2 * tarMagicNumberOffset));
+        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(tarMagicNumber , tarMagicNumberOffset);
+        assertFiltering(filter, tarFileA, true);
+        assertFiltering(filter, randomFileB, false);
+        assertFiltering(filter, dir, false);
+        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(tarMagicNumber, tarMagicNumberOffset);
+        assertFiltering(filter, tarFileA, true);
+        assertFiltering(filter, randomFileB, false);
+        assertFiltering(filter, dir, false);
+    }
+
+    @java.lang.SuppressWarnings(value = "deprecation")
+    public void s() throws java.lang.Exception {
+        final byte[] classFileMagicNumber = new byte[]{ ((byte)(202)) , ((byte)(254)) , ((byte)(186)) , ((byte)(190)) };
+        final java.lang.String xmlFileContent = "<?xml version=\"1.0\" encoding=\"UTF-8\">\n" + "<element>text</element>";
+        final java.lang.String xmlMagicNumber = "<?xml version=\"1.0\"";
+        final java.io.File classFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.class");
+        final java.io.File xmlFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.xml");
+        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
+        dir.mkdirs();
+        final java.io.OutputStream classFileAStream = org.apache.commons.io.FileUtils.openOutputStream(classFileA);
+        org.apache.commons.io.IOUtils.write(classFileMagicNumber, classFileAStream);
+        generateTestData(classFileAStream, 32);
+        classFileAStream.close();
+        org.apache.commons.io.FileUtils.write(xmlFileB, xmlFileContent, org.apache.commons.io.Charsets.UTF_8);
+        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(xmlMagicNumber);
+        assertFiltering(filter, classFileA, false);
+        assertFiltering(filter, xmlFileB, true);
+        assertFiltering(filter, dir, false);
+        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(xmlMagicNumber);
+        assertFiltering(filter, classFileA, false);
+        assertFiltering(filter, xmlFileB, true);
+        assertFiltering(filter, dir, false);
+    }
+
+    @java.lang.SuppressWarnings(value = "deprecation")
+    public void t() throws java.lang.Exception {
+        final java.lang.String tarMagicNumber = "ustar";
+        final long tarMagicNumberOffset = 257;
+        final java.io.File tarFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.tar");
+        final java.io.File randomFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.txt");
+        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
+        dir.mkdirs();
+        final java.io.OutputStream tarFileAStream = org.apache.commons.io.FileUtils.openOutputStream(tarFileA);
+        generateTestData(tarFileAStream, tarMagicNumberOffset);
+        org.apache.commons.io.IOUtils.write(tarMagicNumber, tarFileAStream, org.apache.commons.io.Charsets.UTF_8);
+        tarFileAStream.close();
+        createFile(randomFileB, (2 * tarMagicNumberOffset));
+        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(tarMagicNumber , tarMagicNumberOffset);
+        assertFiltering(filter, tarFileA, true);
+        assertFiltering(filter, randomFileB, false);
+        assertFiltering(filter, dir, false);
+        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(tarMagicNumber, tarMagicNumberOffset);
+        assertFiltering(filter, tarFileA, true);
+        assertFiltering(filter, randomFileB, false);
+        assertFiltering(filter, dir, false);
+    }
+
+    public void u() {
+        try {
+            new org.apache.commons.io.filefilter.MagicNumberFileFilter(((java.lang.String)(null)) , 0);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.MagicNumberFileFilter("0" , -1);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.MagicNumberFileFilter("" , 0);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.MagicNumberFileFilter(((byte[])(null)) , 0);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.MagicNumberFileFilter(new byte[]{ 0 } , -1);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.MagicNumberFileFilter(new byte[]{  } , 0);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+    }
+
+    public void g() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
+        final java.io.File[] filtered = org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, fileA, fileB);
+        junit.framework.TestCase.assertEquals(1, filtered.length);
+        junit.framework.TestCase.assertEquals(fileA, filtered[0]);
+    }
+
+    public void i() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        final java.util.List<java.io.File> fileList = java.util.Arrays.asList(fileA, fileB);
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
+        final java.io.File[] filtered = org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, fileList);
+        junit.framework.TestCase.assertEquals(1, filtered.length);
+        junit.framework.TestCase.assertEquals(fileA, filtered[0]);
+    }
+
+    public void h() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.filter(null, fileA, fileB);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, fileA, null);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        final java.io.File[] filtered = org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, ((java.io.File[])(null)));
+        junit.framework.TestCase.assertEquals(0, filtered.length);
+    }
+
+    public void j() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        final java.util.List<java.io.File> fileList = java.util.Arrays.asList(fileA, fileB);
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
+        final java.util.List<java.io.File> filteredList = org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, fileList);
+        junit.framework.TestCase.assertTrue(filteredList.contains(fileA));
+        junit.framework.TestCase.assertFalse(filteredList.contains(fileB));
+    }
+
+    public void l() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
+        final java.util.List<java.io.File> filteredList = org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, fileA, fileB);
+        junit.framework.TestCase.assertTrue(filteredList.contains(fileA));
+        junit.framework.TestCase.assertFalse(filteredList.contains(fileB));
+    }
+
+    public void k() {
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.filterList(null, java.util.Collections.<java.io.File>emptyList());
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, java.util.Arrays.asList(((java.io.File)(null))));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        final java.util.List<java.io.File> filteredList = org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, ((java.util.List<java.io.File>)(null)));
+        junit.framework.TestCase.assertEquals(0, filteredList.size());
+    }
+
+    public void m() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        final java.util.Set<java.io.File> fileList = new java.util.HashSet<java.io.File>(java.util.Arrays.asList(fileA, fileB));
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
+        final java.util.Set<java.io.File> filteredSet = org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, fileList);
+        junit.framework.TestCase.assertTrue(filteredSet.contains(fileA));
+        junit.framework.TestCase.assertFalse(filteredSet.contains(fileB));
+    }
+
+    public void o() throws java.lang.Exception {
+        final java.io.File fileA = newFile("A");
+        final java.io.File fileB = newFile("B");
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
+        final java.util.Set<java.io.File> filteredSet = org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, fileA, fileB);
+        junit.framework.TestCase.assertTrue(filteredSet.contains(fileA));
+        junit.framework.TestCase.assertFalse(filteredSet.contains(fileB));
+    }
+
+    public void n() {
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.filterSet(null, java.util.Collections.<java.io.File>emptySet());
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, new java.util.HashSet<java.io.File>(java.util.Arrays.asList(((java.io.File)(null)))));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        final java.util.Set<java.io.File> filteredSet = org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, ((java.util.Set<java.io.File>)(null)));
+        junit.framework.TestCase.assertEquals(0, filteredSet.size());
+    }
+
+    public void b() {
+        junit.framework.TestCase.assertNotNull(new org.apache.commons.io.filefilter.FileFilterUtils());
+    }
+
+    public void ae() {
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.toList(((org.apache.commons.io.filefilter.IOFileFilter)(null)));
+            junit.framework.TestCase.fail("Expected IllegalArgumentException");
+        } catch (final java.lang.IllegalArgumentException expected) {
+        }
+        try {
+            org.apache.commons.io.filefilter.FileFilterUtils.toList(new org.apache.commons.io.filefilter.IOFileFilter[]{ null });
+            junit.framework.TestCase.fail("Expected IllegalArgumentException");
+        } catch (final java.lang.IllegalArgumentException expected) {
+        }
+    }
+
+    @java.lang.SuppressWarnings(value = "deprecation")
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.WildcardFilter("*.txt");
+        final java.util.List<java.lang.String> patternList = java.util.Arrays.asList("*.txt", "*.xml", "*.gif");
+        final org.apache.commons.io.filefilter.IOFileFilter listFilter = new org.apache.commons.io.filefilter.WildcardFilter(patternList);
+        final java.io.File txtFile = new java.io.File("test.txt");
+        final java.io.File bmpFile = new java.io.File("test.bmp");
+        final java.io.File dir = new java.io.File("src/java");
+        assertFiltering(filter, new java.io.File("log.txt"), true);
+        filter = new org.apache.commons.io.filefilter.WildcardFilter("log?.txt");
+        assertFiltering(filter, new java.io.File("log1.txt"), true);
+        assertFiltering(filter, new java.io.File("log12.txt"), false);
+        filter = new org.apache.commons.io.filefilter.WildcardFilter("open??.????04");
+        assertFiltering(filter, new java.io.File("openAB.102504"), true);
+        assertFiltering(filter, new java.io.File("openA.102504"), false);
+        assertFiltering(filter, new java.io.File("openXY.123103"), false);
+        filter = new org.apache.commons.io.filefilter.WildcardFilter(new java.lang.String[]{ "*.java" , "*.class" });
+        assertFiltering(filter, new java.io.File("Test.java"), true);
+        assertFiltering(filter, new java.io.File("Test.class"), true);
+        assertFiltering(filter, new java.io.File("Test.jsp"), false);
+        assertFiltering(listFilter, new java.io.File("Test.txt"), true);
+        assertFiltering(listFilter, new java.io.File("Test.xml"), true);
+        assertFiltering(listFilter, new java.io.File("Test.gif"), true);
+        assertFiltering(listFilter, new java.io.File("Test.bmp"), false);
+        junit.framework.TestCase.assertTrue(listFilter.accept(txtFile));
+        junit.framework.TestCase.assertTrue(!(listFilter.accept(bmpFile)));
+        junit.framework.TestCase.assertTrue(!(listFilter.accept(dir)));
+        junit.framework.TestCase.assertTrue(listFilter.accept(txtFile.getParentFile(), txtFile.getName()));
+        junit.framework.TestCase.assertTrue(!(listFilter.accept(bmpFile.getParentFile(), bmpFile.getName())));
+        junit.framework.TestCase.assertTrue(!(listFilter.accept(dir.getParentFile(), dir.getName())));
+        try {
+            new org.apache.commons.io.filefilter.WildcardFilter(((java.lang.String)(null)));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException ex) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.WildcardFilter(((java.lang.String[])(null)));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException ex) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.WildcardFilter(((java.util.List<java.lang.String>)(null)));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException ex) {
+        }
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        final org.apache.commons.io.filefilter.OrFileFilter orFilter = new org.apache.commons.io.filefilter.OrFileFilter();
+        final java.io.File testFile = new java.io.File("test.txt");
+        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FileFilter)(orFilter)));
+        assertFiltering(filter, testFile, false);
+        junit.framework.TestCase.assertNotNull(filter.toString());
+        filter = new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FilenameFilter)(orFilter)));
+        assertFiltering(filter, testFile, false);
+        junit.framework.TestCase.assertNotNull(filter.toString());
+        try {
+            new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FileFilter)(null)));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.DelegateFileFilter(((java.io.FilenameFilter)(null)));
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException iae) {
+        }
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        final org.apache.commons.io.filefilter.IOFileFilter trueFilter = org.apache.commons.io.filefilter.TrueFileFilter.INSTANCE;
+        final org.apache.commons.io.filefilter.IOFileFilter falseFilter = org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE;
+        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(trueFilter , trueFilter), new java.io.File("foo.test"), true);
+        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(trueFilter , falseFilter), new java.io.File("foo.test"), false);
+        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(falseFilter , trueFilter), new java.io.File("foo.test"), false);
+        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(falseFilter , falseFilter), new java.io.File("foo.test"), false);
+        final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters = new java.util.ArrayList<org.apache.commons.io.filefilter.IOFileFilter>();
+        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(filters), new java.io.File("test"), false);
+        assertFiltering(new org.apache.commons.io.filefilter.AndFileFilter(), new java.io.File("test"), false);
+        try {
+            new org.apache.commons.io.filefilter.AndFileFilter(falseFilter , null);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException ex) {
+        }
+        try {
+            new org.apache.commons.io.filefilter.AndFileFilter(null , falseFilter);
+            junit.framework.TestCase.fail();
+        } catch (final java.lang.IllegalArgumentException ex) {
+        }
+        final org.apache.commons.io.filefilter.AndFileFilter f = new org.apache.commons.io.filefilter.AndFileFilter(null);
+        junit.framework.TestCase.assertTrue(f.getFileFilters().isEmpty());
+        junit.framework.TestCase.assertNotNull(f.toString());
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         final java.io.File oldFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "old.txt");
         final java.io.File reference = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "reference.txt");
         final java.io.File newFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "new.txt");
@@ -622,52 +976,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         assertFiltering(filter9, newFile, true);
     }
 
-    public void aq() throws java.lang.Exception {
-        final java.io.File smallFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "small.txt");
-        createFile(smallFile, 32);
-        final java.io.File largeFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "large.txt");
-        createFile(largeFile, 128);
-        final org.apache.commons.io.filefilter.IOFileFilter filter1 = org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(64);
-        final org.apache.commons.io.filefilter.IOFileFilter filter2 = org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(64, true);
-        final org.apache.commons.io.filefilter.IOFileFilter filter3 = org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(64, false);
-        assertFiltering(filter1, smallFile, false);
-        assertFiltering(filter2, smallFile, false);
-        assertFiltering(filter3, smallFile, true);
-        assertFiltering(filter1, largeFile, true);
-        assertFiltering(filter2, largeFile, true);
-        assertFiltering(filter3, largeFile, false);
-        final org.apache.commons.io.filefilter.IOFileFilter filter4 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(33, 127);
-        final org.apache.commons.io.filefilter.IOFileFilter filter5 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(32, 127);
-        final org.apache.commons.io.filefilter.IOFileFilter filter6 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(33, 128);
-        final org.apache.commons.io.filefilter.IOFileFilter filter7 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(31, 129);
-        final org.apache.commons.io.filefilter.IOFileFilter filter8 = org.apache.commons.io.filefilter.FileFilterUtils.sizeRangeFileFilter(128, 128);
-        assertFiltering(filter4, smallFile, false);
-        assertFiltering(filter4, largeFile, false);
-        assertFiltering(filter5, smallFile, true);
-        assertFiltering(filter5, largeFile, false);
-        assertFiltering(filter6, smallFile, false);
-        assertFiltering(filter6, largeFile, true);
-        assertFiltering(filter7, smallFile, true);
-        assertFiltering(filter7, largeFile, true);
-        assertFiltering(filter8, largeFile, true);
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.sizeFileFilter(-1);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException ex) {
-        }
-    }
-
-    public void x() throws java.lang.Exception {
-        final java.io.File hiddenDir = new java.io.File(SVN_DIR_NAME);
-        if (hiddenDir.exists()) {
-            assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.HIDDEN, hiddenDir, hiddenDir.isHidden());
-            assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.VISIBLE, hiddenDir, !(hiddenDir.isHidden()));
-        } 
-        assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.HIDDEN, org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory(), false);
-        assertFiltering(org.apache.commons.io.filefilter.HiddenFileFilter.VISIBLE, org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory(), true);
-    }
-
-    public void c() throws java.lang.Exception {
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         final java.io.File readOnlyFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "read-only-file1.txt");
         createFile(readOnlyFile, 32);
         readOnlyFile.setReadOnly();
@@ -677,7 +986,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         readOnlyFile.delete();
     }
 
-    public void d() throws java.lang.Exception {
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         final java.io.File readOnlyFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "read-only-file2.txt");
         createFile(readOnlyFile, 32);
         readOnlyFile.setReadOnly();
@@ -688,316 +997,7 @@ public class FileFilterTestCase extends org.apache.commons.io.testtools.FileBase
         readOnlyFile.delete();
     }
 
-    public void i() throws java.lang.Exception {
-        final java.io.File emptyDir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "empty-dir");
-        emptyDir.mkdirs();
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, emptyDir, true);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, emptyDir, false);
-        final java.io.File emptyFile = new java.io.File(emptyDir , "empty-file.txt");
-        createFile(emptyFile, 0);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, emptyFile, true);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, emptyFile, false);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, emptyDir, false);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, emptyDir, true);
-        final java.io.File notEmptyFile = new java.io.File(emptyDir , "not-empty-file.txt");
-        createFile(notEmptyFile, 32);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY, notEmptyFile, false);
-        assertFiltering(org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY, notEmptyFile, true);
-        org.apache.commons.io.FileUtils.forceDelete(emptyDir);
-    }
-
-    public void ae() throws java.lang.Exception {
-        junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.DirectoryFileFilter.DIRECTORY, org.apache.commons.io.filefilter.FileFilterUtils.makeDirectoryOnly(null));
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.makeDirectoryOnly(org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("B"));
-        final java.io.File fileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A");
-        final java.io.File fileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B");
-        fileA.mkdirs();
-        fileB.mkdirs();
-        assertFiltering(filter, fileA, false);
-        assertFiltering(filter, fileB, true);
-        org.apache.commons.io.FileUtils.deleteDirectory(fileA);
-        org.apache.commons.io.FileUtils.deleteDirectory(fileB);
-        createFile(fileA, 32);
-        createFile(fileB, 32);
-        assertFiltering(filter, fileA, false);
-        assertFiltering(filter, fileB, false);
-        fileA.delete();
-        fileB.delete();
-    }
-
-    public void af() throws java.lang.Exception {
-        junit.framework.TestCase.assertSame(org.apache.commons.io.filefilter.FileFileFilter.FILE, org.apache.commons.io.filefilter.FileFilterUtils.makeFileOnly(null));
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.makeFileOnly(org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("B"));
-        final java.io.File fileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A");
-        final java.io.File fileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B");
-        fileA.mkdirs();
-        fileB.mkdirs();
-        assertFiltering(filter, fileA, false);
-        assertFiltering(filter, fileB, false);
-        org.apache.commons.io.FileUtils.deleteDirectory(fileA);
-        org.apache.commons.io.FileUtils.deleteDirectory(fileB);
-        createFile(fileA, 32);
-        createFile(fileB, 32);
-        assertFiltering(filter, fileA, false);
-        assertFiltering(filter, fileB, true);
-        fileA.delete();
-        fileB.delete();
-    }
-
-    @java.lang.SuppressWarnings(value = "deprecation")
-    public void y() throws java.lang.Exception {
-        final byte[] classFileMagicNumber = new byte[]{ ((byte)(202)) , ((byte)(254)) , ((byte)(186)) , ((byte)(190)) };
-        final java.lang.String xmlFileContent = "<?xml version=\"1.0\" encoding=\"UTF-8\">\n" + "<element>text</element>";
-        final java.io.File classFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.class");
-        final java.io.File xmlFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.xml");
-        final java.io.File emptyFile = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "C.xml");
-        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
-        dir.mkdirs();
-        final java.io.OutputStream classFileAStream = org.apache.commons.io.FileUtils.openOutputStream(classFileA);
-        org.apache.commons.io.IOUtils.write(classFileMagicNumber, classFileAStream);
-        generateTestData(classFileAStream, 32);
-        classFileAStream.close();
-        org.apache.commons.io.FileUtils.write(xmlFileB, xmlFileContent, org.apache.commons.io.Charsets.UTF_8);
-        org.apache.commons.io.FileUtils.touch(emptyFile);
-        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(classFileMagicNumber);
-        assertFiltering(filter, classFileA, true);
-        assertFiltering(filter, xmlFileB, false);
-        assertFiltering(filter, emptyFile, false);
-        assertFiltering(filter, dir, false);
-        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(classFileMagicNumber);
-        assertFiltering(filter, classFileA, true);
-        assertFiltering(filter, xmlFileB, false);
-        assertFiltering(filter, emptyFile, false);
-        assertFiltering(filter, dir, false);
-    }
-
-    public void z() throws java.lang.Exception {
-        final byte[] tarMagicNumber = new byte[]{ 117 , 115 , 116 , 97 , 114 };
-        final long tarMagicNumberOffset = 257;
-        final java.io.File tarFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.tar");
-        final java.io.File randomFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.txt");
-        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
-        dir.mkdirs();
-        final java.io.OutputStream tarFileAStream = org.apache.commons.io.FileUtils.openOutputStream(tarFileA);
-        generateTestData(tarFileAStream, tarMagicNumberOffset);
-        org.apache.commons.io.IOUtils.write(tarMagicNumber, tarFileAStream);
-        tarFileAStream.close();
-        createFile(randomFileB, (2 * tarMagicNumberOffset));
-        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(tarMagicNumber , tarMagicNumberOffset);
-        assertFiltering(filter, tarFileA, true);
-        assertFiltering(filter, randomFileB, false);
-        assertFiltering(filter, dir, false);
-        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(tarMagicNumber, tarMagicNumberOffset);
-        assertFiltering(filter, tarFileA, true);
-        assertFiltering(filter, randomFileB, false);
-        assertFiltering(filter, dir, false);
-    }
-
-    @java.lang.SuppressWarnings(value = "deprecation")
-    public void aa() throws java.lang.Exception {
-        final byte[] classFileMagicNumber = new byte[]{ ((byte)(202)) , ((byte)(254)) , ((byte)(186)) , ((byte)(190)) };
-        final java.lang.String xmlFileContent = "<?xml version=\"1.0\" encoding=\"UTF-8\">\n" + "<element>text</element>";
-        final java.lang.String xmlMagicNumber = "<?xml version=\"1.0\"";
-        final java.io.File classFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.class");
-        final java.io.File xmlFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.xml");
-        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
-        dir.mkdirs();
-        final java.io.OutputStream classFileAStream = org.apache.commons.io.FileUtils.openOutputStream(classFileA);
-        org.apache.commons.io.IOUtils.write(classFileMagicNumber, classFileAStream);
-        generateTestData(classFileAStream, 32);
-        classFileAStream.close();
-        org.apache.commons.io.FileUtils.write(xmlFileB, xmlFileContent, org.apache.commons.io.Charsets.UTF_8);
-        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(xmlMagicNumber);
-        assertFiltering(filter, classFileA, false);
-        assertFiltering(filter, xmlFileB, true);
-        assertFiltering(filter, dir, false);
-        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(xmlMagicNumber);
-        assertFiltering(filter, classFileA, false);
-        assertFiltering(filter, xmlFileB, true);
-        assertFiltering(filter, dir, false);
-    }
-
-    @java.lang.SuppressWarnings(value = "deprecation")
-    public void ab() throws java.lang.Exception {
-        final java.lang.String tarMagicNumber = "ustar";
-        final long tarMagicNumberOffset = 257;
-        final java.io.File tarFileA = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "A.tar");
-        final java.io.File randomFileB = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "B.txt");
-        final java.io.File dir = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "D");
-        dir.mkdirs();
-        final java.io.OutputStream tarFileAStream = org.apache.commons.io.FileUtils.openOutputStream(tarFileA);
-        generateTestData(tarFileAStream, tarMagicNumberOffset);
-        org.apache.commons.io.IOUtils.write(tarMagicNumber, tarFileAStream, org.apache.commons.io.Charsets.UTF_8);
-        tarFileAStream.close();
-        createFile(randomFileB, (2 * tarMagicNumberOffset));
-        org.apache.commons.io.filefilter.IOFileFilter filter = new org.apache.commons.io.filefilter.MagicNumberFileFilter(tarMagicNumber , tarMagicNumberOffset);
-        assertFiltering(filter, tarFileA, true);
-        assertFiltering(filter, randomFileB, false);
-        assertFiltering(filter, dir, false);
-        filter = org.apache.commons.io.filefilter.FileFilterUtils.magicNumberFileFilter(tarMagicNumber, tarMagicNumberOffset);
-        assertFiltering(filter, tarFileA, true);
-        assertFiltering(filter, randomFileB, false);
-        assertFiltering(filter, dir, false);
-    }
-
-    public void ac() {
-        try {
-            new org.apache.commons.io.filefilter.MagicNumberFileFilter(((java.lang.String)(null)) , 0);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.MagicNumberFileFilter("0" , -1);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.MagicNumberFileFilter("" , 0);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.MagicNumberFileFilter(((byte[])(null)) , 0);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.MagicNumberFileFilter(new byte[]{ 0 } , -1);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        try {
-            new org.apache.commons.io.filefilter.MagicNumberFileFilter(new byte[]{  } , 0);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-    }
-
-    public void o() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
-        final java.io.File[] filtered = org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, fileA, fileB);
-        junit.framework.TestCase.assertEquals(1, filtered.length);
-        junit.framework.TestCase.assertEquals(fileA, filtered[0]);
-    }
-
-    public void q() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        final java.util.List<java.io.File> fileList = java.util.Arrays.asList(fileA, fileB);
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
-        final java.io.File[] filtered = org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, fileList);
-        junit.framework.TestCase.assertEquals(1, filtered.length);
-        junit.framework.TestCase.assertEquals(fileA, filtered[0]);
-    }
-
-    public void p() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.filter(null, fileA, fileB);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, fileA, null);
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        final java.io.File[] filtered = org.apache.commons.io.filefilter.FileFilterUtils.filter(filter, ((java.io.File[])(null)));
-        junit.framework.TestCase.assertEquals(0, filtered.length);
-    }
-
-    public void r() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        final java.util.List<java.io.File> fileList = java.util.Arrays.asList(fileA, fileB);
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
-        final java.util.List<java.io.File> filteredList = org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, fileList);
-        junit.framework.TestCase.assertTrue(filteredList.contains(fileA));
-        junit.framework.TestCase.assertFalse(filteredList.contains(fileB));
-    }
-
-    public void t() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
-        final java.util.List<java.io.File> filteredList = org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, fileA, fileB);
-        junit.framework.TestCase.assertTrue(filteredList.contains(fileA));
-        junit.framework.TestCase.assertFalse(filteredList.contains(fileB));
-    }
-
-    public void s() {
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.filterList(null, java.util.Collections.<java.io.File>emptyList());
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, java.util.Arrays.asList(((java.io.File)(null))));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        final java.util.List<java.io.File> filteredList = org.apache.commons.io.filefilter.FileFilterUtils.filterList(filter, ((java.util.List<java.io.File>)(null)));
-        junit.framework.TestCase.assertEquals(0, filteredList.size());
-    }
-
-    public void u() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        final java.util.Set<java.io.File> fileList = new java.util.HashSet<java.io.File>(java.util.Arrays.asList(fileA, fileB));
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
-        final java.util.Set<java.io.File> filteredSet = org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, fileList);
-        junit.framework.TestCase.assertTrue(filteredSet.contains(fileA));
-        junit.framework.TestCase.assertFalse(filteredSet.contains(fileB));
-    }
-
-    public void w() throws java.lang.Exception {
-        final java.io.File fileA = newFile("A");
-        final java.io.File fileB = newFile("B");
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.nameFileFilter("A");
-        final java.util.Set<java.io.File> filteredSet = org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, fileA, fileB);
-        junit.framework.TestCase.assertTrue(filteredSet.contains(fileA));
-        junit.framework.TestCase.assertFalse(filteredSet.contains(fileB));
-    }
-
-    public void v() {
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.filterSet(null, java.util.Collections.<java.io.File>emptySet());
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        final org.apache.commons.io.filefilter.IOFileFilter filter = org.apache.commons.io.filefilter.FileFilterUtils.trueFileFilter();
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, new java.util.HashSet<java.io.File>(java.util.Arrays.asList(((java.io.File)(null)))));
-            junit.framework.TestCase.fail();
-        } catch (final java.lang.IllegalArgumentException iae) {
-        }
-        final java.util.Set<java.io.File> filteredSet = org.apache.commons.io.filefilter.FileFilterUtils.filterSet(filter, ((java.util.Set<java.io.File>)(null)));
-        junit.framework.TestCase.assertEquals(0, filteredSet.size());
-    }
-
-    public void j() {
-        junit.framework.TestCase.assertNotNull(new org.apache.commons.io.filefilter.FileFilterUtils());
-    }
-
-    public void am() {
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.toList(((org.apache.commons.io.filefilter.IOFileFilter)(null)));
-            junit.framework.TestCase.fail("Expected IllegalArgumentException");
-        } catch (final java.lang.IllegalArgumentException expected) {
-        }
-        try {
-            org.apache.commons.io.filefilter.FileFilterUtils.toList(new org.apache.commons.io.filefilter.IOFileFilter[]{ null });
-            junit.framework.TestCase.fail("Expected IllegalArgumentException");
-        } catch (final java.lang.IllegalArgumentException expected) {
-        }
-    }
-
-    public void f() {
+    public void testCopyDirectoryToItself() {
         junit.framework.TestCase.assertNotNull(org.apache.commons.io.filefilter.FileFilterUtils.asFileFilter(((java.io.FileFilter)(org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE))));
         junit.framework.TestCase.assertNotNull(org.apache.commons.io.filefilter.FileFilterUtils.asFileFilter(((java.io.FilenameFilter)(org.apache.commons.io.filefilter.FalseFileFilter.INSTANCE))).toString());
     }

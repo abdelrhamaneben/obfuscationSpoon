@@ -12,7 +12,7 @@ public class EmptyFileFilter extends org.apache.commons.io.filefilter.AbstractFi
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file) {
+    public boolean removeFileFilter(final java.io.File file) {
         if (file.isDirectory()) {
             final java.io.File[] files = file.listFiles();
             return (files == null) || ((files.length) == 0);

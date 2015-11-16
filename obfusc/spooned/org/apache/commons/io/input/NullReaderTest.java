@@ -152,7 +152,7 @@ public class NullReaderTest extends junit.framework.TestCase {
         }
 
         @java.lang.Override
-        protected int b() {
+        protected int a() {
             return ((int)(getPosition())) - 1;
         }
 

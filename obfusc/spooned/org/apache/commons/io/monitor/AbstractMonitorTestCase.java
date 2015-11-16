@@ -34,7 +34,7 @@ public abstract class AbstractMonitorTestCase extends junit.framework.TestCase {
         createObserver(testDir, filter);
     }
 
-    protected void a(final java.io.File file, final java.io.FileFilter fileFilter) {
+    protected void testAddRemoveObservers(final java.io.File file, final java.io.FileFilter fileFilter) {
         observer = new org.apache.commons.io.monitor.FileAlterationObserver(file , fileFilter);
         observer.addListener(listener);
         observer.addListener(new org.apache.commons.io.monitor.FileAlterationListenerAdaptor());
@@ -50,11 +50,11 @@ public abstract class AbstractMonitorTestCase extends junit.framework.TestCase {
         org.apache.commons.io.FileUtils.deleteDirectory(testDir);
     }
 
-    protected void a(final java.lang.String label) {
+    protected void testAddRemoveObservers(final java.lang.String label) {
         checkCollectionSizes(("EMPTY-" + label), 0, 0, 0, 0, 0, 0);
     }
 
-    protected void a(java.lang.String label, final int dirCreate, final int dirChange, final int dirDelete, final int fileCreate, final int fileChange, final int fileDelete) {
+    protected void testAddRemoveObservers(java.lang.String label, final int dirCreate, final int dirChange, final int dirDelete, final int fileCreate, final int fileChange, final int fileDelete) {
         label = ((((((((((((label + "[") + (listener.getCreatedDirectories().size())) + " ") + (listener.getChangedDirectories().size())) + " ") + (listener.getDeletedDirectories().size())) + " ") + (listener.getCreatedFiles().size())) + " ") + (listener.getChangedFiles().size())) + " ") + (listener.getDeletedFiles().size())) + "]";
         junit.framework.TestCase.assertEquals((label + ": No. of directories created"), dirCreate, listener.getCreatedDirectories().size());
         junit.framework.TestCase.assertEquals((label + ": No. of directories changed"), dirChange, listener.getChangedDirectories().size());
@@ -64,7 +64,7 @@ public abstract class AbstractMonitorTestCase extends junit.framework.TestCase {
         junit.framework.TestCase.assertEquals((label + ": No. of files deleted"), fileDelete, listener.getDeletedFiles().size());
     }
 
-    protected java.io.File a(java.io.File file) {
+    protected java.io.File testAddRemoveObservers(java.io.File file) {
         final long lastModified = file.exists() ? file.lastModified() : 0;
         try {
             org.apache.commons.io.FileUtils.touch(file);
@@ -81,7 +81,7 @@ public abstract class AbstractMonitorTestCase extends junit.framework.TestCase {
         return file;
     }
 
-    protected void a(final long timeInMilliseconds) {
+    protected void testAddRemoveObservers(final long timeInMilliseconds) {
         try {
             java.lang.Thread.sleep(timeInMilliseconds);
         } catch (final java.lang.InterruptedException ie) {

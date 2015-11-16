@@ -38,7 +38,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         org.apache.commons.io.FileUtils.deleteDirectory(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory());
     }
 
-    public void ac() throws java.lang.Exception {
+    public void aa() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.normalize(null));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.normalize(":"));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.normalize("1:\\a\\b\\c.txt"));
@@ -179,7 +179,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals((((((SEP) + (SEP)) + "server") + (SEP)) + ""), org.apache.commons.io.FilenameUtils.normalize("//server/"));
     }
 
-    public void ag() throws java.lang.Exception {
+    public void ae() throws java.lang.Exception {
         try {
             junit.framework.TestCase.assertEquals((((("a" + (SEP)) + "b") + (SEP)) + "c.txt"), org.apache.commons.io.FilenameUtils.normalize("a\\b/c .txt"));
         } catch (java.lang.IllegalArgumentException ignore) {
@@ -190,14 +190,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         }
     }
 
-    public void af() throws java.lang.Exception {
+    public void ad() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals("/a/c/", org.apache.commons.io.FilenameUtils.normalize("/a/b/../c/", true));
         junit.framework.TestCase.assertEquals("/a/c/", org.apache.commons.io.FilenameUtils.normalize("\\a\\b\\..\\c\\", true));
         junit.framework.TestCase.assertEquals("\\a\\c\\", org.apache.commons.io.FilenameUtils.normalize("/a/b/../c/", false));
         junit.framework.TestCase.assertEquals("\\a\\c\\", org.apache.commons.io.FilenameUtils.normalize("\\a\\b\\..\\c\\", false));
     }
 
-    public void ad() throws java.lang.Exception {
+    public void ab() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator(null));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator(":"));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator("1:\\a\\b\\c.txt"));
@@ -338,14 +338,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals((((((SEP) + (SEP)) + "server") + (SEP)) + ""), org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator("//server/"));
     }
 
-    public void ae() throws java.lang.Exception {
+    public void ac() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals("/a/c", org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator("/a/b/../c/", true));
         junit.framework.TestCase.assertEquals("/a/c", org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator("\\a\\b\\..\\c\\", true));
         junit.framework.TestCase.assertEquals("\\a\\c", org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator("/a/b/../c/", false));
         junit.framework.TestCase.assertEquals("\\a\\c", org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator("\\a\\b\\..\\c\\", false));
     }
 
-    public void a() {
+    public void testCopyDirectoryToItself() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.concat("", null));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.concat(null, null));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.concat(null, ""));
@@ -377,7 +377,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals(("~user" + (SEP)), org.apache.commons.io.FilenameUtils.concat("a/b/", "~user"));
     }
 
-    public void aj() {
+    public void ah() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.separatorsToUnix(null));
         junit.framework.TestCase.assertEquals("/a/b/c", org.apache.commons.io.FilenameUtils.separatorsToUnix("/a/b/c"));
         junit.framework.TestCase.assertEquals("/a/b/c.txt", org.apache.commons.io.FilenameUtils.separatorsToUnix("/a/b/c.txt"));
@@ -386,7 +386,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("D:/a/b/c", org.apache.commons.io.FilenameUtils.separatorsToUnix("D:\\a\\b\\c"));
     }
 
-    public void ak() {
+    public void ai() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.separatorsToWindows(null));
         junit.framework.TestCase.assertEquals("\\a\\b\\c", org.apache.commons.io.FilenameUtils.separatorsToWindows("\\a\\b\\c"));
         junit.framework.TestCase.assertEquals("\\a\\b\\c.txt", org.apache.commons.io.FilenameUtils.separatorsToWindows("\\a\\b\\c.txt"));
@@ -395,7 +395,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("D:\\a\\b\\c", org.apache.commons.io.FilenameUtils.separatorsToWindows("D:/a/b/c"));
     }
 
-    public void ai() {
+    public void ag() {
         if (WINDOWS) {
             junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.separatorsToSystem(null));
             junit.framework.TestCase.assertEquals("\\a\\b\\c", org.apache.commons.io.FilenameUtils.separatorsToSystem("\\a\\b\\c"));
@@ -413,7 +413,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         }
     }
 
-    public void t() {
+    public void r() {
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.getPrefixLength(null));
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.getPrefixLength(":"));
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.getPrefixLength("1:\\a\\b\\c.txt"));
@@ -450,14 +450,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.getPrefixLength("///a/b/c.txt"));
     }
 
-    public void w() {
+    public void u() {
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.indexOfLastSeparator(null));
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.indexOfLastSeparator("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals(3, org.apache.commons.io.FilenameUtils.indexOfLastSeparator("a/b/c"));
         junit.framework.TestCase.assertEquals(3, org.apache.commons.io.FilenameUtils.indexOfLastSeparator("a\\b\\c"));
     }
 
-    public void v() {
+    public void t() {
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.indexOfExtension(null));
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.indexOfExtension("file"));
         junit.framework.TestCase.assertEquals(4, org.apache.commons.io.FilenameUtils.indexOfExtension("file.txt"));
@@ -468,7 +468,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.FilenameUtils.indexOfExtension("a\\b.notextension\\c"));
     }
 
-    public void s() {
+    public void q() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getPrefix(null));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getPrefix(":"));
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getPrefix("1:\\a\\b\\c.txt"));
@@ -501,14 +501,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("~user\\", org.apache.commons.io.FilenameUtils.getPrefix("~user\\a\\b\\c.txt"));
     }
 
-    public void u() {
+    public void s() {
         try {
             junit.framework.TestCase.assertEquals("~user\\", org.apache.commons.io.FilenameUtils.getPrefix("~u ser\\a\\b\\c.txt"));
         } catch (java.lang.IllegalArgumentException ignore) {
         }
     }
 
-    public void o() {
+    public void m() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getPath(null));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getPath("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getPath("/noseperator.inthispath"));
@@ -541,14 +541,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("a/b/", org.apache.commons.io.FilenameUtils.getPath("~user/a/b/c.txt"));
     }
 
-    public void r() {
+    public void p() {
         try {
             junit.framework.TestCase.assertEquals("a/b/", org.apache.commons.io.FilenameUtils.getPath("~user/a/ b/c.txt"));
         } catch (java.lang.IllegalArgumentException ignore) {
         }
     }
 
-    public void p() {
+    public void n() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getPath(null));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getPath("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getPathNoEndSeparator("/noseperator.inthispath"));
@@ -581,14 +581,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("a/b", org.apache.commons.io.FilenameUtils.getPathNoEndSeparator("~user/a/b/c.txt"));
     }
 
-    public void q() {
+    public void o() {
         try {
             junit.framework.TestCase.assertEquals("a/b", org.apache.commons.io.FilenameUtils.getPathNoEndSeparator("~user/a /b/c.txt"));
         } catch (java.lang.IllegalArgumentException ignore) {
         }
     }
 
-    public void k() {
+    public void i() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getFullPath(null));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getFullPath("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals("a/b/", org.apache.commons.io.FilenameUtils.getFullPath("a/b/c.txt"));
@@ -619,7 +619,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("~user/a/b/", org.apache.commons.io.FilenameUtils.getFullPath("~user/a/b/c.txt"));
     }
 
-    public void l() {
+    public void j() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator(null));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals("a/b", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("a/b/c.txt"));
@@ -650,7 +650,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("~user/a/b", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("~user/a/b/c.txt"));
     }
 
-    public void m() {
+    public void k() {
         junit.framework.TestCase.assertEquals("/", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("/"));
         junit.framework.TestCase.assertEquals("\\", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("\\"));
         junit.framework.TestCase.assertEquals("/", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("/abc"));
@@ -659,7 +659,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("\\abc", org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator("\\abc\\xyz"));
     }
 
-    public void n() {
+    public void l() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getName(null));
         junit.framework.TestCase.assertEquals("noseperator.inthispath", org.apache.commons.io.FilenameUtils.getName("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals("c.txt", org.apache.commons.io.FilenameUtils.getName("a/b/c.txt"));
@@ -668,14 +668,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("c", org.apache.commons.io.FilenameUtils.getName("a\\b\\c"));
     }
 
-    public void x() {
+    public void v() {
         try {
             junit.framework.TestCase.assertEquals("c", org.apache.commons.io.FilenameUtils.getName("a\\b\\ c"));
         } catch (java.lang.IllegalArgumentException ignore) {
         }
     }
 
-    public void h() {
+    public void f() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getBaseName(null));
         junit.framework.TestCase.assertEquals("noseperator", org.apache.commons.io.FilenameUtils.getBaseName("noseperator.inthispath"));
         junit.framework.TestCase.assertEquals("c", org.apache.commons.io.FilenameUtils.getBaseName("a/b/c.txt"));
@@ -685,14 +685,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("file.txt", org.apache.commons.io.FilenameUtils.getBaseName("file.txt.bak"));
     }
 
-    public void i() {
+    public void g() {
         try {
             junit.framework.TestCase.assertEquals("file.txt", org.apache.commons.io.FilenameUtils.getBaseName("fil e.txt.bak"));
         } catch (java.lang.IllegalArgumentException ignore) {
         }
     }
 
-    public void j() {
+    public void h() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.getExtension(null));
         junit.framework.TestCase.assertEquals("ext", org.apache.commons.io.FilenameUtils.getExtension("file.ext"));
         junit.framework.TestCase.assertEquals("", org.apache.commons.io.FilenameUtils.getExtension("README"));
@@ -708,7 +708,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("ext", org.apache.commons.io.FilenameUtils.getExtension("../filename.ext"));
     }
 
-    public void ah() {
+    public void af() {
         junit.framework.TestCase.assertEquals(null, org.apache.commons.io.FilenameUtils.removeExtension(null));
         junit.framework.TestCase.assertEquals("file", org.apache.commons.io.FilenameUtils.removeExtension("file.ext"));
         junit.framework.TestCase.assertEquals("README", org.apache.commons.io.FilenameUtils.removeExtension("README"));
@@ -724,7 +724,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("../filename", org.apache.commons.io.FilenameUtils.removeExtension("../filename.ext"));
     }
 
-    public void b() {
+    public void testGetPath_with_nullbyte() {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.equals(null, null));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equals(null, ""));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equals("", null));
@@ -734,7 +734,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equals("a\\b\\file.txt", "a/b/file.txt"));
     }
 
-    public void f() {
+    public void d() {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.equalsOnSystem(null, null));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsOnSystem(null, ""));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsOnSystem("", null));
@@ -744,7 +744,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsOnSystem("a\\b\\file.txt", "a/b/file.txt"));
     }
 
-    public void c() {
+    public void a() {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.equalsNormalized(null, null));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsNormalized(null, ""));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsNormalized("", null));
@@ -755,7 +755,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsNormalized("a/b/", "a/b"));
     }
 
-    public void e() {
+    public void c() {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.equalsNormalizedOnSystem(null, null));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsNormalizedOnSystem(null, ""));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsNormalizedOnSystem("", null));
@@ -766,7 +766,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equalsNormalizedOnSystem("a/b/", "a/b"));
     }
 
-    public void d() {
+    public void b() {
         try {
             org.apache.commons.io.FilenameUtils.equalsNormalizedOnSystem("//file.txt", "file.txt");
             junit.framework.TestCase.fail("Invalid normalized first file");
@@ -784,14 +784,14 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         }
     }
 
-    public void g() {
+    public void e() {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equals("file.txt", "FILE.TXT", true, org.apache.commons.io.IOCase.SENSITIVE));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.equals("file.txt", "FILE.TXT", true, org.apache.commons.io.IOCase.INSENSITIVE));
         junit.framework.TestCase.assertEquals(WINDOWS, org.apache.commons.io.FilenameUtils.equals("file.txt", "FILE.TXT", true, org.apache.commons.io.IOCase.SYSTEM));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.equals("file.txt", "FILE.TXT", true, null));
     }
 
-    public void y() {
+    public void w() {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension(null, ((java.lang.String)(null))));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension("file.txt", ((java.lang.String)(null))));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.isExtension("file", ((java.lang.String)(null))));
@@ -818,7 +818,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension("a.b\\file.txt", "TXT"));
     }
 
-    public void ab() {
+    public void z() {
         try {
             org.apache.commons.io.FilenameUtils.isExtension("a.b\\fi le.txt", "TXT");
             junit.framework.TestCase.fail("Should throw IAE");
@@ -826,7 +826,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         }
     }
 
-    public void z() {
+    public void x() {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension(null, ((java.lang.String[])(null))));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension("file.txt", ((java.lang.String[])(null))));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.isExtension("file", ((java.lang.String[])(null))));
@@ -859,7 +859,7 @@ public class FilenameUtilsTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension("a.b\\file.txt", new java.lang.String[]{ "TXT" , "RTF" }));
     }
 
-    public void aa() {
+    public void y() {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension(null, ((java.util.Collection<java.lang.String>)(null))));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.FilenameUtils.isExtension("file.txt", ((java.util.Collection<java.lang.String>)(null))));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.FilenameUtils.isExtension("file", ((java.util.Collection<java.lang.String>)(null))));

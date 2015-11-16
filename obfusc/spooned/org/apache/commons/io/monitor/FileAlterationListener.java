@@ -2,20 +2,20 @@ package org.apache.commons.io.monitor;
 
 
 public interface FileAlterationListener {
-    void a(final org.apache.commons.io.monitor.FileAlterationObserver observer);
+    void onDirectoryChange(final org.apache.commons.io.monitor.FileAlterationObserver observer);
 
-    void b(final java.io.File directory);
+    void onDirectoryChange(final java.io.File directory);
 
-    void a(final java.io.File directory);
+    void onDirectoryCreate(final java.io.File directory);
 
-    void c(final java.io.File directory);
+    void onDirectoryDelete(final java.io.File directory);
 
-    void e(final java.io.File file);
+    void onFileDelete(final java.io.File file);
 
-    void d(final java.io.File file);
+    void onFileCreate(final java.io.File file);
 
-    void f(final java.io.File file);
+    void onFileChange(final java.io.File file);
 
-    void b(final org.apache.commons.io.monitor.FileAlterationObserver observer);
+    void onDirectoryDelete(final org.apache.commons.io.monitor.FileAlterationObserver observer);
 }
 

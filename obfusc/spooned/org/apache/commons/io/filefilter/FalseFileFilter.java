@@ -11,11 +11,11 @@ public class FalseFileFilter implements java.io.Serializable , org.apache.common
     protected FalseFileFilter() {
     }
 
-    public boolean a(final java.io.File file) {
+    public boolean isInvoked(final java.io.File file) {
         return false;
     }
 
-    public boolean a(final java.io.File dir, final java.lang.String name) {
+    public boolean isInvoked(final java.io.File dir, final java.lang.String name) {
         return false;
     }
 }

@@ -32,7 +32,7 @@ public abstract class ConditionalFileFilterAbstractTestCase extends org.apache.c
         this.falseFilters[3] = new org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterFalseFileFilter();
     }
 
-    public void i() {
+    public void getFilenameResults() {
         final java.util.List<org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterTrueFileFilter> filters = new java.util.ArrayList<org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterTrueFileFilter>();
         final org.apache.commons.io.filefilter.ConditionalFileFilter fileFilter = getConditionalFileFilter();
         filters.add(new org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterTrueFileFilter());
@@ -50,7 +50,7 @@ public abstract class ConditionalFileFilterAbstractTestCase extends org.apache.c
         junit.framework.TestCase.assertEquals("file filters count", filters.size(), fileFilter.getFileFilters().size());
     }
 
-    public void m() {
+    public void d() {
         final java.util.List<org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterTrueFileFilter> filters = new java.util.ArrayList<org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterTrueFileFilter>();
         final org.apache.commons.io.filefilter.ConditionalFileFilter fileFilter = getConditionalFileFilter();
         filters.add(new org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.TesterTrueFileFilter());
@@ -64,14 +64,14 @@ public abstract class ConditionalFileFilterAbstractTestCase extends org.apache.c
         junit.framework.TestCase.assertEquals("file filters count", 0, fileFilter.getFileFilters().size());
     }
 
-    public void l() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         final org.apache.commons.io.filefilter.ConditionalFileFilter fileFilter = getConditionalFileFilter();
         final java.io.File file = new java.io.File(this.workingPath , (((TEST_FILE_NAME_PREFIX) + 1) + (TEST_FILE_TYPE)));
         org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.assertFileFiltering(1, ((org.apache.commons.io.filefilter.IOFileFilter)(fileFilter)), file, false);
         org.apache.commons.io.filefilter.IOFileFilterAbstractTestCase.assertFilenameFiltering(1, ((org.apache.commons.io.filefilter.IOFileFilter)(fileFilter)), file, false);
     }
 
-    public void k() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         final java.util.List<java.util.List<org.apache.commons.io.filefilter.IOFileFilter>> testFilters = getTestFilters();
         final java.util.List<boolean[]> testTrueResults = getTrueResults();
         final java.util.List<boolean[]> testFalseResults = getFalseResults();
@@ -97,7 +97,7 @@ public abstract class ConditionalFileFilterAbstractTestCase extends org.apache.c
         }
     }
 
-    public void j() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         final java.util.List<java.util.List<org.apache.commons.io.filefilter.IOFileFilter>> testFilters = getTestFilters();
         final java.util.List<boolean[]> testTrueResults = getTrueResults();
         final java.util.List<boolean[]> testFalseResults = getFalseResults();
@@ -123,24 +123,24 @@ public abstract class ConditionalFileFilterAbstractTestCase extends org.apache.c
         }
     }
 
-    protected abstract org.apache.commons.io.filefilter.ConditionalFileFilter h();
+    protected abstract org.apache.commons.io.filefilter.ConditionalFileFilter assertFilenameFiltering();
+
+    protected abstract org.apache.commons.io.filefilter.IOFileFilter getFilenameResults(java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters);
 
     protected abstract org.apache.commons.io.filefilter.IOFileFilter a(java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters);
 
-    protected abstract org.apache.commons.io.filefilter.IOFileFilter b(java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters);
+    protected abstract java.util.List<java.util.List<org.apache.commons.io.filefilter.IOFileFilter>> buildFilterUsingAdd();
 
-    protected abstract java.util.List<java.util.List<org.apache.commons.io.filefilter.IOFileFilter>> f();
+    protected abstract java.util.List<boolean[]> getFilenameResults();
 
-    protected abstract java.util.List<boolean[]> g();
+    protected abstract java.util.List<boolean[]> getFilenameResults();
 
-    protected abstract java.util.List<boolean[]> c();
+    protected abstract java.util.List<java.lang.Boolean> getFilenameResults();
 
-    protected abstract java.util.List<java.lang.Boolean> d();
+    protected abstract java.util.List<java.lang.Boolean> buildFilterUsingConstructor();
 
-    protected abstract java.util.List<java.lang.Boolean> e();
+    protected abstract java.lang.String getFilenameResults();
 
-    protected abstract java.lang.String b();
-
-    protected abstract java.lang.String a();
+    protected abstract java.lang.String getFilenameResults();
 }
 

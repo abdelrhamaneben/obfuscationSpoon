@@ -27,7 +27,7 @@ public class OrFileFilterTestCase extends org.apache.commons.io.filefilter.Condi
     }
 
     @java.lang.Override
-    protected org.apache.commons.io.filefilter.IOFileFilter a(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters) {
+    protected org.apache.commons.io.filefilter.IOFileFilter getFilenameResults(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters) {
         final org.apache.commons.io.filefilter.OrFileFilter filter = new org.apache.commons.io.filefilter.OrFileFilter();
         for (org.apache.commons.io.filefilter.IOFileFilter filter1 : filters) {
             filter.addFileFilter(filter1);
@@ -36,47 +36,47 @@ public class OrFileFilterTestCase extends org.apache.commons.io.filefilter.Condi
     }
 
     @java.lang.Override
-    protected org.apache.commons.io.filefilter.IOFileFilter b(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters) {
+    protected org.apache.commons.io.filefilter.IOFileFilter assertFilenameFiltering(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> filters) {
         return new org.apache.commons.io.filefilter.OrFileFilter(filters);
     }
 
     @java.lang.Override
-    protected org.apache.commons.io.filefilter.ConditionalFileFilter h() {
+    protected org.apache.commons.io.filefilter.ConditionalFileFilter assertFiltering() {
         return new org.apache.commons.io.filefilter.OrFileFilter();
     }
 
     @java.lang.Override
-    protected java.lang.String a() {
+    protected java.lang.String resetTrueFilters() {
         return DEFAULT_WORKING_PATH;
     }
 
     @java.lang.Override
-    protected java.util.List<boolean[]> c() {
+    protected java.util.List<boolean[]> resetFalseFilters() {
         return this.testFalseResults;
     }
 
     @java.lang.Override
-    protected java.util.List<java.lang.Boolean> d() {
+    protected java.util.List<java.lang.Boolean> assertFalseFiltersInvoked() {
         return this.testFileResults;
     }
 
     @java.lang.Override
-    protected java.util.List<java.lang.Boolean> e() {
+    protected java.util.List<java.lang.Boolean> assertFilenameFiltering() {
         return this.testFilenameResults;
     }
 
     @java.lang.Override
-    protected java.util.List<java.util.List<org.apache.commons.io.filefilter.IOFileFilter>> f() {
+    protected java.util.List<java.util.List<org.apache.commons.io.filefilter.IOFileFilter>> getFilenameResults() {
         return this.testFilters;
     }
 
     @java.lang.Override
-    protected java.util.List<boolean[]> g() {
+    protected java.util.List<boolean[]> determineWorkingDirectoryPath() {
         return this.testTrueResults;
     }
 
     @java.lang.Override
-    protected java.lang.String b() {
+    protected java.lang.String assertTrueFiltersInvoked() {
         return WORKING_PATH_NAME_PROPERTY_KEY;
     }
 

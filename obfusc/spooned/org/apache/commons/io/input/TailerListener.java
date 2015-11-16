@@ -4,9 +4,9 @@ package org.apache.commons.io.input;
 public interface TailerListener {
     void a(org.apache.commons.io.input.Tailer tailer);
 
-    void a();
+    void fileRotated();
 
-    void b();
+    void a();
 
     void a(java.lang.String line);
 

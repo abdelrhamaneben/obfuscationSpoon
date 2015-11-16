@@ -93,13 +93,13 @@ public abstract class ProxyInputStream extends java.io.FilterInputStream {
         return in.markSupported();
     }
 
-    protected void b(final int n) throws java.io.IOException {
+    protected void readChar(final int n) throws java.io.IOException {
     }
 
-    protected void a(final int n) throws java.io.IOException {
+    protected void skip(final int n) throws java.io.IOException {
     }
 
-    protected void a(final java.io.IOException e) throws java.io.IOException {
+    protected void skip(final java.io.IOException e) throws java.io.IOException {
         throw e;
     }
 }

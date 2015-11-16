@@ -5,16 +5,16 @@ public class TailerListenerAdapter implements org.apache.commons.io.input.Tailer
     public void a(final org.apache.commons.io.input.Tailer tailer) {
     }
 
-    public void b() {
-    }
-
-    public void c() {
-    }
-
     public void a(final java.lang.String line) {
     }
 
     public void a(final java.lang.Exception ex) {
+    }
+
+    public void a() {
+    }
+
+    public void a() {
     }
 
     public void a() {

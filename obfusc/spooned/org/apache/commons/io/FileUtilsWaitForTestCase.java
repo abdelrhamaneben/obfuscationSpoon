@@ -16,12 +16,12 @@ public class FileUtilsWaitForTestCase extends org.apache.commons.io.testtools.Fi
         org.apache.commons.io.FileUtils.deleteDirectory(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory());
     }
 
-    public void a() {
+    public void testCopyDirectoryToItself() {
         org.apache.commons.io.FileUtils.waitFor(new java.io.File(""), -1);
         org.apache.commons.io.FileUtils.waitFor(new java.io.File(""), 2);
     }
 
-    public void b() throws java.lang.InterruptedException {
+    public void testGetPath_with_nullbyte() throws java.lang.InterruptedException {
         final java.util.concurrent.atomic.AtomicBoolean wasInterrupted = new java.util.concurrent.atomic.AtomicBoolean(false);
         final java.util.concurrent.CountDownLatch started = new java.util.concurrent.CountDownLatch(1);
         java.lang.Runnable thread = new java.lang.Runnable() {

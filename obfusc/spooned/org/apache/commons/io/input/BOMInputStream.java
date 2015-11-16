@@ -54,18 +54,18 @@ public class BOMInputStream extends org.apache.commons.io.input.ProxyInputStream
         this.boms = java.util.Arrays.asList(boms);
     }
 
-    public boolean a() throws java.io.IOException {
+    public boolean skip() throws java.io.IOException {
         return (getBOM()) != null;
     }
 
-    public boolean a(final org.apache.commons.io.ByteOrderMark bom) throws java.io.IOException {
+    public boolean skip(final org.apache.commons.io.ByteOrderMark bom) throws java.io.IOException {
         if (!(boms.contains(bom))) {
             throw new java.lang.IllegalArgumentException(("Stream not configure to detect " + bom));
         } 
         return ((byteOrderMark) != null) && (getBOM().equals(bom));
     }
 
-    public org.apache.commons.io.ByteOrderMark e() throws java.io.IOException {
+    public org.apache.commons.io.ByteOrderMark mark() throws java.io.IOException {
         if ((firstBytes) == null) {
             fbLength = 0;
             final int maxBomSize = boms.get(0).length();
@@ -91,17 +91,17 @@ public class BOMInputStream extends org.apache.commons.io.input.ProxyInputStream
         return byteOrderMark;
     }
 
-    public java.lang.String c() throws java.io.IOException {
+    public java.lang.String skip() throws java.io.IOException {
         getBOM();
         return (byteOrderMark) == null ? null : byteOrderMark.getCharsetName();
     }
 
-    private int b() throws java.io.IOException {
+    private int readChar() throws java.io.IOException {
         getBOM();
         return (fbIndex) < (fbLength) ? firstBytes[(fbIndex)++] : org.apache.commons.io.IOUtils.EOF;
     }
 
-    private org.apache.commons.io.ByteOrderMark d() {
+    private org.apache.commons.io.ByteOrderMark skip() {
         for (final org.apache.commons.io.ByteOrderMark bom : boms) {
             if (matches(bom)) {
                 return bom;
@@ -110,7 +110,7 @@ public class BOMInputStream extends org.apache.commons.io.input.ProxyInputStream
         return null;
     }
 
-    private boolean b(final org.apache.commons.io.ByteOrderMark bom) {
+    private boolean readChar(final org.apache.commons.io.ByteOrderMark bom) {
         for (int i = 0 ; i < (bom.length()) ; i++) {
             if ((bom.get(i)) != (firstBytes[i])) {
                 return false;

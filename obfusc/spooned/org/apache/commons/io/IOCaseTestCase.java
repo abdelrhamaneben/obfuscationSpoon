@@ -16,7 +16,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
     protected void tearDown() throws java.lang.Exception {
     }
 
-    public void m() throws java.lang.Exception {
+    public void k() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(org.apache.commons.io.IOCase.SENSITIVE, org.apache.commons.io.IOCase.forName("Sensitive"));
         junit.framework.TestCase.assertEquals(org.apache.commons.io.IOCase.INSENSITIVE, org.apache.commons.io.IOCase.forName("Insensitive"));
         junit.framework.TestCase.assertEquals(org.apache.commons.io.IOCase.SYSTEM, org.apache.commons.io.IOCase.forName("System"));
@@ -32,31 +32,31 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void p() throws java.lang.Exception {
+    public void n() throws java.lang.Exception {
         junit.framework.TestCase.assertSame(org.apache.commons.io.IOCase.SENSITIVE, serialize(org.apache.commons.io.IOCase.SENSITIVE));
         junit.framework.TestCase.assertSame(org.apache.commons.io.IOCase.INSENSITIVE, serialize(org.apache.commons.io.IOCase.INSENSITIVE));
         junit.framework.TestCase.assertSame(org.apache.commons.io.IOCase.SYSTEM, serialize(org.apache.commons.io.IOCase.SYSTEM));
     }
 
-    public void n() throws java.lang.Exception {
+    public void l() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals("Sensitive", org.apache.commons.io.IOCase.SENSITIVE.getName());
         junit.framework.TestCase.assertEquals("Insensitive", org.apache.commons.io.IOCase.INSENSITIVE.getName());
         junit.framework.TestCase.assertEquals("System", org.apache.commons.io.IOCase.SYSTEM.getName());
     }
 
-    public void q() throws java.lang.Exception {
+    public void o() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals("Sensitive", org.apache.commons.io.IOCase.SENSITIVE.toString());
         junit.framework.TestCase.assertEquals("Insensitive", org.apache.commons.io.IOCase.INSENSITIVE.toString());
         junit.framework.TestCase.assertEquals("System", org.apache.commons.io.IOCase.SYSTEM.toString());
     }
 
-    public void o() throws java.lang.Exception {
+    public void m() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.isCaseSensitive());
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.INSENSITIVE.isCaseSensitive());
         junit.framework.TestCase.assertEquals(!(WINDOWS), org.apache.commons.io.IOCase.SYSTEM.isCaseSensitive());
     }
 
-    public void b() throws java.lang.Exception {
+    public void testGetPath_with_nullbyte() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(((org.apache.commons.io.IOCase.SENSITIVE.checkCompareTo("ABC", "")) > 0));
         junit.framework.TestCase.assertTrue(((org.apache.commons.io.IOCase.SENSITIVE.checkCompareTo("", "ABC")) < 0));
         junit.framework.TestCase.assertTrue(((org.apache.commons.io.IOCase.SENSITIVE.checkCompareTo("ABC", "DEF")) < 0));
@@ -80,7 +80,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void a() throws java.lang.Exception {
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(0, org.apache.commons.io.IOCase.SENSITIVE.checkCompareTo("ABC", "ABC"));
         junit.framework.TestCase.assertTrue(((org.apache.commons.io.IOCase.SENSITIVE.checkCompareTo("ABC", "abc")) < 0));
         junit.framework.TestCase.assertTrue(((org.apache.commons.io.IOCase.SENSITIVE.checkCompareTo("abc", "ABC")) > 0));
@@ -92,7 +92,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         junit.framework.TestCase.assertEquals(WINDOWS, ((org.apache.commons.io.IOCase.SYSTEM.checkCompareTo("abc", "ABC")) == 0));
     }
 
-    public void f() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEquals("ABC", ""));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEquals("ABC", "A"));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEquals("ABC", "AB"));
@@ -119,7 +119,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void e() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkEquals("ABC", "ABC"));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEquals("ABC", "Abc"));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.INSENSITIVE.checkEquals("ABC", "ABC"));
@@ -128,7 +128,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         junit.framework.TestCase.assertEquals(WINDOWS, org.apache.commons.io.IOCase.SYSTEM.checkEquals("ABC", "Abc"));
     }
 
-    public void l() throws java.lang.Exception {
+    public void j() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkStartsWith("ABC", ""));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkStartsWith("ABC", "A"));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkStartsWith("ABC", "AB"));
@@ -155,7 +155,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void k() throws java.lang.Exception {
+    public void i() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkStartsWith("ABC", "AB"));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkStartsWith("ABC", "Ab"));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.INSENSITIVE.checkStartsWith("ABC", "AB"));
@@ -164,7 +164,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         junit.framework.TestCase.assertEquals(WINDOWS, org.apache.commons.io.IOCase.SYSTEM.checkStartsWith("ABC", "Ab"));
     }
 
-    public void d() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkEndsWith("ABC", ""));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEndsWith("ABC", "A"));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEndsWith("ABC", "AB"));
@@ -191,7 +191,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void c() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkEndsWith("ABC", "BC"));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkEndsWith("ABC", "Bc"));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.INSENSITIVE.checkEndsWith("ABC", "BC"));
@@ -200,7 +200,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         junit.framework.TestCase.assertEquals(WINDOWS, org.apache.commons.io.IOCase.SYSTEM.checkEndsWith("ABC", "Bc"));
     }
 
-    public void h() throws java.lang.Exception {
+    public void f() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(0, org.apache.commons.io.IOCase.SENSITIVE.checkIndexOf("ABCDEFGHIJ", 0, "A"));
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.IOCase.SENSITIVE.checkIndexOf("ABCDEFGHIJ", 1, "A"));
         junit.framework.TestCase.assertEquals(0, org.apache.commons.io.IOCase.SENSITIVE.checkIndexOf("ABCDEFGHIJ", 0, "AB"));
@@ -244,7 +244,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void g() throws java.lang.Exception {
+    public void e() throws java.lang.Exception {
         junit.framework.TestCase.assertEquals(1, org.apache.commons.io.IOCase.SENSITIVE.checkIndexOf("ABC", 0, "BC"));
         junit.framework.TestCase.assertEquals(-1, org.apache.commons.io.IOCase.SENSITIVE.checkIndexOf("ABC", 0, "Bc"));
         junit.framework.TestCase.assertEquals(1, org.apache.commons.io.IOCase.INSENSITIVE.checkIndexOf("ABC", 0, "BC"));
@@ -253,7 +253,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         junit.framework.TestCase.assertEquals((WINDOWS ? 1 : -1), org.apache.commons.io.IOCase.SYSTEM.checkIndexOf("ABC", 0, "Bc"));
     }
 
-    public void j() throws java.lang.Exception {
+    public void h() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkRegionMatches("ABC", 0, ""));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkRegionMatches("ABC", 0, "A"));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkRegionMatches("ABC", 0, "AB"));
@@ -304,7 +304,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         }
     }
 
-    public void i() throws java.lang.Exception {
+    public void g() throws java.lang.Exception {
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.SENSITIVE.checkRegionMatches("ABC", 0, "AB"));
         junit.framework.TestCase.assertFalse(org.apache.commons.io.IOCase.SENSITIVE.checkRegionMatches("ABC", 0, "Ab"));
         junit.framework.TestCase.assertTrue(org.apache.commons.io.IOCase.INSENSITIVE.checkRegionMatches("ABC", 0, "AB"));
@@ -313,7 +313,7 @@ public class IOCaseTestCase extends org.apache.commons.io.testtools.FileBasedTes
         junit.framework.TestCase.assertEquals(WINDOWS, org.apache.commons.io.IOCase.SYSTEM.checkRegionMatches("ABC", 0, "Ab"));
     }
 
-    private org.apache.commons.io.IOCase a(final org.apache.commons.io.IOCase value) throws java.lang.Exception {
+    private org.apache.commons.io.IOCase testCopyDirectoryToItself(final org.apache.commons.io.IOCase value) throws java.lang.Exception {
         final java.io.ByteArrayOutputStream buf = new java.io.ByteArrayOutputStream();
         final java.io.ObjectOutputStream out = new java.io.ObjectOutputStream(buf);
         out.writeObject(value);

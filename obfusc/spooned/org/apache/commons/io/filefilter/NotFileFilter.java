@@ -14,12 +14,12 @@ public class NotFileFilter extends org.apache.commons.io.filefilter.AbstractFile
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file) {
+    public boolean removeFileFilter(final java.io.File file) {
         return !(filter.accept(file));
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file, final java.lang.String name) {
+    public boolean removeFileFilter(final java.io.File file, final java.lang.String name) {
         return !(filter.accept(file, name));
     }
 

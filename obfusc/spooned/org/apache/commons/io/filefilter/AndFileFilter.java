@@ -27,11 +27,11 @@ public class AndFileFilter extends org.apache.commons.io.filefilter.AbstractFile
         addFileFilter(filter2);
     }
 
-    public void b(final org.apache.commons.io.filefilter.IOFileFilter ioFileFilter) {
+    public void toString(final org.apache.commons.io.filefilter.IOFileFilter ioFileFilter) {
         this.fileFilters.add(ioFileFilter);
     }
 
-    public java.util.List<org.apache.commons.io.filefilter.IOFileFilter> a() {
+    public java.util.List<org.apache.commons.io.filefilter.IOFileFilter> removeFileFilter() {
         return java.util.Collections.unmodifiableList(this.fileFilters);
     }
 
@@ -39,13 +39,13 @@ public class AndFileFilter extends org.apache.commons.io.filefilter.AbstractFile
         return this.fileFilters.remove(ioFileFilter);
     }
 
-    public void a(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> fileFilters) {
+    public void removeFileFilter(final java.util.List<org.apache.commons.io.filefilter.IOFileFilter> fileFilters) {
         this.fileFilters.clear();
         this.fileFilters.addAll(fileFilters);
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file) {
+    public boolean removeFileFilter(final java.io.File file) {
         if (this.fileFilters.isEmpty()) {
             return false;
         } 
@@ -58,7 +58,7 @@ public class AndFileFilter extends org.apache.commons.io.filefilter.AbstractFile
     }
 
     @java.lang.Override
-    public boolean a(final java.io.File file, final java.lang.String name) {
+    public boolean removeFileFilter(final java.io.File file, final java.lang.String name) {
         if (this.fileFilters.isEmpty()) {
             return false;
         } 

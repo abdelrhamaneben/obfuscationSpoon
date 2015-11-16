@@ -8,11 +8,11 @@ public class DirectoryFileComparator extends org.apache.commons.io.comparator.Ab
 
     public static final java.util.Comparator<java.io.File> DIRECTORY_REVERSE = new org.apache.commons.io.comparator.ReverseComparator(DIRECTORY_COMPARATOR);
 
-    public int a(final java.io.File file1, final java.io.File file2) {
+    public int compare(final java.io.File file1, final java.io.File file2) {
         return (getType(file1)) - (getType(file2));
     }
 
-    private int a(final java.io.File file) {
+    private int compare(final java.io.File file) {
         if (file.isDirectory()) {
             return 1;
         } else {

@@ -28,7 +28,7 @@ public class YellOnFlushAndCloseOutputStream extends org.apache.commons.io.outpu
         super.close();
     }
 
-    public void a() {
+    public void isCauseOf() {
         yellForFlush = false;
         yellForClose = false;
     }

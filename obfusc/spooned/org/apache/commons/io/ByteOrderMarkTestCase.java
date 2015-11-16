@@ -12,13 +12,13 @@ public class ByteOrderMarkTestCase extends org.apache.commons.io.testtools.FileB
         super(name);
     }
 
-    public void a() {
+    public void testCopyDirectoryToItself() {
         junit.framework.TestCase.assertEquals("test1 name", "test1", TEST_BOM_1.getCharsetName());
         junit.framework.TestCase.assertEquals("test2 name", "test2", TEST_BOM_2.getCharsetName());
         junit.framework.TestCase.assertEquals("test3 name", "test3", TEST_BOM_3.getCharsetName());
     }
 
-    public void b() {
+    public void testGetPath_with_nullbyte() {
         junit.framework.TestCase.assertNotNull(java.nio.charset.Charset.forName(org.apache.commons.io.ByteOrderMark.UTF_8.getCharsetName()));
         junit.framework.TestCase.assertNotNull(java.nio.charset.Charset.forName(org.apache.commons.io.ByteOrderMark.UTF_16BE.getCharsetName()));
         junit.framework.TestCase.assertNotNull(java.nio.charset.Charset.forName(org.apache.commons.io.ByteOrderMark.UTF_16LE.getCharsetName()));
@@ -26,13 +26,13 @@ public class ByteOrderMarkTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertNotNull(java.nio.charset.Charset.forName(org.apache.commons.io.ByteOrderMark.UTF_32LE.getCharsetName()));
     }
 
-    public void h() {
+    public void f() {
         junit.framework.TestCase.assertEquals("test1 length", 1, TEST_BOM_1.length());
         junit.framework.TestCase.assertEquals("test2 length", 2, TEST_BOM_2.length());
         junit.framework.TestCase.assertEquals("test3 length", 3, TEST_BOM_3.length());
     }
 
-    public void e() {
+    public void c() {
         junit.framework.TestCase.assertEquals("test1 get(0)", 1, TEST_BOM_1.get(0));
         junit.framework.TestCase.assertEquals("test2 get(0)", 1, TEST_BOM_2.get(0));
         junit.framework.TestCase.assertEquals("test2 get(1)", 2, TEST_BOM_2.get(1));
@@ -41,13 +41,13 @@ public class ByteOrderMarkTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertEquals("test3 get(2)", 3, TEST_BOM_3.get(2));
     }
 
-    public void f() {
+    public void d() {
         junit.framework.TestCase.assertTrue("test1 bytes", java.util.Arrays.equals(TEST_BOM_1.getBytes(), new byte[]{ ((byte)(1)) }));
         junit.framework.TestCase.assertTrue("test1 bytes", java.util.Arrays.equals(TEST_BOM_2.getBytes(), new byte[]{ ((byte)(1)) , ((byte)(2)) }));
         junit.framework.TestCase.assertTrue("test1 bytes", java.util.Arrays.equals(TEST_BOM_3.getBytes(), new byte[]{ ((byte)(1)) , ((byte)(2)) , ((byte)(3)) }));
     }
 
-    public void c() {
+    public void a() {
         junit.framework.TestCase.assertTrue("test1 equals", TEST_BOM_1.equals(TEST_BOM_1));
         junit.framework.TestCase.assertTrue("test2 equals", TEST_BOM_2.equals(TEST_BOM_2));
         junit.framework.TestCase.assertTrue("test3 equals", TEST_BOM_3.equals(TEST_BOM_3));
@@ -58,14 +58,14 @@ public class ByteOrderMarkTestCase extends org.apache.commons.io.testtools.FileB
         junit.framework.TestCase.assertFalse("test3 not equal", TEST_BOM_3.equals(new org.apache.commons.io.ByteOrderMark("3" , 1 , 2 , 4)));
     }
 
-    public void g() {
+    public void e() {
         final int bomClassHash = org.apache.commons.io.ByteOrderMark.class.hashCode();
         junit.framework.TestCase.assertEquals("hash test1 ", (bomClassHash + 1), TEST_BOM_1.hashCode());
         junit.framework.TestCase.assertEquals("hash test2 ", (bomClassHash + 3), TEST_BOM_2.hashCode());
         junit.framework.TestCase.assertEquals("hash test3 ", (bomClassHash + 6), TEST_BOM_3.hashCode());
     }
 
-    public void d() {
+    public void b() {
         try {
             new org.apache.commons.io.ByteOrderMark(null , 1 , 2 , 3);
             junit.framework.TestCase.fail("null charset name, expected IllegalArgumentException");
@@ -88,7 +88,7 @@ public class ByteOrderMarkTestCase extends org.apache.commons.io.testtools.FileB
         }
     }
 
-    public void i() {
+    public void g() {
         junit.framework.TestCase.assertEquals("test1 ", "ByteOrderMark[test1: 0x1]", TEST_BOM_1.toString());
         junit.framework.TestCase.assertEquals("test2 ", "ByteOrderMark[test2: 0x1,0x2]", TEST_BOM_2.toString());
         junit.framework.TestCase.assertEquals("test3 ", "ByteOrderMark[test3: 0x1,0x2,0x3]", TEST_BOM_3.toString());

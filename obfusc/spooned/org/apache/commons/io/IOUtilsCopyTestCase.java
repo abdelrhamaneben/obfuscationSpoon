@@ -19,7 +19,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void a() throws java.lang.Exception {
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
@@ -31,7 +31,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         junit.framework.TestCase.assertEquals(inData.length, count);
     }
 
-    public void b() throws java.lang.Exception {
+    public void testGetPath_with_nullbyte() throws java.lang.Exception {
         testCopy_inputStreamToOutputStreamWithBufferSize(1);
         testCopy_inputStreamToOutputStreamWithBufferSize(2);
         testCopy_inputStreamToOutputStreamWithBufferSize(4);
@@ -50,7 +50,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    private void a(final int bufferSize) throws java.lang.Exception {
+    private void testCopyDirectoryToItself(final int bufferSize) throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
@@ -62,7 +62,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         junit.framework.TestCase.assertEquals(inData.length, count);
     }
 
-    public void d() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         final java.io.OutputStream out = new org.apache.commons.io.output.ByteArrayOutputStream();
         try {
             org.apache.commons.io.IOUtils.copy(((java.io.InputStream)(null)), out);
@@ -71,7 +71,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         }
     }
 
-    public void e() throws java.lang.Exception {
+    public void c() throws java.lang.Exception {
         final java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         try {
             org.apache.commons.io.IOUtils.copy(in, ((java.io.OutputStream)(null)));
@@ -80,7 +80,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         }
     }
 
-    public void c() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         final long size = ((long)(java.lang.Integer.MAX_VALUE)) + ((long)(1));
         final java.io.InputStream in = new org.apache.commons.io.input.NullInputStream(size);
         final java.io.OutputStream out = new org.apache.commons.io.output.NullOutputStream();
@@ -90,7 +90,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = { "resource" , "deprecation" })
-    public void f() throws java.lang.Exception {
+    public void d() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
@@ -105,7 +105,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void k() throws java.lang.Exception {
+    public void i() throws java.lang.Exception {
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
         final java.io.OutputStream out = new org.apache.commons.io.testtools.YellOnFlushAndCloseOutputStream(baout , true , true);
         final java.io.Writer writer = new java.io.OutputStreamWriter(out , "US-ASCII");
@@ -117,7 +117,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void l() throws java.lang.Exception {
+    public void j() throws java.lang.Exception {
         final java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         try {
             org.apache.commons.io.IOUtils.copy(in, ((java.io.Writer)(null)));
@@ -127,7 +127,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void g() throws java.lang.Exception {
+    public void e() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
@@ -142,7 +142,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         junit.framework.TestCase.assertTrue("Content differs", java.util.Arrays.equals(inData, bytes));
     }
 
-    public void i() throws java.lang.Exception {
+    public void g() throws java.lang.Exception {
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
         final java.io.OutputStream out = new org.apache.commons.io.testtools.YellOnFlushAndCloseOutputStream(baout , true , true);
         final java.io.Writer writer = new java.io.OutputStreamWriter(out , "US-ASCII");
@@ -153,7 +153,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         }
     }
 
-    public void j() throws java.lang.Exception {
+    public void h() throws java.lang.Exception {
         final java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         try {
             org.apache.commons.io.IOUtils.copy(in, null, "UTF8");
@@ -163,7 +163,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void h() throws java.lang.Exception {
+    public void f() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
@@ -178,7 +178,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = { "resource" , "deprecation" })
-    public void m() throws java.lang.Exception {
+    public void k() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -190,7 +190,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "deprecation")
-    public void r() throws java.lang.Exception {
+    public void p() throws java.lang.Exception {
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
         final java.io.OutputStream out = new org.apache.commons.io.testtools.YellOnFlushAndCloseOutputStream(baout , true , true);
         try {
@@ -201,7 +201,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = { "resource" , "deprecation" })
-    public void s() throws java.lang.Exception {
+    public void q() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -213,7 +213,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void n() throws java.lang.Exception {
+    public void l() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -225,7 +225,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         junit.framework.TestCase.assertTrue("Content differs", java.util.Arrays.equals(inData, bytes));
     }
 
-    public void p() throws java.lang.Exception {
+    public void n() throws java.lang.Exception {
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
         final java.io.OutputStream out = new org.apache.commons.io.testtools.YellOnFlushAndCloseOutputStream(baout , true , true);
         try {
@@ -236,7 +236,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void q() throws java.lang.Exception {
+    public void o() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -248,7 +248,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void o() throws java.lang.Exception {
+    public void m() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -260,7 +260,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void t() throws java.lang.Exception {
+    public void r() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -275,7 +275,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         junit.framework.TestCase.assertTrue("Content differs", java.util.Arrays.equals(inData, baout.toByteArray()));
     }
 
-    public void v() throws java.lang.Exception {
+    public void t() throws java.lang.Exception {
         final org.apache.commons.io.output.ByteArrayOutputStream baout = new org.apache.commons.io.output.ByteArrayOutputStream();
         final java.io.OutputStream out = new org.apache.commons.io.testtools.YellOnFlushAndCloseOutputStream(baout , true , true);
         final java.io.Writer writer = new java.io.OutputStreamWriter(out , "US-ASCII");
@@ -287,7 +287,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
     }
 
     @java.lang.SuppressWarnings(value = "resource")
-    public void w() throws java.lang.Exception {
+    public void u() throws java.lang.Exception {
         java.io.InputStream in = new java.io.ByteArrayInputStream(inData);
         in = new org.apache.commons.io.testtools.YellOnCloseInputStream(in);
         final java.io.Reader reader = new java.io.InputStreamReader(in , "US-ASCII");
@@ -298,7 +298,7 @@ public class IOUtilsCopyTestCase extends org.apache.commons.io.testtools.FileBas
         }
     }
 
-    public void u() throws java.lang.Exception {
+    public void s() throws java.lang.Exception {
         final long size = ((long)(java.lang.Integer.MAX_VALUE)) + ((long)(1));
         final java.io.Reader reader = new org.apache.commons.io.input.NullReader(size);
         final java.io.Writer writer = new org.apache.commons.io.output.NullWriter();

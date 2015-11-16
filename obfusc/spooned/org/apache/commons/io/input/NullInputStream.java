@@ -26,11 +26,11 @@ public class NullInputStream extends java.io.InputStream {
         this.throwEofException = throwEofException;
     }
 
-    public long c() {
+    public long b() {
         return position;
     }
 
-    public long d() {
+    public long c() {
         return size;
     }
 
@@ -134,14 +134,14 @@ public class NullInputStream extends java.io.InputStream {
         return returnLength;
     }
 
-    protected int b() {
+    protected int a() {
         return 0;
     }
 
     protected void a(final byte[] bytes, final int offset, final int length) {
     }
 
-    private int a() throws java.io.EOFException {
+    private int processBytes() throws java.io.EOFException {
         eof = true;
         if (throwEofException) {
             throw new java.io.EOFException();

@@ -38,6 +38,7 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 	
 	
 	public MethodNameProvider(Factory factory, CtType classe){
+		System.out.println("NEW METHODNAMEPROVIDER");
 		methodsNames = new HashMap<String,List<List<CtTypeReference>>>();
 		nextNameToGenerate = 1;
 		currentClass = classe;
@@ -48,6 +49,27 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 
 	public String getNewName(CtMethod element){
 
+		
+		/* IF POUR DEBUG */
+		if(element.getSimpleName().equals("getDefaultWorkingPath")){
+			System.out.println("###########################################################################");
+			System.out.println(methodsNames.size());
+			Iterator<Entry<String, List<List<CtTypeReference>>>> iteratorMethodsNames = methodsNames.entrySet().iterator();
+			while (iteratorMethodsNames.hasNext()) {
+			    Map.Entry<String, List<List<CtTypeReference>>> pair = (Map.Entry)iteratorMethodsNames.next();
+			    String key = pair.getKey();
+	            List<List<CtTypeReference>> value = pair.getValue();
+	            System.out.println(key);
+	            for(List<CtTypeReference> lst : value) {
+	            	for(CtTypeReference type : lst) {
+		                System.out.println(type.getSimpleName());
+		            }
+	            	System.out.println("------------------------");
+	            }
+			}
+		}
+			
+			
 		List<CtTypeReference> paramsRefs = getTypesReferences(element);
 		
 		Iterator<Entry<String, List<List<CtTypeReference>>>> iteratorMethodsNames = methodsNames.entrySet().iterator();
@@ -105,6 +127,7 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 			superclass = refSuperClass.getDeclaration();
 			if(superclass != null){
 				//System.out.println("SUPER CLASS = "+refSuperClass.getSimpleName());
+				addMethodsFromSuperClass(superclass.getSuperclass());
 				addMethods(superclass.getAllMethods());
 			}
 		}
@@ -141,9 +164,10 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 			if(currentClass.getReference().equals(c.getSuperclass())
 			|| c.getSuperInterfaces().contains(currentClass.getReference())){
 				
-			//System.out.println("SUB CLASS = "+c.getSimpleName());
+			System.out.println("SUB CLASS = "+c.getSimpleName());
 			addMethodsFromSubClasses(c);
-			addMethods(c.getAllMethods());
+			System.out.println(c.getMethods().size());
+			addMethods(c.getMethods());
 			//}
 			}
 		}
@@ -153,8 +177,18 @@ public class MethodNameProvider implements NameProvider<CtMethod>{
 	
 	
 	private void addMethods(Set<CtMethod<?>>  allMethods) {
-		// TODO Auto-generated method stub
-		
+		for(CtMethod method : allMethods){
+			String name = method.getSimpleName();
+			List<CtTypeReference> paramsRefs = getTypesReferences(method);
+			if(methodsNames.containsKey(name)){
+				methodsNames.get(name).add(paramsRefs);
+			}
+			else{
+				List<List<CtTypeReference>> newList = new ArrayList<List<CtTypeReference>>();
+				newList.add(paramsRefs);
+				methodsNames.put(name,newList);
+			}	
+		}
 	}
 
 	public static String getAlpha(int num) {

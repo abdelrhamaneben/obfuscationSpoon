@@ -18,90 +18,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         java.lang.Thread.sleep(1000);
     }
 
-    public void d() throws java.lang.Exception {
-        final long delay = 50;
-        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "testLongFile.txt");
-        createFile(file, 0);
-        final java.io.Writer writer = new java.io.FileWriter(file , true);
-        for (int i = 0 ; i < 100000 ; i++) {
-            writer.write("LineLineLineLineLineLineLineLineLineLine\n");
-        }
-        writer.write("SBTOURIST\n");
-        org.apache.commons.io.IOUtils.closeQuietly(writer);
-        final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
-        tailer = new org.apache.commons.io.input.Tailer(file , listener , delay , false);
-        final long start = java.lang.System.currentTimeMillis();
-        final java.lang.Thread thread = new java.lang.Thread(tailer);
-        thread.start();
-        java.util.List<java.lang.String> lines = listener.getLines();
-        while ((lines.isEmpty()) || (!(lines.get(((lines.size()) - 1)).equals("SBTOURIST")))) {
-            lines = listener.getLines();
-        }
-        java.lang.System.out.println(("Elapsed: " + ((java.lang.System.currentTimeMillis()) - start)));
-        listener.clear();
-    }
-
-    public void a() throws java.lang.Exception {
-        final long delay = 50;
-        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "testBufferBreak.txt");
-        createFile(file, 0);
-        writeString(file, "SBTOURIST\n");
-        final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
-        tailer = new org.apache.commons.io.input.Tailer(file , listener , delay , false , 1);
-        final java.lang.Thread thread = new java.lang.Thread(tailer);
-        thread.start();
-        java.util.List<java.lang.String> lines = listener.getLines();
-        while ((lines.isEmpty()) || (!(lines.get(((lines.size()) - 1)).equals("SBTOURIST")))) {
-            lines = listener.getLines();
-        }
-        listener.clear();
-    }
-
-    @java.lang.SuppressWarnings(value = "deprecation")
-    public void e() throws java.lang.Exception {
-        java.lang.System.out.println(("testMultiByteBreak() Default charset: " + (java.nio.charset.Charset.defaultCharset().displayName())));
-        final long delay = 50;
-        final java.io.File origin = new java.io.File(getClass().getResource("/test-file-utf8.bin").toURI());
-        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "testMultiByteBreak.txt");
-        createFile(file, 0);
-        final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
-        final java.lang.String osname = java.lang.System.getProperty("os.name");
-        final boolean isWindows = osname.startsWith("Windows");
-        final java.nio.charset.Charset charsetUTF8 = org.apache.commons.io.Charsets.UTF_8;
-        tailer = new org.apache.commons.io.input.Tailer(file , charsetUTF8 , listener , delay , false , isWindows , 4096);
-        final java.lang.Thread thread = new java.lang.Thread(tailer);
-        thread.start();
-        java.io.Writer out = new java.io.OutputStreamWriter(new java.io.FileOutputStream(file) , charsetUTF8);
-        java.io.BufferedReader reader = null;
-        try {
-            java.util.List<java.lang.String> lines = new java.util.ArrayList<java.lang.String>();
-            reader = new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream(origin) , charsetUTF8));
-            java.lang.String line = null;
-            while ((line = reader.readLine()) != null) {
-                out.write(line);
-                out.write("\n");
-                lines.add(line);
-            }
-            out.close();
-            final long testDelayMillis = delay * 10;
-            java.lang.Thread.sleep(testDelayMillis);
-            java.util.List<java.lang.String> tailerlines = listener.getLines();
-            junit.framework.TestCase.assertEquals("line count", lines.size(), tailerlines.size());
-            for (int i = 0, len = lines.size() ; i < len ; i++) {
-                final java.lang.String expected = lines.get(i);
-                final java.lang.String actual = tailerlines.get(i);
-                if (!(expected.equals(actual))) {
-                    junit.framework.TestCase.fail(((((((((("Line: " + i) + "\nExp: (") + (expected.length())) + ") ") + expected) + "\nAct: (") + (actual.length())) + ") ") + actual));
-                } 
-            }
-        } finally {
-            tailer.stop();
-            org.apache.commons.io.IOUtils.closeQuietly(reader);
-            org.apache.commons.io.IOUtils.closeQuietly(out);
-        }
-    }
-
-    public void j() throws java.lang.Exception {
+    public void b() throws java.lang.Exception {
         final long delay = 50;
         final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "tailer2-test.txt");
         createFile(file, 0);
@@ -128,7 +45,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         }
     }
 
-    public void h() throws java.lang.Exception {
+    public void testGetPath_with_nullbyte() throws java.lang.Exception {
         final long delayMillis = 50;
         final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "tailer1-test.txt");
         createFile(file, 0);
@@ -181,7 +98,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         junit.framework.TestCase.assertEquals("fileRotated should be be called", 1, listener.rotated);
     }
 
-    public void i() throws java.lang.Exception {
+    public void a() throws java.lang.Exception {
         final long delayMillis = 50;
         final long testDelayMillis = delayMillis * 10;
         final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "tailer1-test.txt");
@@ -201,27 +118,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         junit.framework.TestCase.assertEquals("end of file reached 3 times", 3, listener.reachedEndOfFile);
     }
 
-    @java.lang.Override
-    protected void a(final java.io.File file, final long size) throws java.io.IOException {
-        super.createFile(file, size);
-        java.io.RandomAccessFile reader = null;
-        try {
-            while (reader == null) {
-                try {
-                    reader = new java.io.RandomAccessFile(file.getPath() , "r");
-                } catch (final java.io.FileNotFoundException e) {
-                }
-                try {
-                    java.lang.Thread.sleep(200L);
-                } catch (final java.lang.InterruptedException e) {
-                }
-            }
-        } finally {
-            org.apache.commons.io.IOUtils.closeQuietly(reader);
-        }
-    }
-
-    private void a(final java.io.File file, final java.lang.String... lines) throws java.lang.Exception {
+    private void testCopyDirectoryToItself(final java.io.File file, final java.lang.String... lines) throws java.lang.Exception {
         java.io.FileWriter writer = null;
         try {
             writer = new java.io.FileWriter(file , true);
@@ -233,7 +130,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         }
     }
 
-    private void b(final java.io.File file, final java.lang.String... strings) throws java.lang.Exception {
+    private void a(final java.io.File file, final java.lang.String... strings) throws java.lang.Exception {
         java.io.FileWriter writer = null;
         try {
             writer = new java.io.FileWriter(file , true);
@@ -245,7 +142,27 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         }
     }
 
-    public void f() throws java.lang.Exception {
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "nosuchfile");
+        junit.framework.TestCase.assertFalse("nosuchfile should not exist", file.exists());
+        final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
+        final int delay = 100;
+        final int idle = 50;
+        tailer = new org.apache.commons.io.input.Tailer(file , listener , delay , false);
+        final java.util.concurrent.Executor exec = new java.util.concurrent.ScheduledThreadPoolExecutor(1);
+        exec.execute(tailer);
+        java.lang.Thread.sleep(idle);
+        tailer.stop();
+        tailer = null;
+        java.lang.Thread.sleep((delay + idle));
+        junit.framework.TestCase.assertNull("Should not generate Exception", listener.exception);
+        junit.framework.TestCase.assertEquals("Expected init to be called", 1, listener.initialised);
+        junit.framework.TestCase.assertTrue("fileNotFound should be called", ((listener.notFound) > 0));
+        junit.framework.TestCase.assertEquals("fileRotated should be not be called", 0, listener.rotated);
+        junit.framework.TestCase.assertEquals("end of file never reached", 0, listener.reachedEndOfFile);
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "nosuchfile");
         junit.framework.TestCase.assertFalse("nosuchfile should not exist", file.exists());
         final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
@@ -263,7 +180,74 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         junit.framework.TestCase.assertEquals("end of file never reached", 0, listener.reachedEndOfFile);
     }
 
-    public void c() throws java.lang.Exception {
+    @java.lang.SuppressWarnings(value = "deprecation")
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        java.lang.System.out.println(("testMultiByteBreak() Default charset: " + (java.nio.charset.Charset.defaultCharset().displayName())));
+        final long delay = 50;
+        final java.io.File origin = new java.io.File(getClass().getResource("/test-file-utf8.bin").toURI());
+        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "testMultiByteBreak.txt");
+        createFile(file, 0);
+        final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
+        final java.lang.String osname = java.lang.System.getProperty("os.name");
+        final boolean isWindows = osname.startsWith("Windows");
+        final java.nio.charset.Charset charsetUTF8 = org.apache.commons.io.Charsets.UTF_8;
+        tailer = new org.apache.commons.io.input.Tailer(file , charsetUTF8 , listener , delay , false , isWindows , 4096);
+        final java.lang.Thread thread = new java.lang.Thread(tailer);
+        thread.start();
+        java.io.Writer out = new java.io.OutputStreamWriter(new java.io.FileOutputStream(file) , charsetUTF8);
+        java.io.BufferedReader reader = null;
+        try {
+            java.util.List<java.lang.String> lines = new java.util.ArrayList<java.lang.String>();
+            reader = new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream(origin) , charsetUTF8));
+            java.lang.String line = null;
+            while ((line = reader.readLine()) != null) {
+                out.write(line);
+                out.write("\n");
+                lines.add(line);
+            }
+            out.close();
+            final long testDelayMillis = delay * 10;
+            java.lang.Thread.sleep(testDelayMillis);
+            java.util.List<java.lang.String> tailerlines = listener.getLines();
+            junit.framework.TestCase.assertEquals("line count", lines.size(), tailerlines.size());
+            for (int i = 0, len = lines.size() ; i < len ; i++) {
+                final java.lang.String expected = lines.get(i);
+                final java.lang.String actual = tailerlines.get(i);
+                if (!(expected.equals(actual))) {
+                    junit.framework.TestCase.fail(((((((((("Line: " + i) + "\nExp: (") + (expected.length())) + ") ") + expected) + "\nAct: (") + (actual.length())) + ") ") + actual));
+                } 
+            }
+        } finally {
+            tailer.stop();
+            org.apache.commons.io.IOUtils.closeQuietly(reader);
+            org.apache.commons.io.IOUtils.closeQuietly(out);
+        }
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        final long delay = 50;
+        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "testLongFile.txt");
+        createFile(file, 0);
+        final java.io.Writer writer = new java.io.FileWriter(file , true);
+        for (int i = 0 ; i < 100000 ; i++) {
+            writer.write("LineLineLineLineLineLineLineLineLineLine\n");
+        }
+        writer.write("SBTOURIST\n");
+        org.apache.commons.io.IOUtils.closeQuietly(writer);
+        final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
+        tailer = new org.apache.commons.io.input.Tailer(file , listener , delay , false);
+        final long start = java.lang.System.currentTimeMillis();
+        final java.lang.Thread thread = new java.lang.Thread(tailer);
+        thread.start();
+        java.util.List<java.lang.String> lines = listener.getLines();
+        while ((lines.isEmpty()) || (!(lines.get(((lines.size()) - 1)).equals("SBTOURIST")))) {
+            lines = listener.getLines();
+        }
+        java.lang.System.out.println(("Elapsed: " + ((java.lang.System.currentTimeMillis()) - start)));
+        listener.clear();
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "nosuchfile");
         junit.framework.TestCase.assertFalse("nosuchfile should not exist", file.exists());
         final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
@@ -285,27 +269,43 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
         junit.framework.TestCase.assertEquals("end of file never reached", 0, listener.reachedEndOfFile);
     }
 
-    public void g() throws java.lang.Exception {
-        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "nosuchfile");
-        junit.framework.TestCase.assertFalse("nosuchfile should not exist", file.exists());
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
+        final long delay = 50;
+        final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "testBufferBreak.txt");
+        createFile(file, 0);
+        writeString(file, "SBTOURIST\n");
         final org.apache.commons.io.input.TailerTest.TestTailerListener listener = new org.apache.commons.io.input.TailerTest.TestTailerListener();
-        final int delay = 100;
-        final int idle = 50;
-        tailer = new org.apache.commons.io.input.Tailer(file , listener , delay , false);
-        final java.util.concurrent.Executor exec = new java.util.concurrent.ScheduledThreadPoolExecutor(1);
-        exec.execute(tailer);
-        java.lang.Thread.sleep(idle);
-        tailer.stop();
-        tailer = null;
-        java.lang.Thread.sleep((delay + idle));
-        junit.framework.TestCase.assertNull("Should not generate Exception", listener.exception);
-        junit.framework.TestCase.assertEquals("Expected init to be called", 1, listener.initialised);
-        junit.framework.TestCase.assertTrue("fileNotFound should be called", ((listener.notFound) > 0));
-        junit.framework.TestCase.assertEquals("fileRotated should be not be called", 0, listener.rotated);
-        junit.framework.TestCase.assertEquals("end of file never reached", 0, listener.reachedEndOfFile);
+        tailer = new org.apache.commons.io.input.Tailer(file , listener , delay , false , 1);
+        final java.lang.Thread thread = new java.lang.Thread(tailer);
+        thread.start();
+        java.util.List<java.lang.String> lines = listener.getLines();
+        while ((lines.isEmpty()) || (!(lines.get(((lines.size()) - 1)).equals("SBTOURIST")))) {
+            lines = listener.getLines();
+        }
+        listener.clear();
     }
 
-    public void b() throws java.lang.Exception {
+    @java.lang.Override
+    protected void testCopyDirectoryToItself(final java.io.File file, final long size) throws java.io.IOException {
+        super.createFile(file, size);
+        java.io.RandomAccessFile reader = null;
+        try {
+            while (reader == null) {
+                try {
+                    reader = new java.io.RandomAccessFile(file.getPath() , "r");
+                } catch (final java.io.FileNotFoundException e) {
+                }
+                try {
+                    java.lang.Thread.sleep(200L);
+                } catch (final java.lang.InterruptedException e) {
+                }
+            }
+        } finally {
+            org.apache.commons.io.IOUtils.closeQuietly(reader);
+        }
+    }
+
+    public void testCopyDirectoryToItself() throws java.lang.Exception {
         final long delayMillis = 50;
         final java.io.File file = new java.io.File(org.apache.commons.io.testtools.FileBasedTestCase.getTestDirectory() , "tailer-testio334.txt");
         createFile(file, 0);
@@ -341,7 +341,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
 
         volatile int reachedEndOfFile = 0;
 
-        public void a(final java.lang.String line) {
+        public void init(final java.lang.String line) {
             lines.add(line);
         }
 
@@ -353,7 +353,7 @@ public class TailerTest extends org.apache.commons.io.testtools.FileBasedTestCas
             lines.clear();
         }
 
-        public void a(final java.lang.Exception e) {
+        public void init(final java.lang.Exception e) {
             exception = e;
         }
 
