@@ -18,7 +18,7 @@ public class StringReference  extends AbstractProcessor<CtLiteral<?>>{
 	public StringReference (factotyReference fn) {
 		this.fn = fn;
 	}
-	
+
 	public void process(CtLiteral<?> element) {
 		if(element.getPosition() != null && element.isParentInitialized() && element.getType().getSimpleName().equals("String")) {
 			try {

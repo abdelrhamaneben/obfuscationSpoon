@@ -1,80 +1,114 @@
 package obfusc.obfusc.Controllers;
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+
 import obfusc.obfusc.processors.CreateContanteString;
 import obfusc.obfusc.processors.NameAccessChanger;
 import obfusc.obfusc.processors.NameDeclarationChanger;
+import obfusc.obfusc.processors.NameMethodProcessor;
 import obfusc.obfusc.processors.StringReference;
 import obfusc.obfusc.utils.factotyReference;
 import spoon.Launcher;
+import spoon.reflect.factory.Factory;
 
 public class App 
 {
-	/**
-	 * l'application prend au moins deux parametres
-	 * @param args
-	 * args[1] premier input
-	 * args[2] premier ouput
-	 * args[3] deuxieme input
-	 * ...
+
+	/*
+	 * Exemple de programme:
+	 * java -jar lejar.jar 
+	 * -inputMain "../commons-csv/src/main/java:../commons-csv/src/test/java" 
+	 * -sourceClasspath ":../commons-csv/target:../jars/commons-io-2.4.jar:../jars/commons-lang3-3.4.jar:../jars/csv-1.0.jar:../jars/gj-csv-1.0.jar:../jars/javacsv-2.0.jar:../jars/jmh-core-1.11.2.jar:../jars/jmh-generator-annprocess-1.11.2.jar:../jars/opencsv-3.6.jar:../jars/super-csv-2.4.0.jar"
+	 * 
+	 * pour l'instant on met les tests dans le main. un seul launcher
 	 */
-    public static void main( String[] args )
+    public static void main( String[] args ) throws ParseException
     {
-    	Launcher spoon ;
-    	NameDeclarationChanger NDC;
-    	NameAccessChanger NAC;
-    	CreateContanteString CCS;
-    	StringReference SR;
+	
+    	
+    	// create Options object
+    	Options options = new Options();
+    	// add t option
+    	options.addOption("inputMain", true, "List of path to sources files");
+    	options.addOption("inputTest", true, "List of path to tests files");
+    	options.addOption("sourceClasspath", true, " An optional classpath to be passed to the internal Java compiler when building or compiling the input sources.");
+    	options.addOption("output",true,"Repertory of output");
+    	
+    	CommandLineParser parser = new DefaultParser();
+    	try {
+    		CommandLine cmd = parser.parse( options, args);
+        	if(!cmd.hasOption("-inputMain")) {
+        		HelpFormatter formatter = new HelpFormatter();
+        		formatter.printHelp( "list des parametres", options );
+        		System.exit(0);
+        	}
+        	obfuscation(cmd.getOptionValue("inputMain"),cmd.getOptionValue("inputTest"),cmd.getOptionValue("sourceClasspath"),cmd.getOptionValue("output"));
+        	
+        }
+        catch( ParseException exp ) {
+            System.err.println( "Parsing failed.  Reason: " + exp.getMessage() );
+        }
+    	
+    }
+    
+    
+    
+    
+    public static void obfuscation(String inputMain, String inputTest, String sourceClasspath, String output){
+    	
+    	//inputMain = "../tmp2";
+    	//inputMain = "../tmp/src";
+    	//inputMain =  "../commons-csv/src/main/java:../commons-csv/src/test/java";
+    	//inputMain = "../jsoup/src/main/java";
+    	
+    	/*sourceClasspath += ":../commons-csv/target:../jars/commons-io-2.4.jar:../jars/commons-lang3-3.4.jar"
+    					+":../jars/csv-1.0.jar:../jars/gj-csv-1.0.jar:../jars/javacsv-2.0.jar:../jars/jmh-core-1.11.2.jar"
+    					+":../jars/jmh-generator-annprocess-1.11.2.jar:../jars/opencsv-3.6.jar:../jars/super-csv-2.4.0.jar";*/
+    	
+    	//inputMain = "../tmp/src";
+    	//sourceClasspath += ":../jsoup-1.8.4-SNAPSHOT.jar";
+    	
+    	
+    			
+    	System.out.printf("inputMain = "+inputMain+" %ninputTest = "+inputTest+" %nsourceClasspath = "+sourceClasspath+" %n");
+    	
+        
+    	System.out.printf("Start of obfuscation for %s %n", inputMain);
+    	
+        Launcher spoon = new Launcher(); 
+        Factory factory = spoon.getFactory();
+        
+        
+    	//spoon.addInputResource("/Users/abdelrhamanebenhammou/workspace/appliTest/src/appliTest/");
+    	//spoon.setSourceOutputDirectory("/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output/");
+
+    
     	// Ajout des processeurs
     	factotyReference getterName = new factotyReference();
+ 
+    	// Définition des processeurs
+    	NameDeclarationChanger NDC = new NameDeclarationChanger(getterName);
+    	NameAccessChanger NAC = new NameAccessChanger(getterName);
+    	CreateContanteString CCS = new CreateContanteString(getterName);
+    	StringReference SR = new StringReference(getterName);
     	
-    	// vérification des entrées et sorties définition par défaut 
-    	int nbParam = args.length;
-    	if(nbParam <= 1) {
-    		// ajuster le nombre d'élement dans le tableau
-    		args = new String[2];
-    		System.out.println("Pas d'entrée et sortie renseignées");
-    		System.out.println("utilisation des parametres par défault");
-    		args[0] = "/Users/abdelrhamanebenhammou/workspace/commons-csv/src/main/";
-    		args[1] = "/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output/";
-    		//args[2] = "/Users/abdelrhamanebenhammou/workspace/commons-csv/src/test";
-    		//args[3] = "/Users/abdelrhamanebenhammou/Desktop/obfuscationSpoon/output/";
-    		
-    		System.out.println("Input  : " + args[0]);
-    		System.out.println("Output : " + args[1]);
-    		nbParam = args.length;
-    	}
+    	spoon.addProcessor(NAC);
+    	spoon.addProcessor(NDC);
+    	spoon.addProcessor(CCS);
+    	spoon.addProcessor(SR);
+    	spoon.addProcessor(new NameMethodProcessor());
     	
-    	// index des entrées sorties
-    	int input = -2;
-    	int output = -1;
     	
-    	// boucle sur les couples de paramètres
-    	for(int i = 1; i <= nbParam/2; i++) {
-    		input += 2;
-    		output += 2;
-    		spoon = new Launcher();
-        	// Définition des chemins d'entrée et de sortie
-        	// INPUT définition
-        	//spoon.addInputResource("/home/m2iagl/benhammou/workspace/OPL/applicationbateau/src/applicationbateau");
-        	spoon.addInputResource(args[input]);
-        	// OUTPUT définition
-        	spoon.setSourceOutputDirectory(args[output]);
-     
-        	// Définition des processeurs
-        	NDC = new NameDeclarationChanger(getterName);
-        	NAC = new NameAccessChanger(getterName);
-        	CCS = new CreateContanteString(getterName);
-        	SR = new StringReference(getterName);
-        	
-        	// Association à spoon des processeurs
-        	spoon.addProcessor(NAC);
-        	spoon.addProcessor(NDC);
-        	spoon.addProcessor(CCS);
-        	spoon.addProcessor(SR);
-
-        	 // Lancement de SPOON
-          	 spoon.run();
-    	}
-    	System.out.println("Obfuscation Terminé");
+    	spoon.setSourceOutputDirectory(output);
+    	spoon.run(new String[]{"-i",inputMain,"--source-classpath",sourceClasspath});
+        
+    	System.out.printf("End of obfuscation for %s %n", inputMain);
+    	
     }
+    
 }
