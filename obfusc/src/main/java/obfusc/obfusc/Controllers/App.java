@@ -45,51 +45,6 @@ public class App
             System.err.println( "Parsing failed.  Reason: " + exp.getMessage() );
         }
     	
-  
-    	
-    	
-    	
-        /*
-    	// Ajout des processeurs
-    	factotyReference getterName = new factotyReference();
-    	
-    	NameDeclarationChanger NDC = new NameDeclarationChanger(getterName);
-    	NameReadChanger NRC = new NameReadChanger(getterName);
-    	NameWriteChanger NWC = new NameWriteChanger(getterName);
-    	//StringReference SR = new StringReference(getterName);
-    	
-    	spoon.addProcessor(NDC);
-    	spoon.addProcessor(NRC);
-    	spoon.addProcessor(NWC);
-    	//spoon.addProcessor(SR);
-    	
-    	BooleanExpressionProcessor boolExpProc = new BooleanExpressionProcessor(getterName);
-    	spoon.addProcessor(boolExpProc);
-    	
-    	 // Lancement de SPOON
-      	 spoon.run();
-      	 System.out.println("run fini");
-      	 
-      	// Création de la classe Contenant les String en constante
-	    CtClass ConstanteClass =  spoon.getFactory().Core().createClass();
-	    ConstanteClass.setSimpleName("TotoStringReference");
-	   
-	    CtField field ;
-	    CtExpression ce;
-	    // Ajout d'une variable dans la classe pour chaque string trouvées
-	    for(String VariableValue : getterName.strings.keySet()) {
-	    	field = spoon.getFactory().Core().createField();
-	    	field.setSimpleName(getterName.strings.get(VariableValue));
-		    ce = spoon.getFactory().Code().createCodeSnippetExpression(VariableValue);
-		    field.setAssignment(ce);
-		    field.addModifier(ModifierKind.PUBLIC);
-		    field.addModifier(ModifierKind.STATIC);
-		    ConstanteClass.addField(field);
-	    }
-	    
-	    System.out.println(ConstanteClass.toString());*/
-	   // CtPackage rootPackage = spoon.getFactory().Package().getRootPackage();
-	    
     }
     
     
@@ -99,12 +54,12 @@ public class App
     	
     	//inputMain = "../tmp2";
     	//inputMain = "../tmp/src";
-    	inputMain =  "../commons-csv/src/main/java:../commons-csv/src/test/java";
+    	//inputMain =  "../commons-csv/src/main/java:../commons-csv/src/test/java";
     	//inputMain = "../jsoup/src/main/java";
     	
-    	sourceClasspath += ":../commons-csv/target:../jars/commons-io-2.4.jar:../jars/commons-lang3-3.4.jar"
+    	/*sourceClasspath += ":../commons-csv/target:../jars/commons-io-2.4.jar:../jars/commons-lang3-3.4.jar"
     					+":../jars/csv-1.0.jar:../jars/gj-csv-1.0.jar:../jars/javacsv-2.0.jar:../jars/jmh-core-1.11.2.jar"
-    					+":../jars/jmh-generator-annprocess-1.11.2.jar:../jars/opencsv-3.6.jar:../jars/super-csv-2.4.0.jar";
+    					+":../jars/jmh-generator-annprocess-1.11.2.jar:../jars/opencsv-3.6.jar:../jars/super-csv-2.4.0.jar";*/
     	
     	//inputMain = "../tmp/src";
     	//sourceClasspath += ":../jsoup-1.8.4-SNAPSHOT.jar";

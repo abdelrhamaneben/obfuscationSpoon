@@ -165,8 +165,10 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 		for(CtType<?> c : subclasses){
 			
 			//si c hérite ou implemente la currentClass
-			if(type.getReference().equals(c.getSuperclass())
-			|| c.getSuperInterfaces().contains(type.getReference())){
+			/*if(type.getReference().equals(c.getSuperclass())
+			|| c.getSuperInterfaces().contains(type.getReference())){*/
+			
+			if(c.isSubtypeOf(type.getReference())){
 				System.out.println("....Change SubClass "+c.getSimpleName());
 				List<CtMethod> methods = c.getElements(filter);
 				for(CtMethod m : methods){
@@ -181,9 +183,6 @@ public class NameMethodProcessor extends AbstractProcessor<CtType>{
 		
 	}
 	
-	public void changeAllSubInterface(CtMethod method){
-		
-	}
 	
 	public boolean isModifiable(CtMethod method){
 		if(method.getSimpleName().equals("main")){
