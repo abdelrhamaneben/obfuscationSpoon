@@ -103,8 +103,10 @@ public class App
     	spoon.addProcessor(SR);
     	spoon.addProcessor(new NameMethodProcessor());
     	
+    	if(output != null){
+    		spoon.setSourceOutputDirectory(output);	
+    	}
     	
-    	spoon.setSourceOutputDirectory(output);
     	spoon.run(new String[]{"-i",inputMain,"--source-classpath",sourceClasspath});
         
     	System.out.printf("End of obfuscation for %s %n", inputMain);
